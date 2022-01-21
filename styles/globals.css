@@ -51,6 +51,7 @@ body {
 }
 
 body {
+  background-color: #fff;
   font-size: 18px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -79,6 +80,11 @@ a {
   box-sizing: border-box;
 }
 
+header a {
+  color: #dcc2f3;
+  font-size: inherit;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -97,7 +103,34 @@ a {
   box-shadow: 1px 1px 5px 0px rgb(0 0 0 / 20%);
 }
 
-.active {
+.scrolled a {
+  color: #23233f;
+}
+
+.scrolled .active {
   border-bottom: 2px solid dodgerblue;
   color: dodgerblue;
+}
+
+.active {
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+
+.download-btn a {
+  background: #ffb75e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ed8f03,
+    #ffb75e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ed8f03,
+    #ffb75e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.main-content,
+#about {
+  background: transparent;
 }

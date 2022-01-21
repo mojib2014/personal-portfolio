@@ -4,6 +4,7 @@ module.exports = {
     colors: {
       transparent: "transparent",
       blue: "#007bff",
+      dodgerblue: "dodgerblue",
       indigo: "#6610f2",
       purple: "#6f42c1",
       "light-purple": "#a345fb",

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import "@fortawesome/fontawesome-free/css/all.css";
 import ActiveLink from "./common/activeLink";
 import styles from "../styles/header.module.css";
 
@@ -56,13 +57,34 @@ export default function Header() {
               className={`${styles.socialContainer} d-flex align-items-center justify-content-between`}
             >
               <Link href="#twitter">
-                <a className="light-black mr-5">Twitter</a>
+                <a
+                  referrerPolicy="no-referrer"
+                  target="_blank"
+                  rel="noopener"
+                  className="mr-2 xl:mr-5"
+                >
+                  <i className="fab fa-twitter fa-lg text-blue" />
+                </a>
               </Link>
-              <Link href="#linkedin">
-                <a className="light-black mr-5">LinkedIn</a>
+              <Link href="https://www.linkedin.com/in/mojib-mohammad" passHref>
+                <a
+                  referrerPolicy="no-referrer"
+                  target="_blank"
+                  rel="noopener"
+                  className="mr-2 xl:mr-5"
+                >
+                  <i className="fab fa-linkedin fa-lg text-blue" />
+                </a>
               </Link>
-              <Link href="#github">
-                <a className="light-black mr-5">Github</a>
+              <Link href="https://github.com/mojib2014">
+                <a
+                  referrerPolicy="no-referrer"
+                  target="_blank"
+                  rel="noopener"
+                  className="mr-2 xl:mr-5"
+                >
+                  <i className="fab fa-github fa-lg text-black" />
+                </a>
               </Link>
             </div>
             <div className={`${styles.contentMenu} flex lg ml-auto`}>
@@ -84,9 +106,9 @@ export default function Header() {
                       </ActiveLink>
                     </li>
                     <li className="pr-12">
-                      <ActiveLink href="/#services">
+                      <ActiveLink href="/#skills">
                         <a className="inline-block" onClick={handleAchorClick}>
-                          Services
+                          Skills
                         </a>
                       </ActiveLink>
                     </li>
@@ -116,7 +138,10 @@ export default function Header() {
               </div>
               <div className="btn-primary self-center">
                 <Link href="#hire-me">
-                  <a className="bg-light-purple hover:bg-purple rounded-md text-white px-4 py-2.5">
+                  <a
+                    style={{ color: "#fff" }}
+                    className="bg-dodgerblue hover:bg-blue rounded-md text-white px-2 py-1.5 xl:px-4 xl:py-2.5"
+                  >
                     Contact Me
                   </a>
                 </Link>
@@ -153,9 +178,9 @@ export default function Header() {
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink href="/#services">
+            <ActiveLink href="/#skills">
               <a className="inlin-block" onClick={handleAchorClick}>
-                Services
+                Skills
               </a>
             </ActiveLink>
           </li>

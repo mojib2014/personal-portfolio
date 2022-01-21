@@ -4,8 +4,9 @@
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 999;
   background: rgba(0, 0, 0, 0.9);
+  background: transparent;
   opacity: 0;
   visibility: hidden;
   will-change: opacity;
@@ -77,11 +78,12 @@
 }
 
 .btnMenu {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   cursor: pointer;
   display: none;
   margin-left: 8px;
 }
+
 .line {
   background-color: #23233f;
   height: 2px;

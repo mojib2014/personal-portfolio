@@ -1,0 +1,18 @@
+.portfolio {
+  padding-top: 120px;
+}
+
+.flex {
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 2px #dddd;
+  padding: 5px;
+}
+
+.card img {
+  width: 100% !important;
+}
