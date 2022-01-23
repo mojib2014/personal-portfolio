@@ -5,8 +5,6 @@
   src: url(../public/fonts/playball.woff2);
 }
 
-.resume {
-}
 .resumeOuter {
   padding: 120px 0;
 }
@@ -18,7 +16,6 @@
 }
 .subTitle {
   position: relative;
-  color: var(--pink);
   display: inline-block;
   font-size: 1.4rem;
   font-family: "Playball", sans-serif;
@@ -135,4 +132,13 @@
 
 .downloadBtn a:hover {
   border-radius: 36px;
+}
+
+@media (max-width: 1270px) {
+  .downloadBtn {
+    top: 32.2%;
+  }
+}
+
+@media (max-width: 1000px) {
 }

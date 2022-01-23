@@ -25,7 +25,7 @@ export default function Footer() {
               </span>
             </a>
           </div>
-          <div className="grid grid-cols-3 grid-rows-1 gap-7 justify-items-center mt-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-1 gap-7 mt-8">
             <nav className="">
               <h4 className="mt-2 mb-5 font-bold">General resources</h4>
               <ul className=" flex flex-col list-style-none items-start justify-center">

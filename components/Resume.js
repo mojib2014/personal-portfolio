@@ -11,8 +11,8 @@ export default function Resume() {
           <h1 className="font-bold text-4xl text-center xl:text-5xl mb-20">
             Resume
           </h1>
-          <div className="col-left flex items-center justify-between flex-wrap min-w-[100%]">
-            <div className="flex-[47%] w-[47%] h-[100%] self-center relative bg-[#FEF6E3] rounded-[50%]">
+          <div className="grid grid-cols-1 auto-row-auto gap-10 justify-center md:grid-cols-2">
+            <div className="self-center relative bg-[#FEF6E3] rounded-[50%]">
               <Image
                 src={resumeSection}
                 width="100%"
@@ -25,7 +25,7 @@ export default function Resume() {
               <div className="resume-social h-0 w-0 max-h-0">
                 <Link href="/#twitter">
                   <a
-                    className="absolute flex items-center justify-center top-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
+                    className="absolute text-sky-500 flex items-center justify-center top-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
                     title="Twitter"
                   >
                     <i className="fab fa-twitter fa-2x xl:fa-4x text-dodgerblue"></i>
@@ -33,7 +33,7 @@ export default function Resume() {
                 </Link>
                 <Link href="/#github">
                   <a
-                    className="absolute flex items-center justify-center bottom-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
+                    className="absolute text-sky-500 flex items-center justify-center bottom-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
                     title="Github"
                   >
                     <i className="fab fa-github fa-2x xl:fa-4x"></i>
@@ -41,7 +41,7 @@ export default function Resume() {
                 </Link>
                 <Link href="/#linkedin">
                   <a
-                    className="absolute flex items-center justify-center top-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
+                    className="absolute text-sky-500 flex items-center justify-center top-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
                     title="Linkedin"
                   >
                     <i className="fab fa-linkedin-in fa-2x xl:fa-4x text-dodgerblue"></i>
@@ -49,7 +49,7 @@ export default function Resume() {
                 </Link>
                 <Link href="/#facebook">
                   <a
-                    className="absolute flex items-center justify-center bottom-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
+                    className="absolute text-sky-500 flex items-center justify-center bottom-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
                     title="Facebook"
                   >
                     <i className="fab fa-facebook fa-2x xl:fa-4x text-dodgerblue"></i>
@@ -57,8 +57,8 @@ export default function Resume() {
                 </Link>
               </div>
             </div>
-            <div className="col-right flat-title w-[53%] pl-[120px] flex-[53%] h-[100%] py-3 self-start">
-              <h4 className={`${styles.subTitle} mb-13`}>
+            <div className="py-3 self-start md:pl-[120px]">
+              <h4 className={`${styles.subTitle} text-pink mb-13`}>
                 Educational qualification
               </h4>
               <h2 className="sction-title font-bold text-3xl mt-5 mb-10 leading-6">
