@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import "@fortawesome/fontawesome-free/css/all.css";
 import ActiveLink from "./common/ActiveLink";
-import styles from "../styles/header.module.css";
+import styles from "../styles/Header.module.css";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
