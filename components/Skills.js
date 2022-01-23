@@ -21,7 +21,7 @@ import styles from "../styles/Skills.module.css";
 export default function Skills() {
   return (
     <section id="skills" className={styles.skills}>
-      <div className="container">
+      <div className="container mx-w-xl">
         <h1 className="text-center font-bold text-4xl xl:text-5xl mb-10">
           Skills
         </h1>

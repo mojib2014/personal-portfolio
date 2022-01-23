@@ -13,12 +13,8 @@ export default function Banner() {
               I&apos;m Mojib Mohammad
             </h1>
             <p className="text-[#f8f8f8]">Junior full stack developer</p>
-            <div className="download-btn mt-10">
-              <a
-                href="public/resume.pf"
-                target="_blank"
-                className="inline-block px-5 py-5 rounded-lg hover:bg-blue text-[#fff] font-inherit"
-              >
+            <div className={`${styles.downloadBtn} mt-10`}>
+              <a href="public/resume.pdf" target="_blank">
                 Download Resume
               </a>
             </div>

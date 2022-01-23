@@ -1,4 +1,122 @@
+@font-face {
+  font-family: "playball";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../public/fonts/playball.woff2);
+}
+
 .resume {
   padding-top: 120px;
   margin-bottom: 120px;
+}
+.resume img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: middle;
+}
+.subTitle {
+  position: relative;
+  color: var(--pink);
+  display: inline-block;
+  font-size: 1.4rem;
+  font-family: "Playball", sans-serif;
+}
+
+.subTitle::after {
+  content: url(../public/icons/dots.png);
+  position: absolute;
+  top: 6px;
+  right: -96px;
+  margin: 15px 0 0 10px;
+}
+
+.timeline li {
+  padding-bottom: 47px;
+  position: relative;
+}
+
+.timeline li::before {
+  content: " ";
+  display: table;
+}
+
+.timeline > li:after {
+  clear: both;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 160px;
+  border: 0.5px dashed var(--pink);
+  margin-left: 7px;
+}
+
+.timeline .color1 .timelineBadge {
+  background-color: #ff2e5f;
+}
+
+.timeline .timelineBadge {
+  background-color: var(--pink);
+  width: 15px;
+  height: 15px;
+  top: 0;
+  left: 0;
+  text-align: center;
+  position: absolute;
+  z-index: 99;
+  border-radius: 50%;
+}
+
+.timelinePanel h3 {
+  color: var(--pink);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.1px;
+}
+
+.timeline .color2 .timelineBadge {
+  background-color: #fbbd41;
+}
+
+.timeline .color2 h3 {
+  color: #fbbd41;
+}
+
+.timelinePanel {
+  border-radius: 2px;
+  margin-left: 55px;
+  margin-top: -4px;
+  position: relative;
+}
+
+.timeline .color3 .timelineBadge {
+  background-color: #8b2ee1;
+}
+
+.timeline .color3 h3 {
+  color: #8b2ee1;
+}
+
+.info {
+  font-size: 21px;
+  color: #646168;
+  letter-spacing: -0.4px;
+  margin-bottom: 11px;
+}
+
+.downloadBtn {
+  position: absolute;
+  top: 28%;
+  left: -190px;
+  padding: 20px 21px 18px 23px;
+  background: rgb(251, 189, 65);
+  background: linear-gradient(
+    254deg,
+    rgba(251, 189, 65, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }

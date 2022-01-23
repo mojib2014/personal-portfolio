@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "../styles/About.module.css";
 
@@ -8,19 +9,21 @@ export default function About() {
         <div className="container">
           <div className="main-content mx-left text-left">
             <h1 className="text-4xl text-center font-bold xl:text-5xl mb-12">
-              I&apos;m a full-stack junior developer
+              I&apos;m a junior full-stack developer
             </h1>
-            <p>I have an associate degree in medicine.</p>
             <p>
-              In my free times I play volleball and enjoy family time with my
-              lovely dauther, watch movies and learn new stuff.
+              I have an associate degree in medicine. I&apos;m really interested
+              in technology & solving technical problems. I create responsive
+              and interactive web apps, With focus on back-end. In my free times
+              I play volleball and enjoy family time with my lovely dauther,
+              watch movies and learn new stuff. You can know more about me by
+              reading my{" "}
+              <Link href="/blog/posts">
+                <a className="text-blue p-2 hover:bg-[#ddd] hover:p-2 hover:rounded">
+                  articles.
+                </a>
+              </Link>
             </p>
-            <p className="">I create responsive and interactive web apps</p>
-            <p>
-              With passion for building user friendly, performent SPAs in
-              MERNstack, PERNstack sites.
-            </p>
-            <p>With focus on back-end.</p>
             <div className="download-btn mt-10">
               <a
                 href="public/resume.pf"

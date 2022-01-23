@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function Portfolio() {
   return (
     <section id="portfolio" className={styles.portfolio}>
-      <div className="container">
+      <div className="container mx-w-xl">
         <h1 className="font-bold text-4xl text-center xl:text-5xl mb-12">
           Portfolio
         </h1>

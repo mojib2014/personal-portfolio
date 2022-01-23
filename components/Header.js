@@ -5,12 +5,12 @@ import ActiveLink from "./common/activeLink";
 import styles from "../styles/header.module.css";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState("");
+  const [scrolled, setScrolled] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const handleHeaderScroll = () => {
-    if (window.scrollY > 90) setScrolled("scrolled");
-    else setScrolled("");
+    if (window.scrollY > 90) setScrolled(true);
+    else setScrolled(false);
   };
   useEffect(() => {
     window.addEventListener("scroll", handleHeaderScroll);
@@ -22,7 +22,7 @@ export default function Header() {
     const hash = target.hash;
     document.querySelectorAll("a").forEach((a) => a.classList.remove("active"));
     target.classList.add("active");
-    if (target.getAttribute("href") === "/" || hash !== "") return;
+    if (target.getAttribute("href") === "/" || hash === "") return;
     if (hash !== "") {
       const section = document.querySelector(hash);
       if (!section) return;
@@ -50,7 +50,12 @@ export default function Header() {
       >
         <span className={styles.mobileMenuCloseBtn}></span>
       </div>
-      <header id="header" className={`${styles.header} ${scrolled}`}>
+      <header
+        id="header"
+        className={`${styles.header}  ${scrolled ? "scrolled" : ""} ${
+          styles.scrolled
+        }`}
+      >
         <div className="container mx-w-xl">
           <div className="flex-header flex justify-between items-center">
             <div
@@ -63,7 +68,11 @@ export default function Header() {
                   rel="noopener"
                   className="mr-2 xl:mr-5"
                 >
-                  <i className="fab fa-twitter fa-lg text-blue" />
+                  <i
+                    className={`${
+                      scrolled ? "text-blue" : ""
+                    } fab fa-twitter fa-lg`}
+                  />
                 </a>
               </Link>
               <Link href="https://www.linkedin.com/in/mojib-mohammad" passHref>
@@ -73,7 +82,11 @@ export default function Header() {
                   rel="noopener"
                   className="mr-2 xl:mr-5"
                 >
-                  <i className="fab fa-linkedin fa-lg text-blue" />
+                  <i
+                    className={`${
+                      scrolled ? "text-blue" : ""
+                    } fab fa-linkedin fa-lg`}
+                  />
                 </a>
               </Link>
               <Link href="https://github.com/mojib2014">

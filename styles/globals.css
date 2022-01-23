@@ -60,6 +60,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
 a {
   font-size: inherit;
@@ -108,12 +112,12 @@ header a {
 }
 
 .scrolled .active {
-  border-bottom: 2px solid dodgerblue;
+  border-bottom: 4px solid dodgerblue;
   color: dodgerblue;
 }
 
 .active {
-  border-bottom: 2px solid #fff;
+  border-bottom: 4px solid #fff;
   color: #fff;
 }
 
