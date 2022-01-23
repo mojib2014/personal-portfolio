@@ -6,8 +6,9 @@
 }
 
 .resume {
-  padding-top: 120px;
-  margin-bottom: 120px;
+}
+.resumeOuter {
+  padding: 120px 0;
 }
 .resume img {
   width: 100%;
@@ -110,8 +111,11 @@
 
 .downloadBtn {
   position: absolute;
-  top: 28%;
+  top: 32%;
   left: -190px;
+}
+
+.downloadBtn a {
   padding: 20px 21px 18px 23px;
   background: rgb(251, 189, 65);
   background: linear-gradient(
@@ -119,4 +123,16 @@
     rgba(251, 189, 65, 1) 0%,
     rgba(255, 255, 255, 1) 100%
   );
+  font-size: inherit;
+  text-decoration: none;
+  color: #3b4250;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.downloadBtn a:hover {
+  border-radius: 36px;
 }

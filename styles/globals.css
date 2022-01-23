@@ -117,8 +117,8 @@ header a {
 }
 
 .active {
-  border-bottom: 4px solid #fff;
-  color: #fff;
+  border-bottom: 4px solid var(--teal);
+  color: var(--teal);
 }
 
 .download-btn a {

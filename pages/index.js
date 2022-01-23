@@ -1,11 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import About from "../components/About";
 import Layout from "../components/Layout";
 import Portfolio from "../components/Portfolio";
 import Resume from "../components/Resume";
 import Banner from "../components/Banner";
-import styles from "../styles/Home.module.css";
 import Skills from "../components/Skills";
 
 export default function Home() {
@@ -19,21 +17,8 @@ export default function Home() {
       <Banner />
       <About />
       <Skills />
-      {/* <Services /> */}
       <Portfolio />
       <Resume />
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </Layout>
   );
 }

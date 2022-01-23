@@ -1,4 +1,10 @@
 .about {
+  /* font-size: inherit; */
+}
+
+.aboutOuter {
+  background-color: #fbf7ff;
+  margin-top: -65px;
   padding-top: 120px;
-  font-size: inherit;
+  padding-bottom: 120px;
 }

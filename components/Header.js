@@ -149,12 +149,9 @@ export default function Header() {
                   </ul>
                 </nav>
               </div>
-              <div className="btn-primary self-center">
-                <Link href="#hire-me">
-                  <a
-                    style={{ color: "#fff" }}
-                    className="bg-dodgerblue hover:bg-blue rounded-md text-white px-2 py-1.5 xl:px-4 xl:py-2.5"
-                  >
+              <div className="self-center">
+                <Link href="#contact">
+                  <a className="bg-amber-200 hover:bg-amber-500 rounded-lg text-white px-2 py-1.5 xl:px-4 xl:py-2.5">
                     Contact Me
                   </a>
                 </Link>

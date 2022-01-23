@@ -5,8 +5,8 @@ import styles from "../styles/About.module.css";
 export default function About() {
   return (
     <section id="about" className={styles.about}>
-      <div className={styles.bannerSection}>
-        <div className="container">
+      <div className={styles.aboutOuter}>
+        <div className="container mx-w-xl">
           <div className="main-content mx-left text-left">
             <h1 className="text-4xl text-center font-bold xl:text-5xl mb-12">
               I&apos;m a junior full-stack developer

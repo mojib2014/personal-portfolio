@@ -1,5 +1,9 @@
 .portfolio {
-  padding-top: 120px;
+}
+
+.portfolioOuter {
+  background-color: #fef6e3;
+  padding: 120px 0;
 }
 
 .grid {

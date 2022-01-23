@@ -1,0 +1,20 @@
+.footer {
+  background-color: #fafafa;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem 0 4rem;
+  min-height: 400px;
+}
+
+.footer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
