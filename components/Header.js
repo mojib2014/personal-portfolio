@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import "@fortawesome/fontawesome-free/css/all.css";
-import ActiveLink from "./common/activeLink";
+import ActiveLink from "./common/ActiveLink";
 import styles from "../styles/header.module.css";
 
 export default function Header() {
