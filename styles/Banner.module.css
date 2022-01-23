@@ -10,7 +10,7 @@
   background-size: cover;
 }
 
-.downloadBtn a {
+.banner a {
   background: linear-gradient(
     -135deg,
     rgba(163, 69, 251, 1) 0%,
@@ -22,7 +22,7 @@
   padding: 20px 35px 18px 35px;
 }
 
-.downloadBtn a:hover {
+.banner a:hover {
   border-radius: 17px;
 }
 

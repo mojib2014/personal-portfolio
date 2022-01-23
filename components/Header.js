@@ -52,21 +52,19 @@ export default function Header() {
       </div>
       <header
         id="header"
-        className={`${styles.header}  ${scrolled ? "scrolled" : ""} ${
-          styles.scrolled
+        className={`${styles.header}  ${scrolled ? styles.scrolled : ""}
         }`}
       >
         <div className="container mx-w-xl">
-          <div className="flex-header flex justify-between items-center">
-            <div
-              className={`${styles.socialContainer} d-flex align-items-center justify-content-between`}
-            >
+          <div className="flex justify-between items-center">
+            <div className="items-center justify-between">
               <Link href="#twitter">
                 <a
                   referrerPolicy="no-referrer"
                   target="_blank"
                   rel="noopener"
                   className="mr-2 xl:mr-5"
+                  title="Twiiter"
                 >
                   <i
                     className={`${
@@ -75,12 +73,13 @@ export default function Header() {
                   />
                 </a>
               </Link>
-              <Link href="https://www.linkedin.com/in/mojib-mohammad" passHref>
+              <Link href="https://www.linkedin.com/in/mojib-mohammad">
                 <a
                   referrerPolicy="no-referrer"
                   target="_blank"
                   rel="noopener"
                   className="mr-2 xl:mr-5"
+                  title="Linkedin"
                 >
                   <i
                     className={`${
@@ -95,15 +94,18 @@ export default function Header() {
                   target="_blank"
                   rel="noopener"
                   className="mr-2 xl:mr-5"
+                  title="Github"
                 >
                   <i className="fab fa-github fa-lg text-black" />
                 </a>
               </Link>
             </div>
-            <div className={`${styles.contentMenu} flex lg ml-auto`}>
+            <div className="flex items-center justify-between ml-auto">
               <div className={styles.navWrap}>
-                <nav id="main-nav" className="main-nav mr-5">
-                  <ul className={`${styles.ul} flex lg list-style-none`}>
+                <nav className="mr-5">
+                  <ul
+                    className={`${styles.ul} flex items-center justify-between`}
+                  >
                     <li className="pr-12">
                       <ActiveLink href="/">
                         <a className="inline-block" onClick={handleAchorClick}>
@@ -151,9 +153,7 @@ export default function Header() {
               </div>
               <div className="self-center">
                 <Link href="#contact">
-                  <a className="bg-amber-200 hover:bg-amber-500 rounded-lg text-white px-2 py-1.5 xl:px-4 xl:py-2.5">
-                    Contact Me
-                  </a>
+                  <a className={styles.contactBtn}>Contact Me</a>
                 </Link>
               </div>
             </div>
@@ -167,7 +167,6 @@ export default function Header() {
         </div>
       </header>
       <nav
-        id="mobile-menu"
         className={`${styles.mobileMenu} ${
           showMobileMenu ? styles.mobileNavShow : ""
         }`}

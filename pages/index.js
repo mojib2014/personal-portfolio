@@ -5,6 +5,7 @@ import Portfolio from "../components/Portfolio";
 import Resume from "../components/Resume";
 import Banner from "../components/Banner";
 import Skills from "../components/Skills";
+import Contact from "../components/Contact";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Skills />
       <Portfolio />
       <Resume />
+      <Contact />
     </Layout>
   );
 }
