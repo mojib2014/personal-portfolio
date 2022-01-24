@@ -63,3 +63,15 @@ a {
   margin-right: auto;
   margin-left: auto;
 }
+
+@media (max-width: 1024px) {
+  /* .flex {
+    margin: auto;
+  } */
+}
+
+@media (max-width: 640px) {
+  .footer-border-right {
+    border: none;
+  }
+}

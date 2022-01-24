@@ -24,11 +24,16 @@
 
 .mobileMenuCloseBtn {
   cursor: pointer;
+  color: #dcc2f3;
   position: absolute;
   right: 30px;
   top: 30px;
   width: 30px;
   height: 30px;
+}
+
+.mobileMenuCloseBtnChangeColor {
+  color: #23233f;
 }
 
 .mobileMenuCloseBtn::before,
@@ -70,7 +75,7 @@
 .header a {
   color: #dcc2f3;
   font-size: inherit;
-  line-height: 90px !important;
+  line-height: 90px;
 }
 .scrolled {
   background-color: #ffffff;
@@ -81,9 +86,9 @@
   box-shadow: 1px 1px 5px 0px rgb(0 0 0 / 20%);
 }
 .scrolled a {
-  color: #23233f;
+  color: #434343;
 }
-.scrolled .active {
+.scrolled ul li a.active {
   border-bottom: 4px solid dodgerblue;
   color: dodgerblue;
 }
@@ -94,6 +99,11 @@
 .ul li a {
   letter-spacing: 0.8px;
   line-height: 90px;
+}
+.headerSocial {
+  line-height: 90px;
+  font-size: inherit;
+  color: rgb(38, 75, 225);
 }
 .contactBtn {
   background: linear-gradient(
@@ -187,7 +197,7 @@
   border-bottom: none;
 }
 
-@media (max-width: 1075px) {
+@media (max-width: 1000px) {
   .contentMenu {
     margin-left: 0;
   }
@@ -196,5 +206,23 @@
   }
   .btnMenu {
     display: block;
+  }
+}
+
+@media (max-width: 300px) {
+  .mobileMenuCloseBtn {
+    right: 10px;
+  }
+  .mobileMenu {
+    width: 250px;
+  }
+  .contactBtn {
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 283px) {
+  .contactBtn {
+    display: none;
   }
 }

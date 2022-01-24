@@ -11,7 +11,7 @@ export default function Resume() {
           <h1 className="font-bold text-4xl text-center xl:text-5xl mb-20">
             Resume
           </h1>
-          <div className="grid grid-cols-1 auto-row-auto gap-10 justify-center md:grid-cols-2">
+          <div className="grid auto-row-auto gap-10 justify-center md:grid-cols-2 lg:grid-cols-2">
             <div className="self-center relative bg-[#FEF6E3] rounded-[50%]">
               <Image
                 src={resumeSection}
@@ -22,10 +22,12 @@ export default function Resume() {
                 alt="Mojib Mohammad"
                 title="Developer"
               />
-              <div className="resume-social h-0 w-0 max-h-0">
+              <div
+                className={`${styles.resumeSocial} resume-social h-0 w-0 max-h-0`}
+              >
                 <Link href="/#twitter">
                   <a
-                    className="absolute text-sky-500 flex items-center justify-center top-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
+                    className="absolute flex items-center justify-center top-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-90"
                     title="Twitter"
                   >
                     <i className="fab fa-twitter fa-2x xl:fa-4x text-dodgerblue"></i>
@@ -33,7 +35,7 @@ export default function Resume() {
                 </Link>
                 <Link href="/#github">
                   <a
-                    className="absolute text-sky-500 flex items-center justify-center bottom-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
+                    className="absolute flex items-center justify-center bottom-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-90"
                     title="Github"
                   >
                     <i className="fab fa-github fa-2x xl:fa-4x"></i>
@@ -41,7 +43,7 @@ export default function Resume() {
                 </Link>
                 <Link href="/#linkedin">
                   <a
-                    className="absolute text-sky-500 flex items-center justify-center top-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
+                    className="absolute flex items-center justify-center top-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-90"
                     title="Linkedin"
                   >
                     <i className="fab fa-linkedin-in fa-2x xl:fa-4x text-dodgerblue"></i>
@@ -49,7 +51,7 @@ export default function Resume() {
                 </Link>
                 <Link href="/#facebook">
                   <a
-                    className="absolute text-sky-500 flex items-center justify-center bottom-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-80"
+                    className="absolute flex items-center justify-center bottom-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-90"
                     title="Facebook"
                   >
                     <i className="fab fa-facebook fa-2x xl:fa-4x text-dodgerblue"></i>
@@ -69,7 +71,9 @@ export default function Resume() {
                   <li className={`${styles.timelineIverted} ${styles.color1}`}>
                     <div className={`${styles.timelineBadge}`}></div>
                     <div className={styles.timelinePanel}>
-                      <h3>Ghazanfar Institute of Health&Science</h3>
+                      <h3 className="text-pink">
+                        Ghazanfar Institute of Health&Science
+                      </h3>
                       <div className={styles.info}>Medicine</div>
                       <p>
                         Prepare medications by reviewing and interpreting

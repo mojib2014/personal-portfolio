@@ -84,13 +84,12 @@ export default function Contact() {
                     className="w-[100%] py-3 px-2 rounded-md border-2 border-sky-500 my-5 focus:border-green-500 outline-0"
                     placeholder="Message: max 150 charactars"
                   />
-                  <button
+                  <input
                     type="submit"
                     disabled={isSubmitting}
-                    className={`${styles.submitBtn} bg-gradient-to-r from-orange-500 to-pink-500 hover:rounded-full`}
-                  >
-                    Submit
-                  </button>
+                    className={styles.submitBtn}
+                    value="Submit"
+                  />
                 </Form>
               )}
             </Formik>

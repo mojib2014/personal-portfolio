@@ -1,7 +1,16 @@
 .submitBtn {
+  background: linear-gradient(
+    -135deg,
+    rgba(163, 69, 251, 1) 0%,
+    rgba(251, 189, 65, 1) 100%
+  );
   font-size: 1.4rem;
+  font-weight: 500;
   color: #fff;
-  padding: 20px 46px;
+  display: inline-block;
+  padding: 20px 35px 18px 35px;
+  width: 25%;
+  flex: 25%;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -11,4 +20,11 @@
 
 .submitBtn:hover {
   border-radius: 26px;
+}
+
+@media (max-width: 600px) {
+  .submitBtn {
+    flex: 50%;
+    width: 50%;
+  }
 }

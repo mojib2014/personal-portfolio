@@ -7,7 +7,7 @@ export default function Banner() {
       <div className={styles.bannerSection}>
         <div className="container">
           <div className="main-content mx-left text-left max-w-xl">
-            <h1 className="text-4xl font-bold text-[#f8f8f8] xl:text-5xl mb-8">
+            <h1 className="text-5xl font-bold text-[#f8f8f8] xl:text-7xl mb-8">
               Hi There,
               <br />
               I&apos;m Mojib Mohammad

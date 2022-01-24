@@ -1,10 +1,16 @@
-.about {
-  /* font-size: inherit; */
-}
-
 .aboutOuter {
   background-color: #fbf7ff;
   margin-top: -65px;
   padding-top: 120px;
   padding-bottom: 120px;
+}
+
+.link {
+  color: blue;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.link:hover {
+  background-color: #ddd;
 }

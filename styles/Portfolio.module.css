@@ -1,34 +1,24 @@
-.portfolio {
-}
-
 .portfolioOuter {
-  background-color: #fef6e3;
+  background-color: #fff;
   padding: 120px 0;
 }
 
-.grid {
-  align-items: baseline;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 386.6px));
-  grid-template-rows: auto;
-  column-gap: 5px;
-  row-gap: 10px;
-  justify-content: center;
-}
-
 .card {
+  position: relative;
   background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 2px 2px #dddd;
-  padding: 5px;
-  max-width: 350px;
-  max-height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px 6px #dddd;
+  animation-name: slideRight;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: linear;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 .card:hover {
-  transform: scale(1.1);
+  opacity: 0.5;
+  border-radius: 10px;
 }
 
 .card img {
@@ -39,12 +29,29 @@
 }
 
 .cardBody {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  padding: 4px;
-  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -30px;
+  padding: 15px;
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity;
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover .cardBody {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 .cardBody p {
@@ -57,14 +64,14 @@
   align-self: flex-start;
   justify-self: flex-end;
   position: relative;
-  background-color: var(--primary);
-  border: 2px solid var(--primary);
+  background-color: dodgerblue;
+  border: 2px solid dodgerblue;
   border-radius: 5px;
   color: #fff;
-  display: block;
-  padding: 4px 18px;
+  display: inline-block;
+  padding: 5px 23px;
   text-align: center;
-  margin-top: auto;
+  margin: auto;
 }
 
 .cardBody a::after {
@@ -81,4 +88,19 @@
   border-bottom: 0;
   margin-left: 5px;
   text-align: center;
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    left: -100%;
+  }
+  75% {
+    opacity: 0.7;
+    left: -50%;
+  }
+  100% {
+    opacity: 1;
+    left: 0%;
+  }
 }

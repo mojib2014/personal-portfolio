@@ -14,6 +14,18 @@
   display: block;
   object-fit: middle;
 }
+.resumeSocial a:first-child {
+  color: #5da9dd;
+}
+.resumeSocial a:nth-child(2) {
+  color: #222;
+}
+.resumeSocial a:nth-child(3) {
+  color: #c63bba;
+}
+.resumeSocial a:nth-child(4) {
+  color: #4867ab;
+}
 .subTitle {
   position: relative;
   display: inline-block;
@@ -49,7 +61,7 @@
   top: 0;
   left: 0;
   bottom: 160px;
-  border: 0.5px dashed var(--pink);
+  border: 0.5px dashed #e94a93;
   margin-left: 7px;
 }
 
@@ -70,8 +82,8 @@
 }
 
 .timelinePanel h3 {
-  color: var(--pink);
   font-size: 1.5rem;
+  font-weight: 400;
   margin-bottom: 8px;
   letter-spacing: 0.1px;
 }
@@ -100,7 +112,7 @@
 }
 
 .info {
-  font-size: 21px;
+  font-size: 1.5rem;
   color: #646168;
   letter-spacing: -0.4px;
   margin-bottom: 11px;
@@ -134,11 +146,36 @@
   border-radius: 36px;
 }
 
+@media (max-width: 1240px) {
+  .downloadBtn {
+    top: 0;
+    left: 0;
+    position: relative;
+  }
+}
+
 @media (max-width: 1270px) {
   .downloadBtn {
     top: 32.2%;
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
+  .subTitle::after {
+    right: -70px;
+  }
+}
+
+@media (max-width: 836px) {
+  .subTitle::after {
+    right: -30px;
+    margin: 0;
+  }
+}
+@media (max-width: 273px) {
+  .subTitle::after {
+    right: 0;
+    margin: 0;
+    margin-top: 15px;
+  }
 }

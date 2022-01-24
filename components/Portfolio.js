@@ -1,84 +1,85 @@
-import Image from "next/image";
-import coderscorner from "../public/portfolio/coderscorner.gif";
-import comfyhouse from "../public/portfolio/comfyhouse.png";
-import crystalCollector from "../public/portfolio/crystalCollector.png";
-import dentsoft from "../public/portfolio/dent-soft.gif";
-import issueTracker from "../public/portfolio/issueTracker.png";
-import vidly from "../public/portfolio/vidly.png";
-import arrowRight from "../public/icons/arrow-right.svg";
-import styles from "../styles/Portfolio.module.css";
+import { useState } from "react";
 import Link from "next/link";
+import SliderImage from "./common/SliderImage";
+import PROJECTS from "../data/projects";
+import styles from "../styles/Portfolio.module.css";
+
+const filters = ["JavaScript", "React", "Django/Docker", "Python", "All"];
 
 export default function Portfolio() {
+  const [projects, setProjects] = useState(PROJECTS);
+
+  const handleFilter = ({ target }) => {
+    const filter = target.dataset.filter;
+    if (filter === "All") setProjects(PROJECTS);
+    else setProjects(PROJECTS.filter((p) => p.technology === filter));
+    console.log(filter);
+  };
+
   return (
     <section id="portfolio" className={styles.portfolio}>
       <div className={styles.portfolioOuter}>
         <div className="container mx-w-xl">
-          <h1 className="font-bold text-4xl text-center xl:text-5xl mb-12">
+          <h1 className="font-bold text-5xl text-center xl:text-5xl mb-12">
             Portfolio
           </h1>
-          <div className={styles.grid}>
-            <div className={`${styles.card} m-4 card`}>
-              <Image
-                className="rounded"
-                src={coderscorner}
-                alt="Coders Corner Project"
-                width={350}
-                height={250}
-              />
-              <div className={styles.cardBody}>
-                <h2 className="text-center font-bold text-2xl md:text-1xl my-3">
-                  Coders Corner
-                </h2>
-                <p>
-                  Asimple application for improving coding(software development)
-                  Skills(for students and mentors).
-                </p>
-                <Link href="/projects/coders-corner">
-                  <a>Read more</a>
-                </Link>
-              </div>
-            </div>
-            <div className={`${styles.card} m-4 card`}>
-              <Image
-                className="rounded"
-                src={comfyhouse}
-                alt="Comfy House Project"
-                width={350}
-                height={250}
-              />
-              <div className={styles.cardBody}>
-                <h2 className="text-center font-bold text-2xl md:text-1xl my-3">
-                  Comfy House
-                </h2>
-                <p>A simple ecomerce shopping cart</p>
-                <Link href="/projects/comfy-house">
-                  <a>Read more</a>
-                </Link>
-              </div>
-            </div>
-            <div className={`${styles.card} m-4 card`}>
-              <Image
-                className="rounded"
-                src={crystalCollector}
-                alt="Crystal Collector Project"
-                width={350}
-                height={250}
-              />
-              <div className={styles.cardBody}>
-                <h2 className="text-center font-bold text-2xl md:text-1xl my-3">
-                  Crystal Collector
-                </h2>
-                <p>
-                  You will be given a random number at the start of the game.
-                  There are four crystals below. By clicking on a crystal you
-                  will add a specific amount of points to your total score.
-                </p>
-                <Link href="/projects/crystall-collector">
-                  <a>Read more</a>
-                </Link>
-              </div>
-            </div>
+          <div className="flex items-center flex-wrap gap-8 justify-center py-20">
+            {filters.map((fitler) => (
+              <button
+                key={fitler}
+                data-filter={fitler}
+                onClick={handleFilter}
+                className="bg-[dodgerblue] py-2 px-6 rounded-[5px] text-[#fff] text-xl"
+              >
+                {fitler}
+              </button>
+            ))}
+          </div>
+          <div className="grid gap-7 auto-rows-auto items-center justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w-[100%]">
+            {projects.length ? (
+              projects.map((project) => (
+                <div
+                  key={project.title}
+                  className={`${styles.card} relative w-[100%]`}
+                >
+                  <SliderImage images={project.images} alt={project.title} />
+                  <div
+                    className={`flex flex-col items-center justify-center text-[#fff] h-[100%] w-[100%] ${styles.cardBody}`}
+                  >
+                    <div>
+                      <h2 className="text-center font-bold text-5xl md:text-4xl py-2">
+                        {project.title}
+                      </h2>
+                      <p className="text-[1.2rem] py-2 text-center">
+                        {project.detail}
+                      </p>
+                    </div>
+                    <div className="flex items-center w-[100%]">
+                      <Link href={project.url}>
+                        <a
+                          referrer="no-referrer"
+                          target="_blank"
+                          className="bg-dodgerblue text-[1.2rem] font-semibold"
+                        >
+                          Live Demo
+                        </a>
+                      </Link>
+                      <Link href={project.github}>
+                        <a
+                          referrer="no-referrer"
+                          target="_blank"
+                          className="bg-dodgerblue text-[1.2rem] font-semibold"
+                        >
+                          Github <i className="fab fa-github"></i>
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>There are no projects!</p>
+            )}
           </div>
         </div>
       </div>

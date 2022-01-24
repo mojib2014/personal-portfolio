@@ -43,17 +43,16 @@ export default function Header() {
   return (
     <>
       <div
-        className={`${styles.mobileMenuOverlay} ${
-          showMobileMenu ? styles.overlayShow : ""
-        }`}
         onClick={closeMobileMenu}
+        className={`${styles.mobileMenuOverlay}
+        ${showMobileMenu && styles.overlayShow}
+        `}
       >
         <span className={styles.mobileMenuCloseBtn}></span>
       </div>
       <header
         id="header"
-        className={`${styles.header}  ${scrolled ? styles.scrolled : ""}
-        }`}
+        className={`${styles.header}  ${scrolled ? styles.scrolled : ""}`}
       >
         <div className="container mx-w-xl">
           <div className="flex justify-between items-center">
@@ -63,7 +62,9 @@ export default function Header() {
                   referrerPolicy="no-referrer"
                   target="_blank"
                   rel="noopener"
-                  className="mr-2 xl:mr-5"
+                  className={`${
+                    scrolled ? "text-sky-500 " : ""
+                  } mr-2 xl:mr-5 leading-[90px]`}
                   title="Twiiter"
                 >
                   <i
@@ -78,7 +79,9 @@ export default function Header() {
                   referrerPolicy="no-referrer"
                   target="_blank"
                   rel="noopener"
-                  className="mr-2 xl:mr-5"
+                  className={`${
+                    scrolled ? "text-sky-500" : ""
+                  } mr-2 xl:mr-5 leading-[90px]`}
                   title="Linkedin"
                 >
                   <i
@@ -93,14 +96,14 @@ export default function Header() {
                   referrerPolicy="no-referrer"
                   target="_blank"
                   rel="noopener"
-                  className="mr-2 xl:mr-5"
+                  className="mr-2 xl:mr-5 leading-[90px]"
                   title="Github"
                 >
                   <i className="fab fa-github fa-lg text-black" />
                 </a>
               </Link>
             </div>
-            <div className="flex items-center justify-between ml-auto">
+            <div className="flex items-center justify-between md:ml-auto m-auto">
               <div className={styles.navWrap}>
                 <nav className="mr-5">
                   <ul

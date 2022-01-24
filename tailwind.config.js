@@ -7,6 +7,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        pink: "#E94A93",
         indigo: "#6610f2",
         purple: "#6f42c1",
         orange: "#fd7e14",
@@ -25,6 +26,7 @@ module.exports = {
         danger: "#dc3545",
         light: "#f8f9fa",
         dark: "#343a40",
+        "light-black": "rgba(0, 0, 0, 0.9)",
       },
     },
     fontFamily: {
