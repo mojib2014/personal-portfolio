@@ -1,6 +1,6 @@
 import Avatar from "./Avatar";
 import CoverImage from "./CoverImage";
-import DateFormatter from "./DateFormatter";
+import DateFormatter from "./Dateformatter";
 
 export default function Card({ item }) {
   return (
