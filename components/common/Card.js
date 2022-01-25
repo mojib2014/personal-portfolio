@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Avatar from "./Avatar";
 import CoverImage from "./CoverImage";
-import DateFormatter from "./dateFormatter";
+import DateFormatter from "./DateFormatter";
 
 export default function Card({ item }) {
   return (
