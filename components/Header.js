@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import "@fortawesome/fontawesome-free/css/all.css";
-import ActiveLink from "./common/ActiveLink";
 import styles from "../styles/Header.module.css";
 
 export default function Header() {
@@ -22,7 +21,7 @@ export default function Header() {
     const hash = target.hash;
     document.querySelectorAll("a").forEach((a) => a.classList.remove("active"));
     target.classList.add("active");
-    if (target.getAttribute("href") === "/" || hash === "") return;
+
     if (hash !== "") {
       const section = document.querySelector(hash);
       if (!section) return;
@@ -52,26 +51,24 @@ export default function Header() {
       </div>
       <header
         id="header"
-        className={`${styles.header}  ${scrolled ? styles.scrolled : ""}`}
+        className={`${styles.header}  ${
+          scrolled ? styles.scrolled + " scrolled" : ""
+        }`}
       >
         <div className="container mx-w-xl">
           <div className="flex justify-between items-center">
-            <div className="items-center justify-between">
+            <div
+              className={`${styles.headerSocial} items-center justify-between`}
+            >
               <Link href="#twitter">
                 <a
                   referrerPolicy="no-referrer"
                   target="_blank"
                   rel="noopener"
-                  className={`${
-                    scrolled ? "text-sky-500 " : ""
-                  } mr-2 xl:mr-5 leading-[90px]`}
+                  className="mr-2 xl:mr-5 leading-[90px]"
                   title="Twiiter"
                 >
-                  <i
-                    className={`${
-                      scrolled ? "text-blue" : ""
-                    } fab fa-twitter fa-lg`}
-                  />
+                  <i className="fab fa-twitter fa-lg" />
                 </a>
               </Link>
               <Link href="https://www.linkedin.com/in/mojib-mohammad">
@@ -79,16 +76,10 @@ export default function Header() {
                   referrerPolicy="no-referrer"
                   target="_blank"
                   rel="noopener"
-                  className={`${
-                    scrolled ? "text-sky-500" : ""
-                  } mr-2 xl:mr-5 leading-[90px]`}
+                  className="mr-2 xl:mr-5 leading-[90px]"
                   title="Linkedin"
                 >
-                  <i
-                    className={`${
-                      scrolled ? "text-blue" : ""
-                    } fab fa-linkedin fa-lg`}
-                  />
+                  <i className="fab fa-linkedin fa-lg" />
                 </a>
               </Link>
               <Link href="https://github.com/mojib2014">
@@ -103,53 +94,53 @@ export default function Header() {
                 </a>
               </Link>
             </div>
-            <div className="flex items-center justify-between md:ml-auto m-auto">
+            <div className="flex items-center justify-between lg:ml-auto">
               <div className={styles.navWrap}>
                 <nav className="mr-5">
                   <ul
                     className={`${styles.ul} flex items-center justify-between`}
                   >
                     <li className="pr-12">
-                      <ActiveLink href="/">
+                      <Link href="/">
                         <a className="inline-block" onClick={handleAchorClick}>
                           Home
                         </a>
-                      </ActiveLink>
+                      </Link>
                     </li>
                     <li className="pr-12">
-                      <ActiveLink href="/#about">
+                      <Link href="/#about">
                         <a className="inline-block" onClick={handleAchorClick}>
                           About
                         </a>
-                      </ActiveLink>
+                      </Link>
                     </li>
                     <li className="pr-12">
-                      <ActiveLink href="/#skills">
+                      <Link href="/#skills">
                         <a className="inline-block" onClick={handleAchorClick}>
                           Skills
                         </a>
-                      </ActiveLink>
+                      </Link>
                     </li>
                     <li className="pr-12">
-                      <ActiveLink href="/#portfolio">
+                      <Link href="/#portfolio">
                         <a className="inline-block" onClick={handleAchorClick}>
                           Portfolio
                         </a>
-                      </ActiveLink>
+                      </Link>
                     </li>
                     <li className="pr-12">
-                      <ActiveLink href="/#resume">
+                      <Link href="/#resume">
                         <a className="inline-block" onClick={handleAchorClick}>
                           Resume
                         </a>
-                      </ActiveLink>
+                      </Link>
                     </li>
                     <li className="pr-12">
-                      <ActiveLink href="/blog">
+                      <Link href="/blog">
                         <a className="inline-block" onClick={handleAchorClick}>
                           Blog
                         </a>
-                      </ActiveLink>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -176,46 +167,46 @@ export default function Header() {
       >
         <ul>
           <li>
-            <ActiveLink href="/">
+            <Link href="/">
               <a className="inlin-block" onClick={handleAchorClick}>
                 Home
               </a>
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink href="/#about">
+            <Link href="/#about">
               <a className="inlin-block" onClick={handleAchorClick}>
                 About
               </a>
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink href="/#skills">
+            <Link href="/#skills">
               <a className="inlin-block" onClick={handleAchorClick}>
                 Skills
               </a>
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink href="/#portfolio">
+            <Link href="/#portfolio">
               <a className="inlin-block" onClick={handleAchorClick}>
                 Portfolio
               </a>
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink href="/#resume">
+            <Link href="/#resume">
               <a className="inlin-block" onClick={handleAchorClick}>
                 Resume
               </a>
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink href="/blog">
+            <Link href="/blog">
               <a className="inlin-block" onClick={handleAchorClick}>
                 Blog
               </a>
-            </ActiveLink>
+            </Link>
           </li>
         </ul>
       </nav>

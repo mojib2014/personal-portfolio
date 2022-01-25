@@ -4,10 +4,10 @@
   font-weight: 400;
   src: url(../public/fonts/playball.woff2);
 }
-
 .resumeOuter {
   padding: 120px 0;
 }
+/* Resume left col */
 .resume img {
   width: 100%;
   height: 100%;
@@ -15,16 +15,16 @@
   object-fit: middle;
 }
 .resumeSocial a:first-child {
-  color: #5da9dd;
+  color: var(--twitter-color);
 }
 .resumeSocial a:nth-child(2) {
   color: #222;
 }
 .resumeSocial a:nth-child(3) {
-  color: #c63bba;
+  color: var(--linkedin-color);
 }
 .resumeSocial a:nth-child(4) {
-  color: #4867ab;
+  color: var(--facebook-color);
 }
 .subTitle {
   position: relative;
@@ -41,89 +41,78 @@
   margin: 15px 0 0 10px;
 }
 
+/* Resume right col */
 .timeline li {
   padding-bottom: 47px;
   position: relative;
 }
 
-.timeline li::before {
+.timeline > li:before,
+.timeline > li:after {
   content: " ";
   display: table;
 }
-
 .timeline > li:after {
   clear: both;
 }
-
-.timeline::before {
-  content: "";
-  position: absolute;
+.timeline:before {
   top: 0;
+  bottom: 165px;
+  position: absolute;
+  content: " ";
+  border: 0.5px dashed #ff2e59;
   left: 0;
-  bottom: 160px;
-  border: 0.5px dashed #e94a93;
   margin-left: 7px;
 }
 
-.timeline .color1 .timelineBadge {
-  background-color: #ff2e5f;
-}
-
 .timeline .timelineBadge {
-  background-color: var(--pink);
   width: 15px;
   height: 15px;
   top: 0;
   left: 0;
   text-align: center;
   position: absolute;
-  z-index: 99;
+  z-index: 1;
   border-radius: 50%;
 }
-
-.timelinePanel h3 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 8px;
-  letter-spacing: 0.1px;
+.timeline .color1 .timelineBadge {
+  background-color: #ff2e5f;
 }
-
-.timeline .color2 .timelineBadge {
-  background-color: #fbbd41;
-}
-
-.timeline .color2 h3 {
-  color: #fbbd41;
-}
-
 .timelinePanel {
   border-radius: 2px;
   margin-left: 55px;
   margin-top: -4px;
   position: relative;
 }
-
+.timelinePanel h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+  letter-spacing: 0.1px;
+}
+.timeline .color2 .timelineBadge {
+  background-color: #fbbd41;
+}
+.timeline .color2 h3 {
+  color: #fbbd41;
+}
 .timeline .color3 .timelineBadge {
   background-color: #8b2ee1;
 }
-
 .timeline .color3 h3 {
   color: #8b2ee1;
 }
-
 .info {
   font-size: 1.5rem;
   color: #646168;
   letter-spacing: -0.4px;
   margin-bottom: 11px;
 }
-
 .downloadBtn {
   position: absolute;
   top: 32%;
   left: -190px;
 }
-
 .downloadBtn a {
   padding: 20px 21px 18px 23px;
   background: rgb(251, 189, 65);
@@ -141,7 +130,6 @@
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
 .downloadBtn a:hover {
   border-radius: 36px;
 }
@@ -168,8 +156,14 @@
 
 @media (max-width: 836px) {
   .subTitle::after {
-    right: -30px;
+    right: -90px;
     margin: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .timelinePanel {
+    margin-left: 39px;
   }
 }
 @media (max-width: 273px) {

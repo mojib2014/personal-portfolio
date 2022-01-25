@@ -90,7 +90,7 @@ const PROJECTS = [
     github: "https://github.com/mojib2014/Python_tic_tac_toe_game",
   },
   {
-    images: [],
+    images: ["/image-coming-soon-placeholder.png"],
     title: "Airline",
     detail:
       "Airline, a small Django/python3/GithubActions (CI/CD) app for learning purposes",
@@ -100,8 +100,8 @@ const PROJECTS = [
   },
   {
     images: [
-      "/portfolio/appointment-planner/planner1",
-      "/portfolio/appointment-planner/planner2",
+      "/portfolio/appointment-planner/planner1.png",
+      "/portfolio/appointment-planner/planner2.png",
     ],
     title: "Appointment Planner",
     detail:

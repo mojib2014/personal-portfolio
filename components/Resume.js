@@ -59,15 +59,15 @@ export default function Resume() {
                 </Link>
               </div>
             </div>
-            <div className="py-3 self-start md:pl-[120px]">
+            <div className="py-3 self-start sm:self-center md:pl-[120px] w-[100%]">
               <h4 className={`${styles.subTitle} text-pink mb-13`}>
                 Educational qualification
               </h4>
-              <h2 className="sction-title font-bold text-3xl mt-5 mb-10 leading-6">
+              <h2 className="sction-title font-bold text-3xl mt-5 mb-20 leading-6">
                 My Education
               </h2>
-              <div className={`${styles.timelines} relative w-[100%]`}>
-                <ul className={`${styles.timeline}`}>
+              <div className="relative w-[100%]">
+                <ul className={`${styles.timeline} relative`}>
                   <li className={`${styles.timelineIverted} ${styles.color1}`}>
                     <div className={`${styles.timelineBadge}`}></div>
                     <div className={styles.timelinePanel}>

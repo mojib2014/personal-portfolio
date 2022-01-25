@@ -4,7 +4,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   background: rgba(0, 0, 0, 0.9);
   opacity: 0;
   visibility: hidden;
@@ -64,7 +64,7 @@
   font-family: "Roboto", sans-serif;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -73,10 +73,11 @@
 }
 
 .header a {
-  color: #dcc2f3;
   font-size: inherit;
+  letter-spacing: 0.8px;
   line-height: 90px;
 }
+
 .scrolled {
   background-color: #ffffff;
   -webkit-box-shadow: 1px 1px 5px 0px rgb(0 0 0 / 20%);
@@ -85,25 +86,20 @@
   -o-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 5px 0px rgb(0 0 0 / 20%);
 }
-.scrolled a {
-  color: #434343;
-}
-.scrolled ul li a.active {
-  border-bottom: 4px solid dodgerblue;
-  color: dodgerblue;
-}
-.active {
-  border-bottom: 4px solid var(--teal);
-  color: var(--teal);
-}
-.ul li a {
-  letter-spacing: 0.8px;
-  line-height: 90px;
-}
-.headerSocial {
+
+.headerSocial > a {
   line-height: 90px;
   font-size: inherit;
-  color: rgb(38, 75, 225);
+  color: #212529;
+}
+.scrolled .headerSocial a:nth-child(3) {
+  color: #212529;
+}
+.scrolled .headerSocial a:nth-child(1) {
+  color: var(--twitter-color);
+}
+.scrolled .headerSocial a:nth-child(2) {
+  color: var(--linkedin-color);
 }
 .contactBtn {
   background: linear-gradient(
@@ -112,7 +108,6 @@
     rgba(251, 189, 65, 1) 100%
   );
   color: #fff;
-  /* display: inline-block; */
   font-size: inherit;
   padding: 15px 20px;
 }
@@ -183,7 +178,7 @@
   text-align: left;
   margin: 0;
 }
-.mobileMenu li a {
+.mobileMenu ul li a {
   color: rgba(255, 255, 255, 0.5);
   display: block;
   line-height: 60px;
@@ -193,9 +188,9 @@
   padding: 0 14px;
 }
 
-.mobileMenu a:active {
+/* .mobileMenu a:active {
   border-bottom: none;
-}
+} */
 
 @media (max-width: 1000px) {
   .contentMenu {

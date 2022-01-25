@@ -17,7 +17,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className={styles.portfolio}>
+    <section id="portfolio">
       <div className={styles.portfolioOuter}>
         <div className="container mx-w-xl">
           <h1 className="font-bold text-5xl text-center xl:text-5xl mb-12">
