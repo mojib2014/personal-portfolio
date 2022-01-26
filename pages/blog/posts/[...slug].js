@@ -5,6 +5,7 @@ import Layout from "components/Layout";
 import { getPostBySlug, getAllPosts } from "lib/api/api";
 import { CMS_NAME } from "lib/api/constants";
 import SubNav from "components/common/SubNav";
+import Image from "next/image";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -23,6 +24,16 @@ export default function Post({ post, morePosts, preview }) {
             <h1 className="text-center font-bold text-5xl mt-6 mb-16">
               {post.title}
             </h1>
+            <div className="w-[700px] h-[auto] max-h-[500px] my-5 mx-auto">
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                width={700}
+                height={300}
+                layout="responsive"
+                objectFit="cover"
+              />
+            </div>
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </div>
