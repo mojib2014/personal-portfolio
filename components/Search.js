@@ -2,7 +2,8 @@ import React from "react";
 
 export default function Search({ value, onChange, onSubmit }) {
   return (
-    <div className="search-container w-[100%]">
+    <div className="border border-gray mb-4 p-2 w-[100%]">
+      <h3 className="font-bold text-[1.6rem] mb-4">Search for posts</h3>
       <form className="w-[100%] relative">
         <input
           type="search"

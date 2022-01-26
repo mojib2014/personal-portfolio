@@ -1,16 +1,26 @@
 ---
-title: "Preview Mode for Static Generation"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/blog/preview/javascript-logo.png"
-date: "2022-01-24T05:35:07.322Z"
+title: "Data Structures & Algorithms Arrays"
+excerpt: "An Array is a linear data structure that collects elements of the same data type and stores them in contiguous and adjacent memory locations. In JavaScript and some other languages you can store any data types."
+category: "data-structures"
+coverImage: "/blog/data-structures/array-1.png"
+date: "2022-01-26T10:47:45.406Z"
 author:
-  name: Joe Haddad
+  name: Mojib
   picture: "/blog/authors/mojib.png"
 ogImage:
-  url: "/blog/preview/javascript-logo.png"
+  url: "/blog/data-structures/array-1.png"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+## My First Post
+
+I **love** using [Next.js](https://nextjs.org/)
+
+```js
+const date = new Date();
+const doc = getDocBySlug(params.slug);
+```
 
 Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
 

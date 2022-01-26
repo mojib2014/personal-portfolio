@@ -14,7 +14,13 @@ export default function Banner() {
             </h1>
             <p className="text-[#f8f8f8]">Junior full stack developer</p>
             <div className={`${styles.downloadBtn} mt-10`}>
-              <a href="public/resume.pdf" target="_blank">
+              <a
+                href="#resume"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Resumt"
+                aria-label="Resume"
+              >
                 Download Resume
               </a>
             </div>

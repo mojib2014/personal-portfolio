@@ -18,7 +18,7 @@ export default function About() {
               I play volleball and enjoy family time with my lovely dauther,
               watch movies and learn new stuff. You can know more about me by
               reading my{" "}
-              <Link href="/blog/posts">
+              <Link href="/blog">
                 <a className={styles.link}>articles.</a>
               </Link>
             </p>

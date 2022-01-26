@@ -65,7 +65,11 @@ export default function Footer() {
                   <h4 className="mt-2 mb-5 font-bold">Social</h4>
                   <li className="mb-4">
                     <a
-                      href="#github"
+                      href="https://github.com/mojib2014"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Github"
+                      aria-label="Github"
                       className="text-[#222] flex items-center justify-center"
                     >
                       Github
@@ -74,7 +78,11 @@ export default function Footer() {
                   </li>
                   <li className="mb-4">
                     <a
-                      href="#twitter"
+                      href="https://twitter.com/mojib_mohammad1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Twitter"
+                      aria-label="Twitter"
                       className="text-[#0070f3] flex items-center justify-center"
                     >
                       Twitter
@@ -83,7 +91,11 @@ export default function Footer() {
                   </li>
                   <li className="mb-4">
                     <a
-                      href="#linkedin"
+                      href="https://www.linkedin.com/in/mojib-mohammad/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Linkedin"
+                      aria-label="Linkedin"
                       className="text-[#0070f3] flex items-center justify-center"
                     >
                       Linkedin
@@ -93,6 +105,10 @@ export default function Footer() {
                   <li className="mb-4">
                     <a
                       href="#facebook"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Facebook"
+                      aria-label="Facebook"
                       className="text-[#0070f3] flex items-center justify-center"
                     >
                       Facebook
