@@ -1,13 +1,14 @@
 ---
-title: "Learn How to Pre-render Pages Using Static Generation with Next.js"
+title: "Preview Mode for Static Generation"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/blog/hello-world/issueTracker.png"
-date: "2020-03-16T05:35:07.322Z"
+category: "javascript"
+coverImage: "/blog/preview/javascript-logo.png"
+date: "2022-01-24T05:35:07.322Z"
 author:
   name: Mojib
   picture: "/blog/authors/mojib.png"
 ogImage:
-  url: "/blog/hello-world/issueTracker.png"
+  url: "/blog/preview/javascript-logo.png"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

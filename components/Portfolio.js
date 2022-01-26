@@ -13,7 +13,6 @@ export default function Portfolio() {
     const filter = target.dataset.filter;
     if (filter === "All") setProjects(PROJECTS);
     else setProjects(PROJECTS.filter((p) => p.technology === filter));
-    console.log(filter);
   };
 
   return (
@@ -57,8 +56,10 @@ export default function Portfolio() {
                     <div className="flex items-center w-[100%]">
                       <Link href={project.url}>
                         <a
-                          referrer="no-referrer"
+                          rel="noopener noreferrer"
                           target="_blank"
+                          title={project.title}
+                          aria-label={project.title}
                           className="bg-dodgerblue text-[1.2rem] font-semibold"
                         >
                           Live Demo
@@ -66,8 +67,10 @@ export default function Portfolio() {
                       </Link>
                       <Link href={project.github}>
                         <a
-                          referrer="no-referrer"
+                          rel="noopener noreferrer"
                           target="_blank"
+                          title={project.title}
+                          aria-label={project.title}
                           className="bg-dodgerblue text-[1.2rem] font-semibold"
                         >
                           Github <i className="fab fa-github"></i>

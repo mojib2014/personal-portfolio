@@ -1,19 +1,28 @@
 import { useRouter } from "next/router";
-import Layout from "components/Layout";
 import ErrorPage from "next/error";
-import { getPostBySlug, getAllPosts } from "lib/api/api";
 import markdownToHtml from "lib/markdownToHtml";
+import Layout from "components/Layout";
+import { getPostBySlug, getAllPosts } from "lib/api/api";
 import { CMS_NAME } from "lib/api/constants";
+import SubNav from "components/common/SubNav";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) return <ErrorPage statusCod={404} />;
 
   return (
-    <Layout title={post.title} author={post.author} description={post.excerpt}>
+    <Layout
+      title={post.title}
+      author={post.author.name}
+      description={post.excerpt}
+    >
       <div className="">
         <div className="py-[120px]">
-          <div className="container">
+          <div className="container mx-w-xl">
+            {/* <SubNav router={router} /> */}
+            <h1 className="text-center font-bold text-5xl mt-6 mb-16">
+              {post.title}
+            </h1>
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </div>
@@ -23,17 +32,17 @@ export default function Post({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, [
+  const post = getPostBySlug(params.slug[0], params.slug[1], [
     "title",
     "date",
     "slug",
+    "category",
     "author",
     "content",
     "ogImage",
     "coverImage",
   ]);
   const content = await markdownToHtml(post.content || "");
-
   return {
     props: {
       post: {
@@ -45,13 +54,13 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const posts = getAllPosts(["slug", "category"]);
 
   return {
     paths: posts.map((post) => {
       return {
         params: {
-          slug: post.slug,
+          slug: [post.category, post.slug],
         },
       };
     }),

@@ -25,26 +25,35 @@ export default function Resume() {
               <div
                 className={`${styles.resumeSocial} resume-social h-0 w-0 max-h-0`}
               >
-                <Link href="/#twitter">
+                <Link href="https://twitter.com/mojib_mohammad1">
                   <a
                     className="absolute flex items-center justify-center top-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-90"
+                    target="_blank"
+                    rel="noreferrer noopener"
                     title="Twitter"
+                    aria-label="Twitter"
                   >
                     <i className="fab fa-twitter fa-2x xl:fa-4x text-dodgerblue"></i>
                   </a>
                 </Link>
-                <Link href="/#github">
+                <Link href="https://github.com/mojib2014">
                   <a
                     className="absolute flex items-center justify-center bottom-0 left-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-90"
+                    target="_blank"
+                    rel="noreferrer noopener"
                     title="Github"
+                    aria-label="Github"
                   >
                     <i className="fab fa-github fa-2x xl:fa-4x"></i>
                   </a>
                 </Link>
-                <Link href="/#linkedin">
+                <Link href="https://www.linkedin.com/in/mojib-mohammad">
                   <a
                     className="absolute flex items-center justify-center top-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-90"
+                    target="_blank"
+                    rel="noreferrer noopener"
                     title="Linkedin"
+                    aria-label="Linkedin"
                   >
                     <i className="fab fa-linkedin-in fa-2x xl:fa-4x text-dodgerblue"></i>
                   </a>
@@ -52,7 +61,10 @@ export default function Resume() {
                 <Link href="/#facebook">
                   <a
                     className="absolute flex items-center justify-center bottom-0 right-0 bg-[#FEF6E3] h-[120px] w-[120px] rounded-[50%] opacity-90"
+                    target="_blank"
+                    rel="noreferrer noopener"
                     title="Facebook"
+                    aria-label="Facebook"
                   >
                     <i className="fab fa-facebook fa-2x xl:fa-4x text-dodgerblue"></i>
                   </a>
@@ -108,8 +120,13 @@ export default function Resume() {
                   </li>
                 </ul>
                 <div className={styles.downloadBtn}>
-                  <Link href="/">
-                    <a title="Download Resume" aria-label="Download Resume">
+                  <Link href="/#resume">
+                    <a
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      title="Download Resume"
+                      aria-label="Download Resume"
+                    >
                       Download Resume
                     </a>
                   </Link>

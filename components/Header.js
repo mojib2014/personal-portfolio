@@ -60,11 +60,11 @@ export default function Header() {
             <div
               className={`${styles.headerSocial} items-center justify-between`}
             >
-              <Link href="#twitter">
+              <Link href="https://twitter.com/mojib_mohammad1">
                 <a
                   referrerPolicy="no-referrer"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   className="mr-2 xl:mr-5 leading-[90px]"
                   title="Twiiter"
                 >
@@ -75,7 +75,7 @@ export default function Header() {
                 <a
                   referrerPolicy="no-referrer"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   className="mr-2 xl:mr-5 leading-[90px]"
                   title="Linkedin"
                 >
@@ -86,7 +86,7 @@ export default function Header() {
                 <a
                   referrerPolicy="no-referrer"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   className="mr-2 xl:mr-5 leading-[90px]"
                   title="Github"
                 >
@@ -102,7 +102,14 @@ export default function Header() {
                   >
                     <li className="pr-12">
                       <Link href="/">
-                        <a className="inline-block" onClick={handleAchorClick}>
+                        <a
+                          className={`inline-block ${
+                            !scrolled
+                              ? "text-[#fff] border-b-2 border-[#fff]"
+                              : ""
+                          }`}
+                          onClick={handleAchorClick}
+                        >
                           Home
                         </a>
                       </Link>
@@ -146,8 +153,10 @@ export default function Header() {
                 </nav>
               </div>
               <div className="self-center">
-                <Link href="#contact">
-                  <a className={styles.contactBtn}>Contact Me</a>
+                <Link href="/#contact">
+                  <a className={styles.contactBtn} onClick={handleAchorClick}>
+                    Contact Me
+                  </a>
                 </Link>
               </div>
             </div>

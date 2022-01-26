@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { highlightAll } from "prismjs";
 import Header from "./Header";
 import Footer from "./Footer";
 import Head from "next/head";
@@ -13,6 +15,9 @@ export default function Layout({
   siteName,
   children,
 }) {
+  useEffect(() => {
+    highlightAll();
+  }, []);
   return (
     <>
       <Head>
