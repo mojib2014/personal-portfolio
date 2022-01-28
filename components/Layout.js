@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { highlightAll } from "prismjs";
 import Header from "./Header";
 import Footer from "./Footer";
 import Head from "next/head";
@@ -15,9 +13,6 @@ export default function Layout({
   siteName,
   children,
 }) {
-  useEffect(() => {
-    highlightAll();
-  }, []);
   return (
     <>
       <Head>
@@ -32,7 +27,7 @@ export default function Layout({
         <meta property="og:site_name" content={siteName} />
       </Head>
       <Header />
-      <main className="main-content">{children}</main>
+      <main className="">{children}</main>
       <Footer />
     </>
   );

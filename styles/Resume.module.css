@@ -4,16 +4,9 @@
   font-weight: 400;
   src: url(../public/fonts/playball.woff2);
 }
-.resumeOuter {
-  padding: 120px 0;
-}
+
 /* Resume left col */
-.resume img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: middle;
-}
+
 .resumeSocial a:first-child {
   color: var(--twitter-color);
 }
@@ -168,7 +161,7 @@
 }
 @media (max-width: 273px) {
   .subTitle::after {
-    right: 0;
+    right: 20px;
     margin: 0;
     margin-top: 15px;
   }

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import BlogLanding from "components/BlogLanding";
-import { getAllCategories, getAllPosts } from "lib/api/api";
+import { getAllFilesFrontMatter } from "@/lib/api/mdx";
+import BlogLayout from "@/layouts/blogLayout";
 
-export default function Home({ posts, categories }) {
+const POSTS_PER_PAGE = 5;
+
+export default function Home({ posts, initialDisplayPosts, pagination }) {
   const [query, setQuery] = useState("");
 
   const handleChange = ({ target }) => {
@@ -14,29 +17,36 @@ export default function Home({ posts, categories }) {
   };
 
   return (
-    <BlogLanding
+    <BlogLayout
       posts={posts}
-      categories={categories}
+      initialDisplayPosts={initialDisplayPosts}
+      pagination={pagination}
       query={query}
+      title="Blog"
       onChange={handleChange}
       onSubmit={handleSubmit}
     />
+    // <BlogLanding
+    //   posts={posts}
+    //   initialDisplayPosts={initialDisplayPosts}
+    //   pagination={pagination}
+    //   title="All posts"
+    //   query={query}
+    //   onChange={handleChange}
+    //   onSubmit={handleSubmit}
+    // />
   );
 }
 
 export async function getStaticProps() {
-  const categories = getAllCategories();
-  const posts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-    "category",
-  ]);
+  const posts = await getAllFilesFrontMatter("blog");
+  const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE);
+  const pagination = {
+    currentPage: 1,
+    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
+  };
 
   return {
-    props: { posts, categories },
+    props: { posts, initialDisplayPosts, pagination },
   };
 }

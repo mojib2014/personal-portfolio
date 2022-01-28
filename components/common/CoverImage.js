@@ -1,6 +1,6 @@
-import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
+import cn from "classnames";
 
 export default function CoverImage({ item, width, height }) {
   const image = (
@@ -10,9 +10,10 @@ export default function CoverImage({ item, width, height }) {
       className={cn("shadow-sm", {
         "hover:shadow-md transition-shadow duration-200": item.slug,
       })}
-      layout="responsive"
       width={width}
       height={height}
+      layout="responsive"
+      objectFit="contain"
     />
   );
 

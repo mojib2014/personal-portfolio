@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import headerNavLinks from "@/data/headerNavLinks";
+import MobileOverlay from "./MobileOverlay";
+import SectionContainer from "./SectionContainer";
+import Image from "next/image";
+import MobileNav from "./MobileNav";
+import ThemeSwitch from "./ThemeSwitch";
 import "@fortawesome/fontawesome-free/css/all.css";
-import styles from "../styles/Header.module.css";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,184 +46,65 @@ export default function Header() {
 
   return (
     <>
-      <div
-        onClick={closeMobileMenu}
-        className={`${styles.mobileMenuOverlay}
-        ${showMobileMenu && styles.overlayShow}
-        `}
-      >
-        <span className={styles.mobileMenuCloseBtn}></span>
-      </div>
+      <MobileOverlay show={showMobileMenu} onClose={closeMobileMenu} />
       <header
         id="header"
-        className={`${styles.header}  ${
-          scrolled ? styles.scrolled + " scrolled" : ""
+        className={`fixed w-full z-10 transition-all duration-300 ease-in-out text-gray-900  ${
+          scrolled ? "bg-gray-100 shadow-lg text-gray-800 dark:bg-gray-800" : ""
         }`}
       >
-        <div className="container mx-w-xl">
-          <div className="flex justify-between items-center">
+        <SectionContainer>
+          <div className="header flex items-center">
+            <Link href="/">
+              <a
+                className={`mr-auto leading-[60px] ${
+                  !scrolled ? "text-gray-700" : "text-gray-800"
+                } dark:text-gray-100`}
+              >
+                Mojib
+              </a>
+            </Link>
+            <nav className="hidden md:block lg:ml-auto">
+              <ul className="flex items-center justify-end">
+                {headerNavLinks.map((link) => (
+                  <li className="xl:pl-10 pl-6" key={link.title}>
+                    <Link href={link.href}>
+                      <a
+                        className={`${
+                          scrolled && "scrolled"
+                        } inline-block tracking-wide leading-[60px] dark:text-gray-100`}
+                        onClick={handleAchorClick}
+                      >
+                        {link.title}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <ThemeSwitch />
             <div
-              className={`${styles.headerSocial} items-center justify-between`}
+              dir="rtl"
+              className="cursor-pointer line-container xl:pl-10 pl-6 block md:hidden"
+              onClick={openMobileMenu}
             >
-              <Link href="https://twitter.com/mojib_mohammad1">
-                <a
-                  referrerPolicy="no-referrer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mr-2 xl:mr-5 leading-[90px]"
-                  title="Twiiter"
-                >
-                  <i className="fab fa-twitter fa-lg" />
-                </a>
-              </Link>
-              <Link href="https://www.linkedin.com/in/mojib-mohammad">
-                <a
-                  referrerPolicy="no-referrer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mr-2 xl:mr-5 leading-[90px]"
-                  title="Linkedin"
-                >
-                  <i className="fab fa-linkedin fa-lg" />
-                </a>
-              </Link>
-              <Link href="https://github.com/mojib2014">
-                <a
-                  referrerPolicy="no-referrer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mr-2 xl:mr-5 leading-[90px]"
-                  title="Github"
-                >
-                  <i className="fab fa-github fa-lg text-black" />
-                </a>
-              </Link>
-            </div>
-            <div className="flex items-center justify-between lg:ml-auto">
-              <div className={styles.navWrap}>
-                <nav className="mr-5">
-                  <ul
-                    className={`${styles.ul} flex items-center justify-between`}
-                  >
-                    <li className="pr-12">
-                      <Link href="/">
-                        <a
-                          className={`inline-block ${
-                            !scrolled
-                              ? "text-[#fff] border-b-2 border-[#fff]"
-                              : ""
-                          }`}
-                          onClick={handleAchorClick}
-                        >
-                          Home
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="pr-12">
-                      <Link href="/#about">
-                        <a className="inline-block" onClick={handleAchorClick}>
-                          About
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="pr-12">
-                      <Link href="/#skills">
-                        <a className="inline-block" onClick={handleAchorClick}>
-                          Skills
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="pr-12">
-                      <Link href="/#portfolio">
-                        <a className="inline-block" onClick={handleAchorClick}>
-                          Portfolio
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="pr-12">
-                      <Link href="/#resume">
-                        <a className="inline-block" onClick={handleAchorClick}>
-                          Resume
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="pr-12">
-                      <Link href="/blog">
-                        <a className="inline-block" onClick={handleAchorClick}>
-                          Blog
-                        </a>
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div className="self-center">
-                <Link href="/#contact">
-                  <a className={styles.contactBtn} onClick={handleAchorClick}>
-                    Contact Me
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div dir="rtl" className={styles.btnMenu} onClick={openMobileMenu}>
-              <div className={`${styles.line} ${styles.line1}`}></div>
-              <div className={`${styles.line} ${styles.line2}`}></div>
-              <div className={`${styles.line} ${styles.line3}`}></div>
-              <div className={`${styles.line} ${styles.line4}`}></div>
+              <div
+                className={`line bg-gray-700 dark:bg-gray-100 h-[2px] my-1 mx-0 transition-all duration-300 ease-in-out w-[30px]`}
+              ></div>
+              <div
+                className={`line bg-gray-700 dark:bg-gray-100 h-[2px] my-1 mx-0 transition-all duration-300 ease-in-out w-[36px]`}
+              ></div>
+              <div
+                className={`line bg-gray-700 dark:bg-gray-100 h-[2px] my-1 mx-0 transition-all duration-300 ease-in-out w-[28px]`}
+              ></div>
+              <div
+                className={`line bg-gray-700 dark:bg-gray-100 h-[2px] my-1 mx-0 transition-all duration-300 ease-in-out w-[32px]`}
+              ></div>
             </div>
           </div>
-        </div>
+        </SectionContainer>
       </header>
-      <nav
-        className={`${styles.mobileMenu} ${
-          showMobileMenu ? styles.mobileNavShow : ""
-        }`}
-      >
-        <ul>
-          <li>
-            <Link href="/">
-              <a className="inlin-block" onClick={handleAchorClick}>
-                Home
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/#about">
-              <a className="inlin-block" onClick={handleAchorClick}>
-                About
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/#skills">
-              <a className="inlin-block" onClick={handleAchorClick}>
-                Skills
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/#portfolio">
-              <a className="inlin-block" onClick={handleAchorClick}>
-                Portfolio
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/#resume">
-              <a className="inlin-block" onClick={handleAchorClick}>
-                Resume
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog">
-              <a className="inlin-block" onClick={handleAchorClick}>
-                Blog
-              </a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <MobileNav show={showMobileMenu} onClick={closeMobileMenu} />
     </>
   );
 }

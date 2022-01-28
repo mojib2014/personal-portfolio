@@ -22,7 +22,7 @@ export default function SliderImage({ images, alt }) {
       height="100%"
       layout="responsive"
       objectFit="fill"
-      className="rounded-md transition-all delay-150 duration-300 ease-in-out will-change-contents"
+      className="rounded-md transition-all ease-in duration-300 will-change-contents"
     />
   );
 }

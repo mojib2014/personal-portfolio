@@ -70,9 +70,16 @@ a {
   margin-left: auto;
 }
 
-.scrolled ul li a.active {
+#header ul li a.active {
   border-bottom: 2px solid dodgerblue;
-  color: dodgerblue;
+}
+
+.line-container:hover .line {
+  width: 36px;
+}
+
+.mobile-nav a {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 input[type="search" i]::-webkit-search-cancel-button {

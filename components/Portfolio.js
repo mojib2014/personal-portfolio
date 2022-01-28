@@ -3,6 +3,7 @@ import Link from "next/link";
 import SliderImage from "./common/SliderImage";
 import PROJECTS from "../data/projects";
 import styles from "../styles/Portfolio.module.css";
+import SectionContainer from "./SectionContainer";
 
 const filters = ["JavaScript", "React", "Django/Docker", "Python", "All"];
 
@@ -16,76 +17,75 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio">
-      <div className={styles.portfolioOuter}>
-        <div className="container mx-w-xl">
-          <h1 className="font-bold text-5xl text-center xl:text-5xl mb-12">
-            Portfolio
-          </h1>
-          <div className="flex items-center flex-wrap gap-8 justify-center py-20">
-            {filters.map((fitler) => (
-              <button
-                key={fitler}
-                data-filter={fitler}
-                onClick={handleFilter}
-                className="bg-[dodgerblue] py-2 px-6 rounded-[5px] text-[#fff] text-xl"
+    <section
+      id="portfolio"
+      className="dark:text-gray-100 py-20 bg-gradient-to-tl dark:from-gray-500 from-gray-200"
+    >
+      <SectionContainer>
+        <h2 className="text-3xl text-center font-bold sm:text-4xl xl:text-5xl mb-12">
+          Portfolio
+        </h2>
+        <div className="flex items-center flex-wrap gap-3 justify-center md:justify-between md:gap-8 py-16">
+          {filters.map((fitler) => (
+            <button
+              key={fitler}
+              data-filter={fitler}
+              onClick={handleFilter}
+              className="bg-cyan-500 py-1 px-3 md:py-2 md:px-6 rounded-md text-gray-100 text-lg"
+            >
+              {fitler}
+            </button>
+          ))}
+        </div>
+        <div className="grid gap-7 auto-rows-auto items-center justify-items-center sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full transition-all slide-in duration-500">
+          {projects.length ? (
+            projects.map((project) => (
+              <div
+                key={project.title}
+                className={`relative w-full rounded-lg shadow-md shadow-gray-500 cursor-pointer pointer-events-auto ${styles.card}`}
               >
-                {fitler}
-              </button>
-            ))}
-          </div>
-          <div className="grid gap-7 auto-rows-auto items-center justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w-[100%]">
-            {projects.length ? (
-              projects.map((project) => (
+                <SliderImage images={project.images} alt={project.title} />
                 <div
-                  key={project.title}
-                  className={`${styles.card} relative w-[100%]`}
+                  className={`flex flex-col items-center justify-center bg-gray-900 text-gray-100 h-full w-full absolute rounded-lg ${styles.cardBody}`}
                 >
-                  <SliderImage images={project.images} alt={project.title} />
-                  <div
-                    className={`flex flex-col items-center justify-center text-[#fff] h-[100%] w-[100%] ${styles.cardBody}`}
-                  >
-                    <div>
-                      <h2 className="text-center font-bold text-5xl md:text-4xl py-2">
-                        {project.title}
-                      </h2>
-                      <p className="text-[1.2rem] py-2 text-center">
-                        {project.detail}
-                      </p>
-                    </div>
-                    <div className="flex items-center w-[100%]">
-                      <Link href={project.url}>
-                        <a
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          title={project.title}
-                          aria-label={project.title}
-                          className="bg-dodgerblue text-[1.2rem] font-semibold"
-                        >
-                          Live Demo
-                        </a>
-                      </Link>
-                      <Link href={project.github}>
-                        <a
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          title={project.title}
-                          aria-label={project.title}
-                          className="bg-dodgerblue text-[1.2rem] font-semibold"
-                        >
-                          Github <i className="fab fa-github"></i>
-                        </a>
-                      </Link>
-                    </div>
+                  <div>
+                    <h2 className="text-center font-bold text-5xl md:text-4xl py-2">
+                      {project.title}
+                    </h2>
+                    <p className="text-left p-3">{project.detail}</p>
+                  </div>
+                  <div className="flex items-center w-full">
+                    <Link href={project.url}>
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        title={project.title}
+                        aria-label={project.title}
+                        className="bg-dodgerblue text-[1.2rem] font-semibold"
+                      >
+                        Live Demo
+                      </a>
+                    </Link>
+                    <Link href={project.github}>
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        title={project.title}
+                        aria-label={project.title}
+                        className="bg-dodgerblue text-[1.2rem] font-semibold"
+                      >
+                        Github <i className="fab fa-github"></i>
+                      </a>
+                    </Link>
                   </div>
                 </div>
-              ))
-            ) : (
-              <p>There are no projects!</p>
-            )}
-          </div>
+              </div>
+            ))
+          ) : (
+            <p>There are no projects!</p>
+          )}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

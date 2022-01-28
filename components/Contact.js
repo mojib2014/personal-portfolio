@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styles from "../styles/Contact.module.css";
+import SectionContainer from "./SectionContainer";
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -27,75 +28,86 @@ export default function Contact() {
     console.log(values);
   };
   return (
-    <section id="contact">
-      <div className="py-[120px] bg-lime-50">
-        <div className="container mx-w-xl">
-          <h2 className="font-bold xl:text-5xl text-4xl text-center mb-20">
-            Contact Section
-          </h2>
-          <div className="w-[100%] md:w-[70%] m-auto">
-            <Formik
-              initialValues={{ name: "", email: "", subject: "", message: "" }}
-              validationSchema={ContactSchema}
-              onSubmit={(values, { setSubmitting }) => {
-                handleSubmit(values);
-                setTimeout(() => {
-                  alert(JSON.stringify(values, null, 2));
-                  setSubmitting(false);
-                }, 400);
-              }}
-            >
-              {({ isSubmitting }) => (
-                <Form className="flex flex-col items-center justify-center">
-                  <Field
-                    type="name"
-                    name="name"
-                    className="w-[100%] py-3 px-2 rounded-full border-2 border-sky-500 my-5 focus:border-green-500 outline-0"
-                    placeholder="Name: John Doe"
-                  />
-                  <ErrorMessage
-                    name="name"
-                    component="div"
-                    className="text-red"
-                  />
-                  <Field
-                    type="email"
-                    name="email"
-                    className="w-[100%] py-3 px-2 rounded-full border-2 border-sky-500 my-5 focus:border-green-500 outline-0"
-                    placeholder="Email: yourdomain@email.com"
-                  />
-                  <ErrorMessage
-                    name="email"
-                    component="div"
-                    className="text-red"
-                  />
-                  <Field
-                    type="subject"
-                    name="subject"
-                    className="w-[100%] py-3 px-2 rounded-full border-2 border-sky-500 my-5 focus:border-green-500 outline-0"
-                    placeholder="Subject: max 50 charactars"
-                  />
-                  <Field
-                    type="message"
-                    name="message"
-                    as="textarea"
-                    cols="10"
-                    rows="8"
-                    className="w-[100%] py-3 px-2 rounded-md border-2 border-sky-500 my-5 focus:border-green-500 outline-0"
-                    placeholder="Message: max 150 charactars"
-                  />
-                  <input
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={styles.submitBtn}
-                    value="Submit"
-                  />
-                </Form>
-              )}
-            </Formik>
-          </div>
+    <section
+      id="contact"
+      className="dark:text-gray-100 bg-gradient-to-bl from-sky-300 dark:from-gray-500 py-20"
+    >
+      <SectionContainer>
+        <h2 className="text-3xl text-center font-bold sm:text-4xl xl:text-5xl mb-12">
+          Contact Section
+        </h2>
+        <div className="w-full m-auto">
+          <Formik
+            initialValues={{ name: "", email: "", subject: "", message: "" }}
+            validationSchema={ContactSchema}
+            onSubmit={(values, { setSubmitting }) => {
+              handleSubmit(values);
+              setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                setSubmitting(false);
+              }, 400);
+            }}
+          >
+            {({ isSubmitting }) => (
+              <Form className="flex flex-col items-center justify-center max-w-3xl m-auto">
+                <Field
+                  type="name"
+                  name="name"
+                  className="form-input dark:bg-gray-700 w-full py-3 px-2 outline-0 rounded-lg border-2 border-sky-500 mt-4 focus:border-pink-400"
+                  placeholder="Name: John Doe"
+                />
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className="text-danger-500 self-start"
+                />
+                <Field
+                  type="email"
+                  name="email"
+                  className="form-input dark:bg-gray-700 w-full py-3 px-2 outline-0 rounded-lg border-2 border-sky-500 mt-4 focus:border-pink-400"
+                  placeholder="Email: yourdomain@email.com"
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-danger-500 self-start"
+                />
+                <Field
+                  type="subject"
+                  name="subject"
+                  className="form-input dark:bg-gray-700 w-full py-3 px-2 outline-0 rounded-lg border-2 border-sky-500 mt-4 focus:border-pink-400"
+                  placeholder="Subject: max 50 charactars"
+                />
+                <ErrorMessage
+                  name="subject"
+                  component="div"
+                  className="text-danger-500 self-start"
+                />
+                <Field
+                  type="message"
+                  name="message"
+                  as="textarea"
+                  cols="10"
+                  rows="5"
+                  className="form-textarea dark:bg-gray-700 w-full py-3 px-2 outline-0 rounded-lg border-2 border-sky-500 mt-4 focus:border-pink-400"
+                  placeholder="Message: max 150 charactars"
+                />
+                <ErrorMessage
+                  name="message"
+                  component="div"
+                  className="text-danger-500 self-start"
+                />
+                <input
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={styles.submitBtn}
+                  value="Submit"
+                />
+              </Form>
+            )}
+          </Formik>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

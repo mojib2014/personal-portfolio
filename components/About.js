@@ -1,30 +1,29 @@
 import Link from "next/link";
 import React from "react";
-import styles from "../styles/About.module.css";
+import SectionContainer from "./SectionContainer";
 
 export default function About() {
   return (
-    <section id="about">
-      <div className={styles.aboutOuter}>
-        <div className="container mx-w-xl">
-          <div className="main-content mx-left text-left">
-            <h1 className="text-4xl text-center font-bold xl:text-5xl mb-12">
-              I&apos;m a junior full-stack developer
-            </h1>
-            <p>
-              I have an associate degree in medicine. I&apos;m really interested
-              in technology & solving technical problems. I create responsive
-              and interactive web apps, With focus on back-end. In my free times
-              I play volleball and enjoy family time with my lovely dauther,
-              watch movies and learn new stuff. You can know more about me by
-              reading my{" "}
-              <Link href="/blog">
-                <a className={styles.link}>articles.</a>
-              </Link>
-            </p>
-          </div>
+    <section id="about" className="dark:text-gray-100 dark:bg-gray-700 py-20">
+      <SectionContainer>
+        <div className="text-left">
+          <h2 className="text-3xl text-center font-bold sm:text-4xl xl:text-5xl mb-12">
+            I&apos;m a junior full-stack developer
+          </h2>
+          <p>
+            I have an associate degree in medicine. I&apos;m really interested
+            in technology & solving technical problems. I create responsive and
+            interactive web apps, With focus on back-end. In my free times I
+            play volleball and enjoy family time with my lovely dauther, watch
+            movies and learn new stuff. You can know more about me by reading my{" "}
+            <Link href="/blog">
+              <a cla className="text-anchor p-3 hover:underline">
+                articles.
+              </a>
+            </Link>
+          </p>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

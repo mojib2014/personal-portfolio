@@ -1,57 +1,25 @@
-.portfolioOuter {
-  background-color: #fff;
-  padding: 120px 0;
-}
-
-.card {
-  position: relative;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 6px 6px #dddd;
-  animation-name: slideRight;
-  animation-fill-mode: forwards;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-.card:hover {
-  opacity: 0.5;
-  border-radius: 10px;
-}
-
-.card img {
-  width: 100% !important;
-  max-width: 350px;
-  min-height: 100%;
-  height: 100%;
-}
-
 .cardBody {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  left: -30px;
-  padding: 15px;
-  opacity: 0;
-  visibility: hidden;
-  will-change: opacity;
-  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  left: -100%;
+  opacity: 0.9;
+  display: none;
+  will-change: left;
+  --webkit-animation: slideRight 0.7s forwards;
+  --moz-animation: slideRight 0.7s forwards;
+  --ms-animation: slideRight 0.7s forwards;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  animation: slideRight 0.7s forwards;
 }
 
 .card:hover .cardBody {
   left: 0;
-  opacity: 1;
-  visibility: visible;
+  display: flex;
 }
 
 .cardBody p {
@@ -74,7 +42,7 @@
   margin: auto;
 }
 
-.cardBody a::after {
+/* .cardBody a::after {
   content: "";
   position: absolute;
   top: 41%;
@@ -88,27 +56,13 @@
   border-bottom: 0;
   margin-left: 5px;
   text-align: center;
-}
+} */
 
 @keyframes slideRight {
-  0% {
-    opacity: 0;
+  from {
     left: -100%;
   }
-  25% {
-    opacity: 0.25;
-    left: -75%;
-  }
-  50% {
-    opacity: 0.5;
-    left: -50%;
-  }
-  75% {
-    opacity: 0.75;
-    left: -25%;
-  }
-  100% {
-    opacity: 1;
+  to {
     left: 0%;
   }
 }
