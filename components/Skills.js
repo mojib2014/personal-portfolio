@@ -21,7 +21,10 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="dark:bg-gray-400 dark:text-gray-100 py-20">
+    <section
+      id="skills"
+      className="dark:bg-gray-400 dark:text-gray-100 py-section-y"
+    >
       <SectionContainer>
         <h2 className="text-3xl text-center font-extrabold sm:text-4xl xl:text-5xl mb-12">
           Skills

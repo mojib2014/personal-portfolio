@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="dark:text-gray-100 bg-gradient-to-bl from-sky-300 dark:from-gray-500 py-20"
+      className="dark:text-gray-100 bg-gradient-to-bl from-sky-300 dark:from-gray-500 py-section-y"
     >
       <SectionContainer>
         <h2 className="text-3xl text-center font-bold sm:text-4xl xl:text-5xl mb-12">

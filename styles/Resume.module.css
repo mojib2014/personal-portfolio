@@ -149,7 +149,7 @@
 
 @media (max-width: 836px) {
   .subTitle::after {
-    right: -90px;
+    right: -50px;
     margin: 0;
   }
 }
@@ -161,7 +161,7 @@
 }
 @media (max-width: 273px) {
   .subTitle::after {
-    right: 20px;
+    right: 10px;
     margin: 0;
     margin-top: 15px;
   }

@@ -50,7 +50,7 @@ export default function Header() {
       <header
         id="header"
         className={`fixed w-full z-10 transition-all duration-300 ease-in-out text-gray-900  ${
-          scrolled ? "bg-gray-100 shadow-lg text-gray-800 dark:bg-gray-800" : ""
+          scrolled ? "bg-gray-100 shadow-lg text-gray-800 dark:bg-gray-900" : ""
         }`}
       >
         <SectionContainer>

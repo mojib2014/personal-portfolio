@@ -3,11 +3,11 @@ title: Sample .md file
 date: "2016-03-08"
 tags: ["markdown", "code", "features"]
 draft: false
-excerp: Example of a markdown file with code blocks and syntax highlighting
+excerpt: Example of a markdown file with code blocks and syntax highlighting
 coverImage: /blog/data-structures/array-1.png
 author:
   name: Mojib
-  picture: "/blog/authors/mojib.png"
+  picture: "/profile_pic.png"
 ogImage:
   url: "/blog/data-structures/array-1.png"
 ---

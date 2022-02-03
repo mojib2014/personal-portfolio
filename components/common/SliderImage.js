@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import imageComingSoon from "../../public/image-coming-soon-placeholder.png";
 
 export default function SliderImage({ images, alt }) {
   const [index, setIndex] = useState(0);
@@ -16,7 +15,7 @@ export default function SliderImage({ images, alt }) {
 
   return (
     <Image
-      src={images.length ? images[index] : imageComingSoon}
+      src={images[index]}
       alt={alt}
       width="100%"
       height="100%"

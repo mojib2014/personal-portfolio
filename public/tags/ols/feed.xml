@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Personal Portfolio | Blog</title>
+      <link>https://mojib-mohammad.vercel.app/blog</link>
+      <description>A personal blog for recording my learning journey.</description>
+      <language>en-us</language>
+      <managingEditor>mmohammad3@outlook.com (Mojib Mohammad)</managingEditor>
+      <webMaster>mmohammad3@outlook.com (Mojib Mohammad)</webMaster>
+      <lastBuildDate>Mon, 21 Dec 2020 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://mojib-mohammad.vercel.app/tags/ols/feed.xml" rel="self" type="application/rss+xml"/>
+      
+    <item>
+        <guid>https://mojib-mohammad.vercel.app/blogderiving-ols-estimator</guid>
+        <title>Deriving the OLS Estimator</title>
+        <link>https://mojib-mohammad.vercel.app/blog/deriving-ols-estimator</link>
+        undefined
+        <pubDate>Mon, 21 Dec 2020 00:00:00 GMT</pubDate>
+        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+        <category>next js</category><category>math</category><category>ols</category>
+    </item>
+
+    </channel>
+  </rss>

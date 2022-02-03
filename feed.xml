@@ -1,0 +1,54 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Personal Portfolio | Blog</title>
+      <link>https://mojib-mohammad.vercel.app/blog</link>
+      <description>A personal blog for recording my learning journey.</description>
+      <language>en-us</language>
+      <managingEditor>mmohammad3@outlook.com (Mojib Mohammad)</managingEditor>
+      <webMaster>mmohammad3@outlook.com (Mojib Mohammad)</webMaster>
+      <lastBuildDate>Mon, 21 Dec 2020 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://mojib-mohammad.vercel.app/feed.xml" rel="self" type="application/rss+xml"/>
+      
+    <item>
+        <guid>https://mojib-mohammad.vercel.app/blogderiving-ols-estimator</guid>
+        <title>Deriving the OLS Estimator</title>
+        <link>https://mojib-mohammad.vercel.app/blog/deriving-ols-estimator</link>
+        undefined
+        <pubDate>Mon, 21 Dec 2020 00:00:00 GMT</pubDate>
+        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+        <category>next js</category><category>math</category><category>ols</category>
+    </item>
+
+    <item>
+        <guid>https://mojib-mohammad.vercel.app/bloggithub-markdown-guide</guid>
+        <title>Markdown Guide</title>
+        <link>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</link>
+        undefined
+        <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
+        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+        <category>github</category><category>guide</category><category>markdown</category>
+    </item>
+
+    <item>
+        <guid>https://mojib-mohammad.vercel.app/blogthe-time-machine</guid>
+        <title>The Time Machine</title>
+        <link>https://mojib-mohammad.vercel.app/blog/the-time-machine</link>
+        undefined
+        <pubDate>Wed, 15 Aug 2018 00:00:00 GMT</pubDate>
+        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+        <category>writings</category><category>book</category><category>reflection</category>
+    </item>
+
+    <item>
+        <guid>https://mojib-mohammad.vercel.app/blogcode-sample</guid>
+        <title>Sample .md file</title>
+        <link>https://mojib-mohammad.vercel.app/blog/code-sample</link>
+        undefined
+        <pubDate>Tue, 08 Mar 2016 00:00:00 GMT</pubDate>
+        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+        <category>markdown</category><category>code</category><category>features</category>
+    </item>
+
+    </channel>
+  </rss>

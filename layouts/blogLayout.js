@@ -1,47 +1,53 @@
 import Layout from "@/components/Layout";
 import SectionContainer from "@/components/SectionContainer";
-import Card from "@/components/common/Card";
+import Post from "@/components/Post";
 import Search from "@/components/Search";
+import PageTitle from "@/components/PageTitle";
+import siteMetadata from "@/data/siteMetadata";
+import Pagination from "@/components/Pagination";
 
 export default function BlogLayout({
   posts,
+  tag,
   query,
-  initialDisplayPosts,
-  pagination,
-  title,
-  onChange,
-  onSubmit,
+  onQueryChange,
+  itemsCount,
+  pageSize,
+  currentPage,
+  onPageChange,
+  onNext,
+  onPrevious,
 }) {
-  const filteredBlogPosts = posts.filter((frontMatter) => {
-    const searchContent =
-      frontMatter.title + frontMatter.summary + frontMatter.tags.join(" ");
-    return searchContent.toLowerCase().includes(query.toLowerCase());
-  });
-
-  // If initialDisplayPosts exist, display it if no searchValue is specified
-  const displayPosts =
-    initialDisplayPosts.length > 0 && !query
-      ? initialDisplayPosts
-      : filteredBlogPosts;
+  // Capitalize first letter and convert space to dash
+  const title = tag && tag[0].toUpperCase() + tag.split(" ").join("-").slice(1);
 
   return (
-    <Layout>
+    <Layout
+      title={`${title || "Blog"} - ${siteMetadata.author}`}
+      description={`${tag} tags - ${siteMetadata.author}`}
+      ogImage="/profile_pic.png"
+    >
       <SectionContainer>
-        <article className="divide-y pt-90 mt-90">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            All Posts
-          </h1>
-          <div className="space-x-2 md:space-x-5 space-y-2 md:space-y-5 lg:grid lg:grid-cols-4 lg:space-y-0 lg:items-baseline">
-            <div className="space-y-3 xl:col-span-3">
-              {displayPosts.map((post) => (
-                <Card key={post.title} item={post} />
-              ))}
-            </div>
-            <dl className="flex flex-col items-center border border-gray p-4">
-              <Search value={query} onChange={onChange} onSubmit={onSubmit} />
-            </dl>
+        <div className="divide-y py-section-y">
+          <div className="pt-6 pb-8 space-y-2 md:space-y-5">
+            <PageTitle>{title ? title : "All Posts"}</PageTitle>
+            <Search query={query} onChange={onQueryChange} />
           </div>
-        </article>
+          <ul>
+            {!posts.length && "No posts found."}
+            {posts.map((frontMatter) => (
+              <Post key={frontMatter.slug} item={frontMatter} />
+            ))}
+          </ul>
+          <Pagination
+            currentPage={currentPage}
+            itemsCount={itemsCount}
+            pageSize={pageSize}
+            onPageChange={onPageChange}
+            onNext={onNext}
+            onPrevious={onPrevious}
+          />
+        </div>
       </SectionContainer>
     </Layout>
   );

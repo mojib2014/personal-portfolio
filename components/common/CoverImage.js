@@ -12,23 +12,8 @@ export default function CoverImage({ item, width, height }) {
       })}
       width={width}
       height={height}
-      layout="responsive"
-      objectFit="contain"
     />
   );
 
-  return (
-    <div className="sm:mx-0">
-      {item.slug ? (
-        <Link
-          as={`/blog/posts/${item.category}/${item.slug}`}
-          href="/blog/posts/[category]/[slug]"
-        >
-          <a aria-label={item.title}>{image}</a>
-        </Link>
-      ) : (
-        image
-      )}
-    </div>
-  );
+  return <div className="w-full m-auto text-center">{image}</div>;
 }

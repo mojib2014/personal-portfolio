@@ -1,80 +1,66 @@
+import fs from "fs";
 import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import markdownToHtml from "lib/markdownToHtml";
-import Layout from "components/Layout";
-import { getPostBySlug, getAllPosts } from "lib/api/api";
-import { CMS_NAME } from "lib/api/constants";
-import SubNav from "components/common/SubNav";
 import Image from "next/image";
+import ErrorPage from "next/error";
+import Layout from "components/Layout";
+import {
+  formatSlug,
+  getAllFilesFrontMatter,
+  getFileBySlug,
+  getFiles,
+} from "@/lib/mdx";
+import generateRss from "@/lib/generate-rss";
 
-export default function Post({ post, morePosts, preview }) {
+const DEFAULT_LAYOUT = "PostLayout";
+
+export default function Post({ post }) {
+  const { mdxSource, toc, frontMatter } = post;
   const router = useRouter();
   if (!router.isFallback && !post?.slug) return <ErrorPage statusCod={404} />;
 
   return (
-    <Layout
-      title={post.title}
-      author={post.author.name}
-      description={post.excerpt}
-    >
-      <div className="">
-        <div className="py-[120px]">
-          <div className="container mx-w-xl">
-            {/* <SubNav router={router} /> */}
-            <h1 className="text-center font-bold text-5xl mt-6 mb-16">
-              {post.title}
-            </h1>
-            <div className="w-[700px] h-[auto] max-h-[500px] my-5 mx-auto">
-              <Image
-                src={post.coverImage}
-                alt={post.title}
-                width={700}
-                height={300}
-                layout="responsive"
-                objectFit="cover"
-              />
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-          </div>
+    <>
+      {frontMatter.draft !== true ? (
+        <MDXLayoutRenderer
+          layout={frontMatter.layout || DEFAULT_LAYOUT}
+          toc={toc}
+          mdxSource={mdxSource}
+          frontMatter={frontMatter}
+        />
+      ) : (
+        <div className="mt-24 text-center">
+          <PageTitle>
+            Under Construction{" "}
+            <span role="img" aria-label="roadwork sign">
+              🚧
+            </span>
+          </PageTitle>
         </div>
-      </div>
-    </Layout>
+      )}
+    </>
   );
 }
 
-export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug[0], params.slug[1], [
-    "title",
-    "date",
-    "slug",
-    "category",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
-  const content = await markdownToHtml(post.content || "");
+export async function getStaticPaths() {
+  const posts = getFiles("blog");
   return {
-    props: {
-      post: {
-        ...post,
-        content,
+    paths: posts.map((p) => ({
+      params: {
+        slug: formatSlug(p).split("/"),
       },
-    },
+    })),
+    fallback: false,
   };
 }
 
-export async function getStaticPaths() {
-  const posts = getAllPosts(["slug", "category"]);
+export async function getStaticProps({ params }) {
+  const allPosts = await getAllFilesFrontMatter("blog");
+  const post = await getFileBySlug("blog", params.slug.join("/"));
+  // rss
+  if (allPosts.length > 0) {
+    const rss = generateRss(allPosts);
+    fs.writeFileSync("./public/feed.xml", rss);
+  }
 
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: [post.category, post.slug],
-        },
-      };
-    }),
-    fallback: false,
-  };
+  return { props: { post } };
 }

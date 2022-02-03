@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Personal Portfolio | Blog</title>
+      <link>https://mojib-mohammad.vercel.app/blog</link>
+      <description>A personal blog for recording my learning journey.</description>
+      <language>en-us</language>
+      <managingEditor>mmohammad3@outlook.com (Mojib Mohammad)</managingEditor>
+      <webMaster>mmohammad3@outlook.com (Mojib Mohammad)</webMaster>
+      <lastBuildDate>Wed, 15 Aug 2018 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://mojib-mohammad.vercel.app/tags/book/feed.xml" rel="self" type="application/rss+xml"/>
+      
+    <item>
+        <guid>https://mojib-mohammad.vercel.app/blogthe-time-machine</guid>
+        <title>The Time Machine</title>
+        <link>https://mojib-mohammad.vercel.app/blog/the-time-machine</link>
+        undefined
+        <pubDate>Wed, 15 Aug 2018 00:00:00 GMT</pubDate>
+        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+        <category>writings</category><category>book</category><category>reflection</category>
+    </item>
+
+    </channel>
+  </rss>

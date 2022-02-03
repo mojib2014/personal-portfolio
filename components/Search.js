@@ -1,27 +1,20 @@
 import React from "react";
 
-export default function Search({ value, onChange, onSubmit }) {
+export default function Search({ value, onChange }) {
   return (
-    <div className="border border-gray mb-4 p-2 w-[100%]">
+    <div className="p-2 w-full">
       <h3 className="font-bold text-[1.6rem] mb-4">Search for posts</h3>
-      <form className="w-[100%] relative">
+      <div className="relative">
         <input
-          type="search"
+          type="text"
           name="query"
           value={value}
           onChange={onChange}
           placeholder="Search for posts..."
-          className="border-2 border-sky-500 w-[100%] py-3 px-4 rounded-full"
-          id="search"
+          className="form-input border-2 border-sky-500 focus:border-pink-400 text-gray-800 w-full py-2 px-4 rounded-full relative"
         />
-        <button
-          type="submit"
-          onClick={onSubmit}
-          className="absolute right-12 top-3 text-2xl"
-        >
-          <i className="fas fa-search fa-lg"></i>
-        </button>
-      </form>
+        <i className="fas fa-search fa-md text-gray-800 absolute right-3 top-3"></i>
+      </div>
     </div>
   );
 }

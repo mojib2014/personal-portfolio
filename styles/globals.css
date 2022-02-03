@@ -84,7 +84,7 @@ a {
 
 input[type="search" i]::-webkit-search-cancel-button {
   background-color: red;
-  font-size: 36px;
+  font-size: 3rem;
   color: red;
   cursor: pointer;
 }

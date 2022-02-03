@@ -19,6 +19,7 @@ module.exports = {
       },
       spacing: {
         "9/16": "56.25%",
+        "section-y": "10rem",
       },
       lineHeight: {
         11: "2.75rem",
