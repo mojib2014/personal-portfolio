@@ -2,7 +2,15 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  content: ["./pages/**/*.{js, jsx}", "./components/**/*.{js, jsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  options: {
+    safelist: {
+      standard: ["outline-none"],
+    },
+  },
   darkMode: "class",
   theme: {
     extend: {
@@ -19,7 +27,7 @@ module.exports = {
       },
       spacing: {
         "9/16": "56.25%",
-        "section-y": "10rem",
+        "section-y": "7rem",
       },
       lineHeight: {
         11: "2.75rem",

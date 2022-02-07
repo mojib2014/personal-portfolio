@@ -10,25 +10,25 @@
       <lastBuildDate>Fri, 11 Oct 2019 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://mojib-mohammad.vercel.app/tags/markdown/feed.xml" rel="self" type="application/rss+xml"/>
       
-    <item>
-        <guid>https://mojib-mohammad.vercel.app/bloggithub-markdown-guide</guid>
-        <title>Markdown Guide</title>
-        <link>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</link>
-        undefined
-        <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
-        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
-        <category>github</category><category>guide</category><category>markdown</category>
-    </item>
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</guid>
+    <title>Markdown Guide</title>
+    <link>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</link>
+    <description>Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.</description>
+    <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>github</category><category>guide</category><category>markdown</category>
+  </item>
 
-    <item>
-        <guid>https://mojib-mohammad.vercel.app/blogcode-sample</guid>
-        <title>Sample .md file</title>
-        <link>https://mojib-mohammad.vercel.app/blog/code-sample</link>
-        undefined
-        <pubDate>Tue, 08 Mar 2016 00:00:00 GMT</pubDate>
-        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
-        <category>markdown</category><category>code</category><category>features</category>
-    </item>
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/code-sample</guid>
+    <title>Sample .md file</title>
+    <link>https://mojib-mohammad.vercel.app/blog/code-sample</link>
+    <description>Example of a markdown file with code blocks and syntax highlighting</description>
+    <pubDate>Tue, 08 Mar 2016 00:00:00 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>markdown</category><category>code</category><category>features</category>
+  </item>
 
     </channel>
   </rss>

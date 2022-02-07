@@ -7,48 +7,58 @@
       <language>en-us</language>
       <managingEditor>mmohammad3@outlook.com (Mojib Mohammad)</managingEditor>
       <webMaster>mmohammad3@outlook.com (Mojib Mohammad)</webMaster>
-      <lastBuildDate>Mon, 21 Dec 2020 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sat, 07 Aug 2021 15:32:14 GMT</lastBuildDate>
       <atom:link href="https://mojib-mohammad.vercel.app/feed.xml" rel="self" type="application/rss+xml"/>
       
-    <item>
-        <guid>https://mojib-mohammad.vercel.app/blogderiving-ols-estimator</guid>
-        <title>Deriving the OLS Estimator</title>
-        <link>https://mojib-mohammad.vercel.app/blog/deriving-ols-estimator</link>
-        undefined
-        <pubDate>Mon, 21 Dec 2020 00:00:00 GMT</pubDate>
-        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
-        <category>next js</category><category>math</category><category>ols</category>
-    </item>
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/new-features-in-v1</guid>
+    <title>New features in v1</title>
+    <link>https://mojib-mohammad.vercel.app/blog/new-features-in-v1</link>
+    <description>An overview of the new features released in v1 - code block copy, multiple authors, frontmatter layout and more</description>
+    <pubDate>Sat, 07 Aug 2021 15:32:14 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>next-js</category><category>tailwind</category><category>guide</category>
+  </item>
 
-    <item>
-        <guid>https://mojib-mohammad.vercel.app/bloggithub-markdown-guide</guid>
-        <title>Markdown Guide</title>
-        <link>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</link>
-        undefined
-        <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
-        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
-        <category>github</category><category>guide</category><category>markdown</category>
-    </item>
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/deriving-ols-estimator</guid>
+    <title>Deriving the OLS Estimator</title>
+    <link>https://mojib-mohammad.vercel.app/blog/deriving-ols-estimator</link>
+    <description>How to derive the OLS Estimator with matrix notation and a tour of math typesetting using markdown with the help of KaTeX.</description>
+    <pubDate>Mon, 21 Dec 2020 00:00:00 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>next js</category><category>math</category><category>ols</category>
+  </item>
 
-    <item>
-        <guid>https://mojib-mohammad.vercel.app/blogthe-time-machine</guid>
-        <title>The Time Machine</title>
-        <link>https://mojib-mohammad.vercel.app/blog/the-time-machine</link>
-        undefined
-        <pubDate>Wed, 15 Aug 2018 00:00:00 GMT</pubDate>
-        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
-        <category>writings</category><category>book</category><category>reflection</category>
-    </item>
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</guid>
+    <title>Markdown Guide</title>
+    <link>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</link>
+    <description>Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.</description>
+    <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>github</category><category>guide</category><category>markdown</category>
+  </item>
 
-    <item>
-        <guid>https://mojib-mohammad.vercel.app/blogcode-sample</guid>
-        <title>Sample .md file</title>
-        <link>https://mojib-mohammad.vercel.app/blog/code-sample</link>
-        undefined
-        <pubDate>Tue, 08 Mar 2016 00:00:00 GMT</pubDate>
-        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
-        <category>markdown</category><category>code</category><category>features</category>
-    </item>
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/the-time-machine</guid>
+    <title>The Time Machine</title>
+    <link>https://mojib-mohammad.vercel.app/blog/the-time-machine</link>
+    <description>The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us. His pale grey eyes shone and twinkled, and his usually pale face was flushed and animated...</description>
+    <pubDate>Wed, 15 Aug 2018 00:00:00 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>writings</category><category>book</category><category>reflection</category>
+  </item>
+
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/code-sample</guid>
+    <title>Sample .md file</title>
+    <link>https://mojib-mohammad.vercel.app/blog/code-sample</link>
+    <description>Example of a markdown file with code blocks and syntax highlighting</description>
+    <pubDate>Tue, 08 Mar 2016 00:00:00 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>markdown</category><category>code</category><category>features</category>
+  </item>
 
     </channel>
   </rss>

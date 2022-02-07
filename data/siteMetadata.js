@@ -7,9 +7,9 @@ const siteMetadata = {
   theme: "system", // system, dark or light
   siteUrl: "https://mojib-mohammad.vercel.app",
   siteRepo: "https://github.com/mojib2014/personal-portfolio",
-  siteLogo: "/profile_pic.png",
+  siteLogo: "/twitter-card.png",
   image: "/profile_pic.png",
-  socialBanner: "/images/twitter-card.png",
+  socialBanner: "/twitter-card.png",
   email: "mmohammad3@outlook.com",
   github: "https://github.com/mojib2014",
   twitter: "https://twitter.com/mojib-mohammad1",
