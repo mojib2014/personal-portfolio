@@ -1,14 +1,16 @@
+import {MouseEventHandler} from 'react'
+
 interface Props {
-  show?: boolean;
-  onClose?: () => void;
+  show?: boolean
+  onClose?: MouseEventHandler
 }
 
-const MobileOverlay = ({ show, onClose }: Props) => {
+const MobileOverlay = ({show, onClose}: Props) => {
   return (
     <div
       onClick={onClose}
       className={`fixed top-0 left-0 right-0 bottom-0 z-20 bg-black transition-opacity duration-500 will-change-auto ${
-        show ? "visible opacity-90" : "hidden opacity-0"
+        show ? 'visible opacity-90' : 'hidden opacity-0'
       }`}
     >
       <span
@@ -21,7 +23,7 @@ const MobileOverlay = ({ show, onClose }: Props) => {
        "
       ></span>
     </div>
-  );
-};
+  )
+}
 
-export default MobileOverlay;
+export default MobileOverlay

@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Link from "@/components/Link";
-import styles from "../styles/Footer.module.css";
-import SectionContainer from "./SectionContainer";
+import Image from 'next/image'
+import Link from '@/components/Link'
+import styles from '../styles/Footer.module.css'
+import SectionContainer from './SectionContainer'
 
 const Footer = () => {
   return (
-    <footer className="border-t-gray min-h-[400px] w-full overflow-hidden border-t py-3 dark:bg-gray-800 dark:text-gray-400">
+    <footer className="border-t-gray min-h-[400px] w-full overflow-hidden border-t py-3 dark:bg-[#111827] dark:text-gray-400">
       <div>
         <SectionContainer>
           <div className="power-by text-center">
@@ -13,7 +13,7 @@ const Footer = () => {
               className="pb-10 text-anchor"
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             >
-              Powered by{" "}
+              Powered by{' '}
               <span className={styles.logo}>
                 <Image
                   src="/vercel.svg"
@@ -131,7 +131,7 @@ const Footer = () => {
         </SectionContainer>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

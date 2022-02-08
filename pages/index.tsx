@@ -1,8 +1,8 @@
-import { NextPage } from "next";
-import PortfolioLanding from "@/components/PortfolioLanding";
+import {NextPage} from 'next'
+import PortfolioLayout from '@/layouts/PortfolioLayout'
 
 const Home: NextPage = () => {
-  return <PortfolioLanding />;
-};
+  return <PortfolioLayout />
+}
 
-export default Home;
+export default Home

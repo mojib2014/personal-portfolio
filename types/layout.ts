@@ -1,3 +1,3 @@
 export interface LayoutType {
-  [key: string]: any;
+  [key: string]: any
 }

@@ -1,8 +1,12 @@
-import React from "react";
-import NextImage, { ImageProps } from "next/image";
+import {FC} from 'react'
+import NextImage, {ImageProps} from 'next/image'
 
-const Image = (props: ImageProps) => {
-  return <NextImage {...props} />;
-};
+interface Props {
+  [key: string]: any
+}
 
-export default Image;
+const Image: FC<ImageProps & Props> = props => {
+  return <NextImage {...props} />
+}
+
+export default Image

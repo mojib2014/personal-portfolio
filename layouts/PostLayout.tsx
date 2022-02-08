@@ -1,30 +1,30 @@
-import React, { FC } from "react";
-import Link from "@/components/Link";
-import PageTitle from "@/components/PageTitle";
-import SectionContainer from "@/components/SectionContainer";
-import Layout from "@/components/Layout";
-import Image from "@/components/Image";
-import Tag from "@/components/Tag";
-import siteMetadata from "@/data/siteMetadata";
-import Comments from "@/components/comments";
-import ScrollTopAndComment from "@/components/ScrollTopAndComment";
-import { AuthorType } from "interfaces/authors";
-import { FrontMatterInterface } from "interfaces/frontMatter";
-import { NextPrevType } from "interfaces/next-previous";
+import React, {FC} from 'react'
+import Link from '@/components/Link'
+import PageTitle from '@/components/PageTitle'
+import SectionContainer from '@/components/SectionContainer'
+import {BlogSEO} from '@/components/SEO'
+import Image from '@/components/Image'
+import Tag from '@/components/Tag'
+import siteMetadata from '@/data/siteMetadata'
+import Comments from '@/components/comments'
+import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import {AuthorTypes} from 'types/authors'
+import {FrontMatterTypes} from 'types/frontMatter'
+import {NextPrevType} from 'types/next-previous'
 
 const editUrl = (fileName: string) =>
-  `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`;
+  `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `${siteMetadata.siteUrl}/blog/${slug}`
-  )}`;
+    `${siteMetadata.siteUrl}/blog/${slug}`,
+  )}`
 
 interface Props {
-  frontMatter: FrontMatterInterface;
-  authorDetails: AuthorType[];
-  next?: NextPrevType;
-  prev?: NextPrevType;
-  children?: any;
+  frontMatter: FrontMatterTypes
+  authorDetails: AuthorTypes[]
+  next?: NextPrevType
+  prev?: NextPrevType
+  children?: any
 }
 
 const PostLayout: FC<Props> = ({
@@ -34,14 +34,15 @@ const PostLayout: FC<Props> = ({
   prev,
   children,
 }) => {
-  const { slug, fileName, date, title, tags } = frontMatter;
+  const {slug, fileName, date, title, tags} = frontMatter
 
   return (
-    <Layout
-      url={`${siteMetadata.siteUrl}/blog/${slug}`}
-      authorDetails={authorDetails}
-      {...frontMatter}
-    >
+    <>
+      <BlogSEO
+        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        authorDetails={authorDetails}
+        {...frontMatter}
+      />
       <SectionContainer>
         <ScrollTopAndComment />
         <article className="py-section-y">
@@ -65,13 +66,13 @@ const PostLayout: FC<Props> = ({
             </header>
             <div
               className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
-              style={{ gridTemplateRows: "auto 1fr" }}
+              style={{gridTemplateRows: 'auto 1fr'}}
             >
               <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
                 <dt className="sr-only">Authors</dt>
                 <dd>
                   <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
-                    {authorDetails?.map((author) => (
+                    {authorDetails?.map(author => (
                       <li
                         className="flex items-center space-x-2"
                         key={author.name}
@@ -98,8 +99,8 @@ const PostLayout: FC<Props> = ({
                                 className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                               >
                                 {author.twitter.replace(
-                                  "https://twitter.com/",
-                                  "@"
+                                  'https://twitter.com/',
+                                  '@',
                                 )}
                               </Link>
                             )}
@@ -116,10 +117,10 @@ const PostLayout: FC<Props> = ({
                 </div>
                 <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                   <Link href={discussUrl(slug)} rel="nofollow">
-                    {"Discuss on Twitter"}
+                    {'Discuss on Twitter'}
                   </Link>
                   {` • `}
-                  <Link href={editUrl(fileName)}>{"View on GitHub"}</Link>
+                  <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
                 </div>
                 <Comments frontMatter={frontMatter} />
               </div>
@@ -131,7 +132,7 @@ const PostLayout: FC<Props> = ({
                         Tags
                       </h2>
                       <div className="flex flex-wrap">
-                        {tags.map((tag) => (
+                        {tags.map(tag => (
                           <Tag key={tag} tag={tag} />
                         ))}
                       </div>
@@ -179,8 +180,8 @@ const PostLayout: FC<Props> = ({
           </div>
         </article>
       </SectionContainer>
-    </Layout>
-  );
-};
+    </>
+  )
+}
 
-export default PostLayout;
+export default PostLayout

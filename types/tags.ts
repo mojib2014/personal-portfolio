@@ -1,3 +1,3 @@
 export interface TagType {
-  [key: string]: number;
+  [key: string]: number
 }

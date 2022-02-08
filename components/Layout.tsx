@@ -1,10 +1,10 @@
-import React, { FC } from "react";
-import { useRouter } from "next/router";
-import Header from "./Header";
-import Footer from "./Footer";
-import Head from "next/head";
-import siteMetadata from "@/data/siteMetadata";
-import { LayoutType } from "interfaces/layout";
+import React, {FC} from 'react'
+import {useRouter} from 'next/router'
+import Header from './Header'
+import Footer from './Footer'
+import Head from 'next/head'
+import siteMetadata from '@/data/siteMetadata'
+import {LayoutType} from 'types/layout'
 
 const Layout: FC<LayoutType> = ({
   title,
@@ -20,16 +20,16 @@ const Layout: FC<LayoutType> = ({
   twImage,
   children,
 }) => {
-  const router = useRouter();
-  const publishedAt = date && new Date(date).toISOString();
+  const router = useRouter()
+  const publishedAt = date && new Date(date).toISOString()
   const modifiedAt =
-    lastmod || (date && new Date(lastmod || date).toISOString());
+    lastmod || (date && new Date(lastmod || date).toISOString())
   const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
+    '@context': 'https://schema.org',
+    '@type': 'Article',
     mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": siteMetadata.siteUrl,
+      '@type': 'WebPage',
+      '@id': siteMetadata.siteUrl,
     },
     headline: title,
     image: siteMetadata.socialBanner,
@@ -37,15 +37,15 @@ const Layout: FC<LayoutType> = ({
     dateModified: modifiedAt,
     author: author,
     publisher: {
-      "@type": "Organization",
+      '@type': 'Organization',
       name: siteMetadata.author,
       logo: {
-        "@type": "ImageObject",
+        '@type': 'ImageObject',
         url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
       },
     },
     description: description,
-  };
+  }
   return (
     <>
       <Head>
@@ -85,6 +85,6 @@ const Layout: FC<LayoutType> = ({
       <main className="mb-auto h-full w-full">{children}</main>
       <Footer />
     </>
-  );
-};
-export default Layout;
+  )
+}
+export default Layout

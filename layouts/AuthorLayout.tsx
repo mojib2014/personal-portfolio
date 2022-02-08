@@ -1,36 +1,21 @@
-import React, { FC } from "react";
-import Image from "@/components/Image";
-import { PageSEO } from "@/components/SEO";
-import Link from "next/link";
+import React, {FC} from 'react'
+import Link from 'next/link'
+import Image from '@/components/Image'
+import {PageSEO} from '@/components/SEO'
+import {AuthorTypes} from '@/types/authors'
 
 interface Props {
-  frontMatter: {
-    name: string;
-    avatar: string;
-    occupation: string;
-    company: string;
-    email: string;
-    twitter: string;
-    github: string;
-    linkedin: string;
-  };
-  children?: any;
+  frontMatter: AuthorTypes
+  children?: any
 }
 
-const AuthorLayout: FC<Props> = ({ children, frontMatter }) => {
-  const {
-    name,
-    avatar,
-    occupation,
-    company,
-    email,
-    twitter,
-    linkedin,
-    github,
-  } = frontMatter;
+const AuthorLayout: FC<Props> = ({frontMatter, children}) => {
+  const {name, avatar, occupation, company, email, twitter, linkedin, github} =
+    frontMatter
 
   return (
-    <PageSEO title={`About - ${name}`} description={`About me - ${name}`}>
+    <>
+      <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
       <div className="divide-y">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -79,8 +64,8 @@ const AuthorLayout: FC<Props> = ({ children, frontMatter }) => {
           </div>
         </div>
       </div>
-    </PageSEO>
-  );
-};
+    </>
+  )
+}
 
-export default AuthorLayout;
+export default AuthorLayout

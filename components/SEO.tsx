@@ -1,9 +1,8 @@
-import React, { FC } from "react";
-import Head from "next/head";
-import { useRouter } from "next/router";
-import siteMetadata from "@/data/siteMetadata";
-import { LayoutType } from "@/interfaces/layout";
-import { AuthorType } from "@/interfaces/authors";
+import React, {FC} from 'react'
+import Head from 'next/head'
+import {useRouter} from 'next/router'
+import siteMetadata from '@/data/siteMetadata'
+import {LayoutType} from 'types/layout'
 
 const CommonSEO = ({
   title,
@@ -12,7 +11,7 @@ const CommonSEO = ({
   ogImage,
   twImage,
 }: LayoutType) => {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <>
       <Head>
@@ -27,7 +26,7 @@ const CommonSEO = ({
         <meta property="og:site_name" content={siteMetadata.title} />
         <meta property="og:description" content={description} />
         <meta property="og:title" content={title} />
-        {ogImage?.constructor.name === "Array" ? (
+        {ogImage?.constructor.name === 'Array' ? (
           ogImage.map((url: string) => (
             <meta property="og:image" content={url} key={url} />
           ))
@@ -41,12 +40,12 @@ const CommonSEO = ({
         <meta name="twitter:image" content={twImage} />
       </Head>
     </>
-  );
-};
+  )
+}
 
-export const PageSEO = ({ title, description }: LayoutType) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
+export const PageSEO = ({title, description}: LayoutType) => {
+  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   return (
     <CommonSEO
       title={title}
@@ -55,13 +54,18 @@ export const PageSEO = ({ title, description }: LayoutType) => {
       ogImage={ogImageUrl}
       twImage={twImageUrl}
     />
-  );
-};
+  )
+}
 
-export const TagSEO = ({ title, description }: LayoutType) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
-  const router = useRouter();
+interface SEOProps {
+  title?: string
+  description?: string
+}
+
+export const TagSEO = ({title, description}: SEOProps) => {
+  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const router = useRouter()
   return (
     <>
       <CommonSEO
@@ -80,18 +84,8 @@ export const TagSEO = ({ title, description }: LayoutType) => {
         />
       </Head>
     </>
-  );
-};
-
-type BlogProps = {
-  authorDetails?: AuthorType[];
-  title?: string;
-  summary?: string;
-  date?: Date;
-  lastmod?: Date;
-  url?: string;
-  images?: string[];
-};
+  )
+}
 
 export const BlogSEO = ({
   authorDetails,
@@ -102,44 +96,44 @@ export const BlogSEO = ({
   url,
   images = [],
 }: LayoutType) => {
-  const router = useRouter();
-  const publishedAt = new Date(date).toISOString();
-  const modifiedAt = new Date(lastmod || date).toISOString();
+  const router = useRouter()
+  const publishedAt = new Date(date).toISOString()
+  const modifiedAt = new Date(lastmod || date).toISOString()
   let imagesArr =
     images.length === 0
       ? [siteMetadata.socialBanner]
-      : typeof images === "string"
+      : typeof images === 'string'
       ? [images]
-      : images;
+      : images
 
   const featuredImages = imagesArr.map((img: string) => {
     return {
-      "@type": "ImageObject",
+      '@type': 'ImageObject',
       url: `${siteMetadata.siteUrl}${img}`,
-    };
-  });
+    }
+  })
 
-  let authorList;
+  let authorList
   if (authorDetails) {
-    authorList = authorDetails.map((author: { name: string }) => {
+    authorList = authorDetails.map((author: {name: string}) => {
       return {
-        "@type": "Person",
+        '@type': 'Person',
         name: author.name,
-      };
-    });
+      }
+    })
   } else {
     authorList = {
-      "@type": "Person",
+      '@type': 'Person',
       name: siteMetadata.author,
-    };
+    }
   }
 
   const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
+    '@context': 'https://schema.org',
+    '@type': 'Article',
     mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": url,
+      '@type': 'WebPage',
+      '@id': url,
     },
     headline: title,
     image: featuredImages,
@@ -147,17 +141,17 @@ export const BlogSEO = ({
     dateModified: modifiedAt,
     author: authorList,
     publisher: {
-      "@type": "Organization",
+      '@type': 'Organization',
       name: siteMetadata.author,
       logo: {
-        "@type": "ImageObject",
+        '@type': 'ImageObject',
         url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
       },
     },
     description: summary,
-  };
+  }
 
-  const twImageUrl = featuredImages[0].url;
+  const twImageUrl = featuredImages[0].url
 
   return (
     <>
@@ -187,5 +181,5 @@ export const BlogSEO = ({
         />
       </Head>
     </>
-  );
-};
+  )
+}

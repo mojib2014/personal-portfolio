@@ -1,3 +1,3 @@
 export interface TOCInterface {
-  tocHeading: string;
+  tocHeading: string
 }

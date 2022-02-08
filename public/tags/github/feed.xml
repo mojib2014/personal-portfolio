@@ -10,15 +10,15 @@
       <lastBuildDate>Fri, 11 Oct 2019 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://mojib-mohammad.vercel.app/tags/github/feed.xml" rel="self" type="application/rss+xml"/>
       
-    <item>
-        <guid>https://mojib-mohammad.vercel.app/bloggithub-markdown-guide</guid>
-        <title>Markdown Guide</title>
-        <link>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</link>
-        undefined
-        <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
-        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
-        <category>github</category><category>guide</category><category>markdown</category>
-    </item>
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</guid>
+    <title>Markdown Guide</title>
+    <link>https://mojib-mohammad.vercel.app/blog/github-markdown-guide</link>
+    <description>Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.</description>
+    <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>github</category><category>guide</category><category>markdown</category>
+  </item>
 
     </channel>
   </rss>
