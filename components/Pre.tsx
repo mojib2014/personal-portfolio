@@ -1,7 +1,7 @@
-import {useState, useRef} from 'react'
+import {useState, useRef, ReactNode} from 'react'
 
 type Props = {
-  children?: any
+  children?: ReactNode
 }
 
 const Pre = ({children}: Props) => {

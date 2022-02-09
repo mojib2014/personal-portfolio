@@ -7,13 +7,13 @@ import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/format-date'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import {FrontMatterTypes} from 'types/frontMatter'
-import {NextPrevType} from '@/types/next-previous'
+import {FrontMatterTypes} from 'types/index'
+import {NextPrevTypes} from '@/types/index'
 
 interface Props {
   frontMatter: FrontMatterTypes
-  next: NextPrevType
-  prev: NextPrevType
+  next: NextPrevTypes
+  prev: NextPrevTypes
   children: ReactNode
 }
 
@@ -35,6 +35,7 @@ const PostLayout: FC<Props> = ({frontMatter, next, prev, children}) => {
                 <div>
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    {/* @ts-expect-error: Let's ignore a compile error like this unreachable code */}
                     <time dateTime={date}>{formatDate(date)}</time>
                   </dd>
                 </div>

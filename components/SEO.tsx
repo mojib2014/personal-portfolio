@@ -1,8 +1,7 @@
-import React, {FC} from 'react'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
-import {LayoutType} from 'types/layout'
+import {LayoutTypes} from 'types/index'
 
 const CommonSEO = ({
   title,
@@ -10,7 +9,7 @@ const CommonSEO = ({
   ogType,
   ogImage,
   twImage,
-}: LayoutType) => {
+}: LayoutTypes) => {
   const router = useRouter()
   return (
     <>
@@ -43,7 +42,7 @@ const CommonSEO = ({
   )
 }
 
-export const PageSEO = ({title, description}: LayoutType) => {
+export const PageSEO = ({title, description}: LayoutTypes) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   return (
@@ -95,7 +94,7 @@ export const BlogSEO = ({
   lastmod,
   url,
   images = [],
-}: LayoutType) => {
+}: LayoutTypes) => {
   const router = useRouter()
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()

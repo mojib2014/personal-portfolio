@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Tag from '@/components/Tag'
 import formatDate from '@/lib/utils/format-date'
-import {FrontMatterTypes} from 'types/frontMatter'
+import {FrontMatterTypes} from 'types/index'
 
 interface Props {
   frontMatter: FrontMatterTypes
@@ -16,7 +16,11 @@ const Post = ({frontMatter}: Props) => {
           <dl>
             <dt className="sr-only">Published on</dt>
             <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-              <time dateTime={date}>{formatDate(date)}</time>
+              {date && (
+                <time dateTime={date.toDateString()}>
+                  {date && formatDate(date)}
+                </time>
+              )}
             </dd>
           </dl>
         </li>

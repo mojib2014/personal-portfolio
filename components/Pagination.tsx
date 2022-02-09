@@ -1,14 +1,14 @@
-import {PaginationInterface} from 'types/pagination'
+import {PaginationTypes} from 'types/index'
 import _ from 'lodash'
 
 const Pagination = ({
-  itemsCount,
-  pageSize,
+  itemsCount = 0,
+  pageSize = 5,
   currentPage,
   onPageChange,
   onNext,
   onPrevious,
-}: PaginationInterface) => {
+}: PaginationTypes) => {
   const pagesCount = Math.ceil(itemsCount / pageSize)
   if (pagesCount === 1) return null
   const pages = _.range(1, pagesCount + 1)
@@ -25,10 +25,10 @@ const Pagination = ({
               Previous
             </button>
           </li>
-          {pages.map(page => (
+          {pages?.map(page => (
             <li key={page}>
               <a
-                onClick={() => onPageChange(page)}
+                onClick={() => onPageChange?.(page)}
                 className={`${
                   page === currentPage
                     ? 'bg-primary-500'

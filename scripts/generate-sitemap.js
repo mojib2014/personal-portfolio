@@ -6,15 +6,14 @@ const siteMetadata = require('../data/siteMetadata')
 
 ;(async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
+  //@ts-expect-error: Let's ignore a compile error like this unreachable code
   const pages = await globby([
     'pages/*.js',
-    'pages/*.ts',
     'pages/*.tsx',
     'data/blog/**/*.mdx',
     'data/blog/**/*.md',
     'public/tags/**/*.xml',
     '!pages/_*.js',
-    '!pages/_*.ts',
     '!pages/_*.tsx',
     '!pages/api',
   ])
@@ -23,6 +22,7 @@ const siteMetadata = require('../data/siteMetadata')
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
+              //@ts-expect-error: Let's ignore a compile error like this unreachable code
               .map(page => {
                 // Exclude drafts from the sitemap
                 if (page.search('.md') >= 1 && fs.existsSync(page)) {
@@ -37,7 +37,6 @@ const siteMetadata = require('../data/siteMetadata')
                   .replace('data/blog', '/blog')
                   .replace('public/', '/')
                   .replace('.js', '')
-                  .replace('.ts', '')
                   .replace('.tsx', '')
                   .replace('.mdx', '')
                   .replace('.md', '')

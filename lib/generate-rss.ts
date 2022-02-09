@@ -1,8 +1,8 @@
-import { escape } from "@/lib/utils/htmlEscaper";
+import {escape} from '@/lib/utils/htmlEscaper'
 
-import siteMetadata from "@/data/siteMetadata";
-
-const generateRssItem = (post: object) => `
+import siteMetadata from '@/data/siteMetadata'
+//@ts-expect-error: Let's ignore a compile error like this unreachable code
+const generateRssItem = post => `
   <item>
     <guid>${siteMetadata.siteUrl}/blog/${post.slug}</guid>
     <title>${escape(post.title)}</title>
@@ -10,11 +10,14 @@ const generateRssItem = (post: object) => `
     ${post.summary && `<description>${escape(post.summary)}</description>`}
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
     <author>${siteMetadata.email} (${siteMetadata.author})</author>
-    ${post.tags && post.tags.map((t) => `<category>${t}</category>`).join("")}
+    ${
+      post.tags &&
+      post.tags.map((t: string) => `<category>${t}</category>`).join('')
+    }
   </item>
-`;
-
-const generateRss = (posts: array, page: string = "feed.xml") => `
+`
+//@ts-expect-error: Let's ignore a compile error like this unreachable code
+const generateRss = (posts, page: string = 'feed.xml') => `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>${escape(siteMetadata.title)}</title>
@@ -29,8 +32,8 @@ const generateRss = (posts: array, page: string = "feed.xml") => `
       <atom:link href="${
         siteMetadata.siteUrl
       }/${page}" rel="self" type="application/rss+xml"/>
-      ${posts.map(generateRssItem).join("")}
+      ${posts.map(generateRssItem).join('')}
     </channel>
   </rss>
-`;
-export default generateRss;
+`
+export default generateRss

@@ -5,6 +5,8 @@
  * @prop {string} url
  */
 
+import {TocTypes} from '../types'
+
 /**
  * Generates an inline table of contents
  * Exclude titles matching this string (new RegExp('^(' + string + ')$', 'i')).
@@ -22,7 +24,8 @@
  */
 
 interface Props {
-  [key: string]: any;
+  toc?: TocTypes[]
+  [key: string]: any
 }
 
 const TOCInline = ({
@@ -31,31 +34,33 @@ const TOCInline = ({
   fromHeading = 1,
   toHeading = 6,
   asDisclosure = false,
-  exclude = "",
+  exclude = '',
 }: Props) => {
   const re = Array.isArray(exclude)
-    ? new RegExp("^(" + exclude.join("|") + ")$", "i")
-    : new RegExp("^(" + exclude + ")$", "i");
+    ? new RegExp('^(' + exclude.join('|') + ')$', 'i')
+    : new RegExp('^(' + exclude + ')$', 'i')
 
-  const filteredToc = toc.filter(
-    (heading: { [key: string]: any }) =>
-      heading.depth >= fromHeading &&
-      heading.depth <= toHeading &&
-      !re.test(heading.value)
-  );
+  const filteredToc =
+    toc &&
+    toc.filter(
+      (heading: {[key: string]: any}) =>
+        heading.depth >= fromHeading &&
+        heading.depth <= toHeading &&
+        !re.test(heading.value),
+    )
 
   const tocList = (
     <ul>
-      {filteredToc.map((heading: { [key: string]: any }) => (
+      {filteredToc?.map((heading: {[key: string]: any}) => (
         <li
           key={heading.value}
-          className={`${heading.depth >= indentDepth && "ml-6"}`}
+          className={`${heading.depth >= indentDepth && 'ml-6'}`}
         >
           <a href={heading.url}>{heading.value}</a>
         </li>
       ))}
     </ul>
-  );
+  )
 
   return (
     <>
@@ -70,7 +75,7 @@ const TOCInline = ({
         tocList
       )}
     </>
-  );
-};
+  )
+}
 
-export default TOCInline;
+export default TOCInline

@@ -8,14 +8,14 @@ import {getAllFilesFrontMatter} from '@/lib/mdx'
 import {getAllTags} from '@/lib/tags'
 import kebabCase from '@/lib/utils/kebabCase'
 import {paginate} from '@/lib/utils/paginate'
-import {PostType} from 'types/posts'
+import {PostTypes} from 'types/index'
 import {ParsedUrlQuery} from 'querystring'
 
 const root = process.cwd()
 const PAGE_SIZE = 5
 
 type Props = {
-  posts: PostType[]
+  posts: PostTypes[]
   tag: string
 }
 
@@ -48,9 +48,13 @@ const Tag = ({posts, tag}: Props) => {
   if (query)
     filetered = posts.filter(
       ({frontMatter}) =>
+        frontMatter?.title &&
         frontMatter?.title +
-        frontMatter?.summary +
-        frontMatter.tags.join(' ').toLowerCase().includes(query.toLowerCase()),
+          frontMatter?.summary +
+          frontMatter?.tags
+            ?.join(' ')
+            .toLowerCase()
+            .includes(query.toLowerCase()),
     )
   const displayPosts = paginate(filetered, currentPage, PAGE_SIZE)
 

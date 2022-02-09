@@ -11,6 +11,7 @@ import {
   getFiles,
 } from '@/lib/mdx'
 import {ParsedUrlQuery} from 'querystring'
+import {FrontMatterTypes} from '@/types/index'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -34,9 +35,11 @@ export const getStaticProps: GetStaticProps = async context => {
   const {slug} = context.params as Params
   const allPosts = await getAllFilesFrontMatter('blog')
 
-  const post = await getFileBySlug('blog', slug.join('/'))
+  const post: FrontMatterTypes = await getFileBySlug('blog', slug.join('/'))
   const authorList = post.frontMatter.authors || ['default']
+  //@ts-expect-error: Let's ignore a compile error like this unreachable code
   const authorPromise = authorList.map(async author => {
+    //@ts-expect-error: Let's ignore a compile error like this unreachable code
     const authorResults = await getFileBySlug('authors', [author])
     return authorResults.frontMatter
   })

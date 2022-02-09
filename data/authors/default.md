@@ -9,4 +9,5 @@ linkedin: https://www.linkedin.com/mojib-mohammad
 github: https://github.com/mojib2014
 ---
 
-Tails Azimuth is a junior full-stack developer, currently learning python3 and data structures & algorithms.
+Mojib Mohammad is a junior full-stack developer, currently learning python3 and
+data structures&algorithms.

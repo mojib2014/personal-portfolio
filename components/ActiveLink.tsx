@@ -1,4 +1,4 @@
-import {FC, Children, cloneElement, MouseEventHandler} from 'react'
+import {Children, cloneElement} from 'react'
 import Link from 'next/link'
 import {withRouter, NextRouter} from 'next/router'
 
@@ -10,11 +10,12 @@ interface WithRouterProps {
 
 interface MyComponentProps extends WithRouterProps {}
 
-const ActiveLink: FC<MyComponentProps> = ({router, children, ...rest}) => {
+const ActiveLink = ({router, children, ...rest}: MyComponentProps) => {
   return (
-    <Link {...rest}>
+    <Link href={rest.href} {...rest}>
       {cloneElement(Children.only(children), {
         className:
+          // @ts-ignore: Unreachable code error
           router.pathname === /\// || router.asPath === rest.href
             ? `active ${children.props.className}`
             : children.props.className,

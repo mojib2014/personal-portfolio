@@ -21,7 +21,7 @@ const getLayouts = () => {
     .filter(file => file.toLowerCase().includes('post'))
   return layoutList
 }
-
+//@ts-expect-error: Let's ignore a compile error like this unreachable code
 const genFrontMatter = answers => {
   let d = new Date()
   const date = [
@@ -30,6 +30,7 @@ const genFrontMatter = answers => {
     ('0' + d.getDate()).slice(-2),
   ].join('-')
   const tagArray = answers.tags.split(',')
+  //@ts-expect-error: Let's ignore a compile error like this unreachable code
   tagArray.forEach((tag, index) => (tagArray[index] = tag.trim()))
   const tags = "'" + tagArray.join("','") + "'"
   const authorArray =
@@ -96,6 +97,7 @@ inquirer
       choices: getLayouts,
     },
   ])
+  //@ts-expect-error: Let's ignore a compile error like this unreachable code
   .then(answers => {
     // Remove special characters and replace space with -
     const fileName = answers.title
@@ -117,6 +119,7 @@ inquirer
       }
     })
   })
+  //@ts-expect-error: Let's ignore a compile error like this unreachable code
   .catch(error => {
     if (error.isTypeError) {
       console.log("Prompt couldn't be rendered in the current environment")

@@ -99,6 +99,7 @@ export async function getFileBySlug(type: string, slug: string) {
       return options
     },
     esbuildOptions: options => {
+      options.minify = true
       options.loader = {
         ...options.loader,
         '.ts': 'tsx',

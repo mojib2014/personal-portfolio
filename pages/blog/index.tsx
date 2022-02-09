@@ -5,12 +5,12 @@ import _ from 'lodash'
 import BlogLayout from '@/layouts/BlogLayout'
 import {getAllFilesFrontMatter} from '@/lib/mdx'
 import {paginate} from '@/lib/utils/paginate'
-import {FrontMatterInterface} from 'types/frontMatter'
+import {FrontMatterTypes} from 'types/index'
 
 const PAGE_SIZE = 4
 
 interface Props {
-  posts: FrontMatterInterface[]
+  posts: FrontMatterTypes[]
 }
 
 const Home: FC<NextPage & Props> = ({posts}) => {
@@ -42,9 +42,10 @@ const Home: FC<NextPage & Props> = ({posts}) => {
   if (query)
     filtered = posts?.filter(
       ({title, summary, tags}) =>
+        title &&
         title +
-        summary +
-        tags.join(' ').toLowerCase().includes(query.toLowerCase()),
+          summary +
+          tags?.join(' ').toLowerCase().includes(query.toLowerCase()),
     )
   const displayPosts = paginate(filtered, currentPage, PAGE_SIZE)
 

@@ -19,7 +19,7 @@ const DisqusComponent = dynamic(
   },
   {ssr: false},
 )
-
+// @ts-expect-error: Let's ignore a compile error like this unreachable code
 const Comments = frontMatter => {
   let term
   switch (

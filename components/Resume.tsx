@@ -1,13 +1,13 @@
-import Image from "next/image";
-import Link from "@/components/Link";
-import styles from "../styles/Resume.module.css";
-import SectionContainer from "./SectionContainer";
+import Image from 'next/image'
+import Link from '@/components/Link'
+import styles from '../styles/Resume.module.css'
+import SectionContainer from './SectionContainer'
 
 export default function Resume() {
   return (
     <section
       id="resume"
-      className="py-section-y dark:bg-[#111827] dark:text-gray-100"
+      className="pb-section-pb pt-section-pt dark:bg-[#111827] dark:text-gray-100"
     >
       <SectionContainer>
         <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl xl:text-5xl">
@@ -123,5 +123,5 @@ export default function Resume() {
         </div>
       </SectionContainer>
     </section>
-  );
+  )
 }

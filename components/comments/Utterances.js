@@ -2,7 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react'
 import {useTheme} from 'next-themes'
 
 import siteMetadata from '@/data/siteMetadata'
-
+// @ts-expect-error: Let's ignore a compile error like this unreachable code
 const Utterances = ({issueTerm}) => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
   const {theme, resolvedTheme} = useTheme()
@@ -17,6 +17,7 @@ const Utterances = ({issueTerm}) => {
     setEnabledLoadComments(false)
     const script = document.createElement('script')
     script.src = 'https://utteranc.es/client.js'
+    // @ts-expect-error: Let's ignore a compile error like this unreachable code
     script.setAttribute('repo', siteMetadata.comment.utterancesConfig.repo)
     script.setAttribute('issue-term', issueTerm)
     script.setAttribute('label', siteMetadata.comment.utterancesConfig.label)

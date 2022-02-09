@@ -5,10 +5,10 @@ import Search from '@/components/Search'
 import PageTitle from '@/components/PageTitle'
 import siteMetadata from '@/data/siteMetadata'
 import Pagination from '@/components/Pagination'
-import {FrontMatterInterface} from 'types/frontMatter'
+import {FrontMatterTypes} from 'types/index'
 
 interface Props {
-  posts: FrontMatterInterface[]
+  posts: FrontMatterTypes[]
   tag?: string
   query?: string
   onQueryChange?: any
@@ -41,7 +41,7 @@ const BlogLayout = ({
         title={`Blog | ${siteMetadata.author} | All Posts`}
         description={`${tag} tags - ${siteMetadata.author}`}
       />
-      <div className="divide-y py-section-y">
+      <div className="py-section-y divide-y">
         <SectionContainer>
           <div className="space-y-2 pt-6 pb-8 md:space-y-5">
             <PageTitle>{title ? title : 'All Posts'}</PageTitle>

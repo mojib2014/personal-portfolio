@@ -10,7 +10,8 @@
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
     "start:css": "tailwindcss -o tailwind.css --watch",
     "build:css": "NODE_ENV=production tailwindcss -o tailwind.css -m",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "type-check": "tsc"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.2",
@@ -18,7 +19,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@mailchimp/mailchimp_marketing": "^3.0.74",
-    "@types/node": "^17.0.15",
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
     "esbuild": "^0.14.18",
@@ -54,6 +54,7 @@
     "@svgr/webpack": "^6.2.1",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
+    "@types/node": "^17.0.16",
     "@types/react": "^17.0.39",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "autolinker": "^3.14.3",
@@ -70,6 +71,7 @@
     "inquirer": "^8.2.0",
     "lint-staged": "^12.3.3",
     "next-remote-watch": "^1.0.0",
+    "node-gyp": "^8.4.1",
     "postcss": "^8.4.5",
     "postcss-preset-env": "^7.2.3",
     "prettier": "^2.5.1",

@@ -1,22 +1,22 @@
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import {useState, useEffect} from 'react'
+import Image from 'next/image'
 
 interface Props {
-  images: string[];
-  alt?: string;
+  images: string[]
+  alt?: string
 }
 
-export default function SliderImage({ images, alt }: Props) {
-  const [index, setIndex] = useState(0);
+export default function SliderImage({images, alt}: Props) {
+  const [index, setIndex] = useState(0)
 
-  if (images?.length && index > images?.length - 1) setIndex(0);
+  if (images?.length && index > images?.length - 1) setIndex(0)
   useEffect(() => {
     const intervalID = setInterval(() => {
-      setIndex(index + 1);
-    }, 3000);
+      setIndex(index + 1)
+    }, 3000)
 
-    return () => clearInterval(intervalID);
-  }, [index]);
+    return () => clearInterval(intervalID)
+  }, [index])
 
   return (
     <Image
@@ -28,5 +28,5 @@ export default function SliderImage({ images, alt }: Props) {
       objectFit="fill"
       className="rounded-md transition-all duration-300 ease-in will-change-contents"
     />
-  );
+  )
 }

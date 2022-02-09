@@ -2,10 +2,10 @@ import React, {FC} from 'react'
 import Link from 'next/link'
 import Image from '@/components/Image'
 import {PageSEO} from '@/components/SEO'
-import {AuthorTypes} from '@/types/authors'
+import {FrontMatterTypes} from '@/types/index'
 
 interface Props {
-  frontMatter: AuthorTypes
+  frontMatter: FrontMatterTypes
   children?: any
 }
 
@@ -24,13 +24,15 @@ const AuthorLayout: FC<Props> = ({frontMatter, children}) => {
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center space-x-2 pt-8">
-            <Image
-              src={avatar}
-              alt="avatar"
-              width="192px"
-              height="192px"
-              className="h-48 w-48 rounded-full"
-            />
+            {avatar && (
+              <Image
+                src={avatar}
+                alt="avatar"
+                width="192px"
+                height="192px"
+                className="h-48 w-48 rounded-full"
+              />
+            )}
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
               {name}
             </h3>
