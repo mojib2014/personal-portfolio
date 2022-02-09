@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -52,7 +51,7 @@ const securityHeaders = [
     value: 'camera=(), microphone=(), geolocation=()',
   },
 ]
-//@ts-expect-error: Let's ignore a compile error like this unreachable code
+
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   'typescript.tsconfigPath': './tsconfig.json',
@@ -68,7 +67,7 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
-  //@ts-expect-error: Let's ignore a compile error like this unreachable code
+  // @ts-expect-error
   webpack: (config, {dev, isServer}) => {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4)$/i,

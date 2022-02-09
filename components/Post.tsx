@@ -16,11 +16,8 @@ const Post = ({frontMatter}: Props) => {
           <dl>
             <dt className="sr-only">Published on</dt>
             <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-              {date && (
-                <time dateTime={date.toDateString()}>
-                  {date && formatDate(date)}
-                </time>
-              )}
+              {/* @ts-ignore: Unreachable code error */}
+              {date && <time dateTime={date}>{date && formatDate(date)}</time>}
             </dd>
           </dl>
         </li>

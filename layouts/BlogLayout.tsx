@@ -41,7 +41,7 @@ const BlogLayout = ({
         title={`Blog | ${siteMetadata.author} | All Posts`}
         description={`${tag} tags - ${siteMetadata.author}`}
       />
-      <div className="py-section-y divide-y">
+      <div className="divide-y pt-section-pt pb-section-pb">
         <SectionContainer>
           <div className="space-y-2 pt-6 pb-8 md:space-y-5">
             <PageTitle>{title ? title : 'All Posts'}</PageTitle>

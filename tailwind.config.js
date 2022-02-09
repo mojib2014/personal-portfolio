@@ -1,4 +1,3 @@
-const path = require('path')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
@@ -31,7 +30,7 @@ module.exports = {
       },
       spacing: {
         '9/16': '56.25%',
-        'section-pt': '3.5rem',
+        'section-pt': '4.5rem',
         'section-pb': '5rem',
       },
       lineHeight: {
@@ -44,7 +43,7 @@ module.exports = {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
+        primary: colors.sky,
         gray: colors.neutral,
       },
       fontSize: {

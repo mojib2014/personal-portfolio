@@ -3,14 +3,11 @@
     "baseUrl": ".",
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "alwaysStrict": true,
     "allowJs": true,
-    "checkJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -24,15 +21,15 @@
       "@/lib/*": ["lib/*"],
       "@/types/*": ["types/*"],
       "@/styles/*": ["styles/*"]
-    }
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
     "global.d.ts",
     "**/*.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "**/*.js"
+    "**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }

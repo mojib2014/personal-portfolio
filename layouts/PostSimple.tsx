@@ -27,7 +27,7 @@ const PostLayout: FC<Props> = ({frontMatter, next, prev, children}) => {
         {...frontMatter}
       />
       <ScrollTopAndComment />
-      <article>
+      <article className="pb-section-pb pt-section-pt">
         <div>
           <header>
             <div className="space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
