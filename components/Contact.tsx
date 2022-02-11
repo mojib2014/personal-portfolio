@@ -1,7 +1,7 @@
 import {Formik, Form, Field, ErrorMessage} from 'formik'
 import * as Yup from 'yup'
-import styles from '../styles/Contact.module.css'
 import SectionContainer from './SectionContainer'
+import styles from '@/styles/Contact.module.css'
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -37,7 +37,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-t from-sky-100 to-sky-400 pb-section-pb pt-section-pt dark:from-[#111827] dark:to-[#111827] dark:text-gray-100"
+      className="pb-section-pb pt-section-pt dark:bg-[#111827] dark:text-gray-100"
     >
       <SectionContainer>
         <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl xl:text-5xl">
@@ -66,7 +66,7 @@ export default function Contact() {
                 <ErrorMessage
                   name="name"
                   component="div"
-                  className="text-danger-500 self-start"
+                  className="self-start text-red-500"
                 />
                 <Field
                   type="email"
@@ -77,7 +77,7 @@ export default function Contact() {
                 <ErrorMessage
                   name="email"
                   component="div"
-                  className="text-danger-500 self-start"
+                  className="self-start text-red-500"
                 />
                 <Field
                   type="subject"
@@ -88,7 +88,7 @@ export default function Contact() {
                 <ErrorMessage
                   name="subject"
                   component="div"
-                  className="text-danger-500 self-start"
+                  className="self-start text-red-500"
                 />
                 <Field
                   type="message"
@@ -102,7 +102,7 @@ export default function Contact() {
                 <ErrorMessage
                   name="message"
                   component="div"
-                  className="text-danger-500 self-start"
+                  className="self-start text-red-500"
                 />
                 <input
                   type="submit"

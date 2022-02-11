@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react'
+//@ts-expect-error
 import {useTheme} from 'next-themes'
 
 import siteMetadata from '@/data/siteMetadata'

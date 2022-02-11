@@ -15,7 +15,7 @@ const ActiveLink = ({router, children, ...rest}: MyComponentProps) => {
     <Link href={rest.href} {...rest}>
       {cloneElement(Children.only(children), {
         className:
-          // @ts-ignore: Unreachable code error
+          // @ts-expect-error
           router.pathname === /\// || router.asPath === rest.href
             ? `active ${children.props.className}`
             : children.props.className,

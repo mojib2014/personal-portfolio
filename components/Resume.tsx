@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from '@/components/Link'
-import styles from '../styles/Resume.module.css'
 import SectionContainer from './SectionContainer'
+import styles from '@/styles/Resume.module.css'
 
 export default function Resume() {
   return (
@@ -29,39 +29,59 @@ export default function Resume() {
             >
               <Link
                 href="https://twitter.com/mojib_mohammad1"
-                className="absolute top-0 left-0 flex h-16 w-16 items-center justify-center rounded-[50%] bg-[#FEF6E3] opacity-90 md:h-[120px] md:w-[120px]"
+                className="md:h-cover md:w-cover absolute top-0 left-0 flex h-16 w-16 items-center justify-center rounded-full bg-[#FEF6E3] opacity-90"
                 title="Twitter"
                 aria-label="Twitter"
               >
-                <i className="fab fa-twitter fa-2x xl:fa-4x text-dodgerblue"></i>
+                <Image
+                  src="/icons/twitter.svg"
+                  alt="Twitter"
+                  width={45}
+                  height={45}
+                />
               </Link>
               <Link
                 href="https://github.com/mojib2014"
-                className="absolute bottom-0 left-0 flex h-16 w-16 items-center justify-center rounded-[50%] bg-[#FEF6E3] opacity-90 md:h-[120px] md:w-[120px]"
+                className="md:h-cover md:w-cover absolute bottom-0 left-0 flex h-16 w-16 items-center justify-center rounded-full bg-[#FEF6E3] opacity-90"
                 title="Github"
                 aria-label="Github"
               >
-                <i className="fab fa-github fa-2x xl:fa-4x"></i>
+                <Image
+                  src="/icons/github.svg"
+                  alt="Github"
+                  width={45}
+                  height={45}
+                />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/mojib-mohammad"
-                className="absolute top-0 right-0 flex h-16 w-16 items-center justify-center rounded-[50%] bg-[#FEF6E3] opacity-90 md:h-[120px] md:w-[120px]"
+                className="md:h-cover md:w-cover absolute top-0 right-0 flex h-16 w-16 items-center justify-center rounded-full bg-[#FEF6E3] opacity-90"
                 title="Linkedin"
                 aria-label="Linkedin"
               >
-                <i className="fab fa-linkedin-in fa-2x xl:fa-4x text-dodgerblue"></i>
+                <Image
+                  src="/icons/linkedin.svg"
+                  alt="Linkedin"
+                  width={45}
+                  height={45}
+                />
               </Link>
               <Link
                 href="/#facebook"
-                className="absolute bottom-0 right-0 flex h-16 w-16 items-center justify-center rounded-[50%] bg-[#FEF6E3] opacity-90 md:h-[120px] md:w-[120px]"
+                className="md:h-cover md:w-cover absolute bottom-0 right-0 flex h-16 w-16 items-center justify-center rounded-full bg-[#FEF6E3] opacity-90"
                 title="Facebook"
                 aria-label="Facebook"
               >
-                <i className="fab fa-facebook fa-2x xl:fa-4x text-dodgerblue"></i>
+                <Image
+                  src="/icons/facebook.svg"
+                  alt="Facebook"
+                  width={45}
+                  height={45}
+                />
               </Link>
             </div>
           </div>
-          <div className="w-full self-start py-3 sm:self-center md:pl-[120px]">
+          <div className="md:pl-full sm:self-cecover w-full self-start py-3">
             <h4 className={`${styles.subTitle} text-pink mb-13`}>
               Educational qualification
             </h4>

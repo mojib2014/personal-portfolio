@@ -1,9 +1,9 @@
 :root {
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+    'Liberation Mono', 'Courier New', monospace;
   --facebook-color: #4867ab;
   --twitter-color: #5da9dd;
   --linkedin-color: #2466c2;
@@ -82,7 +82,7 @@ a {
   color: rgba(255, 255, 255, 0.5);
 }
 
-input[type="search" i]::-webkit-search-cancel-button {
+input[type='search' i]::-webkit-search-cancel-button {
   background-color: red;
   font-size: 3rem;
   color: red;

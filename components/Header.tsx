@@ -1,11 +1,11 @@
 import React, {useState, useEffect, MouseEventHandler} from 'react'
-import Link from './ActiveLink'
+import ActiveLink from './ActiveLink'
 import headerNavLinks from '@/data/headerNavLinks'
 import MobileOverlay from './MobileOverlay'
 import SectionContainer from './SectionContainer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
-import '@fortawesome/fontawesome-free/css/all.css'
+import smoothscroll from 'smoothscroll-polyfill'
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -16,6 +16,7 @@ const Header = () => {
     else setScrolled(false)
   }
   useEffect(() => {
+    smoothscroll.polyfill()
     window.addEventListener('scroll', handleHeaderScroll)
 
     return () => window.removeEventListener('scroll', handleHeaderScroll)
@@ -42,7 +43,7 @@ const Header = () => {
       >
         <SectionContainer>
           <div className="header flex items-center">
-            <Link href="/">
+            <ActiveLink href="/">
               <a
                 className={`mr-auto leading-[60px] ${
                   !scrolled ? 'text-gray-700' : 'text-gray-800'
@@ -50,12 +51,12 @@ const Header = () => {
               >
                 Mojib
               </a>
-            </Link>
+            </ActiveLink>
             <nav className="hidden md:block lg:ml-auto">
               <ul className="flex items-center justify-end">
                 {headerNavLinks.map(link => (
                   <li className="relative pl-6 xl:pl-10" key={link.title}>
-                    <Link href={link.href} as={link.href}>
+                    <ActiveLink href={link.href} as={link.href}>
                       <a
                         onClick={handleAchorClick}
                         className={`${
@@ -64,7 +65,7 @@ const Header = () => {
                       >
                         {link.title}
                       </a>
-                    </Link>
+                    </ActiveLink>
                   </li>
                 ))}
               </ul>
@@ -75,18 +76,10 @@ const Header = () => {
               className="line-container block cursor-pointer pl-6 md:hidden xl:pl-10"
               onClick={openMobileMenu}
             >
-              <div
-                className={`line my-1 mx-0 h-[2px] w-[30px] bg-gray-700 transition-all duration-300 ease-in-out dark:bg-gray-100`}
-              ></div>
-              <div
-                className={`line my-1 mx-0 h-[2px] w-[36px] bg-gray-700 transition-all duration-300 ease-in-out dark:bg-gray-100`}
-              ></div>
-              <div
-                className={`line my-1 mx-0 h-[2px] w-[28px] bg-gray-700 transition-all duration-300 ease-in-out dark:bg-gray-100`}
-              ></div>
-              <div
-                className={`line my-1 mx-0 h-[2px] w-[32px] bg-gray-700 transition-all duration-300 ease-in-out dark:bg-gray-100`}
-              ></div>
+              <div className="line my-1 mx-0 h-[2px] w-[30px] bg-gray-700 transition-all duration-300 ease-in-out dark:bg-gray-100"></div>
+              <div className="line my-1 mx-0 h-[2px] w-[36px] bg-gray-700 transition-all duration-300 ease-in-out dark:bg-gray-100"></div>
+              <div className="line my-1 mx-0 h-[2px] w-[28px] bg-gray-700 transition-all duration-300 ease-in-out dark:bg-gray-100"></div>
+              <div className="line my-1 mx-0 h-[2px] w-[32px] bg-gray-700 transition-all duration-300 ease-in-out dark:bg-gray-100"></div>
             </div>
           </div>
         </SectionContainer>

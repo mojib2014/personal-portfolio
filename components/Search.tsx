@@ -1,9 +1,11 @@
+import {ChangeEventHandler} from 'react'
+
 interface Props {
-  query?: string;
-  onChange?: () => void;
+  query?: string
+  onChange?: ChangeEventHandler
 }
 
-const Search = ({ query, onChange }: Props) => {
+const Search = ({query, onChange}: Props) => {
   return (
     <div className="w-full p-2">
       <h3 className="mb-4 text-[1.6rem] font-bold">Search for posts</h3>
@@ -19,7 +21,7 @@ const Search = ({ query, onChange }: Props) => {
         <i className="fas fa-search fa-md absolute right-3 top-3 text-gray-800"></i>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search

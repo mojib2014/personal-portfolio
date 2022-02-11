@@ -2,9 +2,6 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  experimental: {
-    optimizeUniversalDefaults: true,
-  },
   mode: 'layers',
   enabled: process.env.NODE_ENV === 'production',
   content: [
@@ -54,6 +51,15 @@ module.exports = {
         '5xl': '3.125rem', // 50px
         '6xl': '3.75rem', // 60px
         '7xl': '4.375rem', // 70px
+      },
+      transitionProperty: {
+        all: 'all',
+      },
+      transitionTimingFunction: {
+        'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      transitionDuration: {
+        300: '300ms',
       },
       //@ts-expect-error: Let's ignore a compile error like this unreachable code
       typography: theme => ({

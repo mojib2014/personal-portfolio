@@ -8,7 +8,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import {AuthorTypes, FrontMatterTypes, NextPrevTypes} from '../types'
+import {AuthorTypes, FrontMatterTypes, NextPrevTypes} from '@/types/index'
 
 const editUrl = (fileName: string) =>
   `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
@@ -107,7 +107,7 @@ export default function PostLayout({
                           {author.twitter && (
                             <Link
                               href={author.twitter}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                              className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
                             >
                               {author.twitter.replace(
                                 'https://twitter.com/',
@@ -148,7 +148,7 @@ export default function PostLayout({
                     </h2>
                     <div className="flex flex-wrap">
                       {tags.map(tag => (
-                        <Tag key={tag} text={tag} />
+                        <Tag key={tag} tag={tag} />
                       ))}
                     </div>
                   </div>
@@ -160,7 +160,7 @@ export default function PostLayout({
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           Previous Article
                         </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        <div className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400">
                           <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
                         </div>
                       </div>
@@ -170,7 +170,7 @@ export default function PostLayout({
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           Next Article
                         </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        <div className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400">
                           <Link href={`/blog/${next.slug}`}>{next.title}</Link>
                         </div>
                       </div>
@@ -181,7 +181,7 @@ export default function PostLayout({
               <div className="pt-4 xl:pt-8">
                 <Link
                   href="/blog"
-                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
                 >
                   &larr; Back to the blog
                 </Link>

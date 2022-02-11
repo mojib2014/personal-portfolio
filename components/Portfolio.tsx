@@ -31,7 +31,7 @@ export default function Portfolio() {
               key={fitler}
               data-filter={fitler}
               onClick={handleFilter}
-              className="rounded-md bg-cyan-500 py-1 px-3 text-lg text-gray-100 md:py-2 md:px-6"
+              className="rounded-md bg-blue-400 py-1 px-3 text-lg text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-600 md:py-2 md:px-6"
             >
               {fitler}
             </button>
@@ -46,7 +46,7 @@ export default function Portfolio() {
               >
                 <SliderImage images={project.images} alt={project.title} />
                 <div
-                  className={`absolute flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-900 text-gray-100 ${styles.cardBody}`}
+                  className={`absolute flex h-full w-full flex-col items-center justify-center rounded-md bg-gray-900 text-gray-100 ${styles.cardBody}`}
                 >
                   <div>
                     <h2 className="py-2 text-center text-5xl font-bold md:text-4xl">

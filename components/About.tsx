@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="pt-section-pt pb-section-pb dark:bg-[#111827] dark:text-gray-100"
+      className="pt-section-pt pb-section-pb dark:text-gray-100"
     >
       <SectionContainer>
         <div className="text-left">
@@ -18,7 +18,7 @@ const About = () => {
             interactive web apps, With focus on back-end. In my free times I
             play volleball and enjoy family time with my lovely dauther, watch
             movies and learn new stuff. You can know more about me by reading my{' '}
-            <Link href="/blog" className="text-anchor p-3 hover:underline">
+            <Link href="/blog" className="p-3 text-blue-700 hover:underline">
               articles.
             </Link>
           </p>

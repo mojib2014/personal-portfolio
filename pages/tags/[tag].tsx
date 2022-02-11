@@ -1,77 +1,23 @@
 import fs from 'fs'
 import path from 'path'
-import React, {ChangeEvent, useState} from 'react'
 import {GetStaticPaths, GetStaticProps} from 'next'
 import BlogLayout from '@/layouts/BlogLayout'
 import generateRss from '@/lib/generate-rss'
 import {getAllFilesFrontMatter} from '@/lib/mdx'
 import {getAllTags} from '@/lib/tags'
 import kebabCase from '@/lib/utils/kebabCase'
-import {paginate} from '@/lib/utils/paginate'
-import {PostTypes} from 'types/index'
+import {FrontMatterTypes} from '@/types/index'
 import {ParsedUrlQuery} from 'querystring'
 
 const root = process.cwd()
-const PAGE_SIZE = 5
 
 type Props = {
-  posts: PostTypes[]
+  items: FrontMatterTypes[]
   tag: string
 }
 
-const Tag = ({posts, tag}: Props) => {
-  const [query, setQuery] = useState('')
-  const [currentPage, setCurrentPage] = useState(1)
-
-  let filetered = posts
-
-  if (currentPage > Math.ceil(filetered.length / PAGE_SIZE)) setCurrentPage(1)
-
-  if (currentPage < 1) setCurrentPage(1)
-
-  const handleChange = (event: ChangeEvent) => {
-    setQuery((event.target as HTMLInputElement).value)
-  }
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page)
-  }
-
-  const handleNext = () => {
-    setCurrentPage(currentPage + 1)
-  }
-
-  const handlePrevious = () => {
-    setCurrentPage(currentPage - 1)
-  }
-
-  if (query)
-    filetered = posts.filter(
-      ({frontMatter}) =>
-        frontMatter?.title &&
-        frontMatter?.title +
-          frontMatter?.summary +
-          frontMatter?.tags
-            ?.join(' ')
-            .toLowerCase()
-            .includes(query.toLowerCase()),
-    )
-  const displayPosts = paginate(filetered, currentPage, PAGE_SIZE)
-
-  return (
-    <BlogLayout
-      posts={displayPosts}
-      tag={tag}
-      itemsCount={filetered.length}
-      pageSize={PAGE_SIZE}
-      currentPage={currentPage}
-      onPageChange={handlePageChange}
-      onNext={handleNext}
-      onPrevious={handlePrevious}
-      query={query}
-      onQueryChange={handleChange}
-    />
-  )
+const Tag = ({items, tag}: Props) => {
+  return <BlogLayout items={items} tag={tag} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -93,6 +39,7 @@ interface Params extends ParsedUrlQuery {
 
 export const getStaticProps: GetStaticProps = async context => {
   const {tag} = context.params as Params
+
   const allPosts = await getAllFilesFrontMatter('blog')
   const filteredPosts = allPosts.filter(
     post =>
@@ -108,7 +55,7 @@ export const getStaticProps: GetStaticProps = async context => {
     fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
   }
 
-  return {props: {posts: filteredPosts, tag}}
+  return {props: {items: filteredPosts, tag}}
 }
 
 export default Tag

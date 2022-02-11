@@ -9,6 +9,7 @@ interface Props {
 
 const Post = ({frontMatter}: Props) => {
   const {title, slug, summary, date, tags} = frontMatter
+
   return (
     <div className="border-gray mb-4 w-full border p-2">
       <ul className="meta mb-3 flex items-center justify-between">
@@ -30,7 +31,7 @@ const Post = ({frontMatter}: Props) => {
           </div>
         </a>
       </Link>
-      {tags && tags.map(tag => <Tag key={tag} tag={tag} />)}
+      {tags && tags.map((tag: string) => <Tag key={tag} tag={tag} />)}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "playball";
+  font-family: 'playball';
   font-style: normal;
   font-weight: 400;
   src: url(../public/fonts/playball.woff2);
@@ -23,7 +23,7 @@
   position: relative;
   display: inline-block;
   font-size: 1.4rem;
-  font-family: "Playball", sans-serif;
+  font-family: 'Playball', sans-serif;
 }
 
 .subTitle::after {
@@ -42,7 +42,7 @@
 
 .timeline > li:before,
 .timeline > li:after {
-  content: " ";
+  content: ' ';
   display: table;
 }
 .timeline > li:after {
@@ -52,7 +52,7 @@
   top: 0;
   bottom: 165px;
   position: absolute;
-  content: " ";
+  content: ' ';
   border: 0.5px dashed #ff2e59;
   left: 0;
   margin-left: 7px;
@@ -117,11 +117,6 @@
   font-size: inherit;
   text-decoration: none;
   color: #3b4250;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 .downloadBtn a:hover {
   border-radius: 36px;

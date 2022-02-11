@@ -1,43 +1,43 @@
-import { useRef, useState, MouseEvent, FormEventHandler } from "react";
+import {useRef, useState, MouseEvent, FormEventHandler} from 'react'
 
-import siteMetadata from "@/data/siteMetadata";
+import siteMetadata from '@/data/siteMetadata'
 
 interface Props {
-  title?: string;
+  title?: string
 }
 
-const NewsLetterForm = ({ title = "Subscribe to the newsletter" }: Props) => {
-  const inputEl = useRef<HTMLInputElement>(null);
-  const [error, setError] = useState(false);
-  const [message, setMessage] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
+const NewsLetterForm = ({title = 'Subscribe to the newsletter'}: Props) => {
+  const inputEl = useRef<HTMLInputElement>(null)
+  const [error, setError] = useState(false)
+  const [message, setMessage] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
 
   const subscribe: FormEventHandler = async (e: MouseEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
     const res = await fetch(`/api/${siteMetadata.newsletter.provider}`, {
       body: JSON.stringify({
         email: inputEl?.current?.value,
       }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      method: "POST",
-    });
+      method: 'POST',
+    })
 
-    const { error } = await res.json();
+    const {error} = await res.json()
     if (error) {
-      setError(true);
+      setError(true)
       setMessage(
-        "Your e-mail address is invalid or you are already subscribed!"
-      );
-      return;
+        'Your e-mail address is invalid or you are already subscribed!',
+      )
+      return
     }
-    if (inputEl.current) inputEl.current.value = "";
-    setError(false);
-    setSubscribed(true);
-    setMessage("Successfully! 🎉 You are now subscribed.");
-  };
+    if (inputEl.current) inputEl.current.value = ''
+    setError(false)
+    setSubscribed(true)
+    setMessage('Successfully! 🎉 You are now subscribed.')
+  }
 
   return (
     <div>
@@ -55,7 +55,7 @@ const NewsLetterForm = ({ title = "Subscribe to the newsletter" }: Props) => {
             id="email-input"
             name="email"
             placeholder={
-              subscribed ? "You're subscribed !  🎉" : "Enter your email"
+              subscribed ? "You're subscribed !  🎉" : 'Enter your email'
             }
             ref={inputEl}
             required
@@ -67,13 +67,13 @@ const NewsLetterForm = ({ title = "Subscribe to the newsletter" }: Props) => {
           <button
             className={`w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0 ${
               subscribed
-                ? "cursor-default"
-                : "hover:bg-primary-700 dark:hover:bg-primary-400"
+                ? 'cursor-default'
+                : 'hover:bg-primary-700 dark:hover:bg-primary-400'
             } focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black`}
             type="submit"
             disabled={subscribed}
           >
-            {subscribed ? "Thank you!" : "Sign up"}
+            {subscribed ? 'Thank you!' : 'Sign up'}
           </button>
         </div>
       </form>
@@ -83,15 +83,15 @@ const NewsLetterForm = ({ title = "Subscribe to the newsletter" }: Props) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default NewsLetterForm;
+export default NewsLetterForm
 
-export const BlogNewsLetterForm = ({ title }: Props) => (
+export const BlogNewsLetterForm = ({title}: Props) => (
   <div className="flex items-center justify-center">
     <div className="bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8">
       <NewsLetterForm title={title} />
     </div>
   </div>
-);
+)

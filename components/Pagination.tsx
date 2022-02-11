@@ -19,7 +19,7 @@ const Pagination = ({
           <li>
             <button
               disabled={currentPage === 1}
-              className="cursor-pointer rounded-md bg-sky-400 px-3 py-2 font-semibold text-gray-50 disabled:cursor-not-allowed disabled:bg-sky-200"
+              className="cursor-pointer rounded-md bg-blue-600 px-3 py-2 font-semibold text-gray-50 disabled:cursor-not-allowed disabled:bg-gray-400"
               onClick={onPrevious}
             >
               Previous
@@ -31,9 +31,9 @@ const Pagination = ({
                 onClick={() => onPageChange?.(page)}
                 className={`${
                   page === currentPage
-                    ? 'bg-primary-500'
-                    : 'overflow-x-hidden bg-primary-200'
-                } cursor-pointer overflow-x-hidden rounded-md px-2 py-1 font-semibold text-gray-50 visited:bg-primary-100`}
+                    ? 'bg-blue-500'
+                    : 'overflow-x-hidden bg-gray-400'
+                } cursor-pointer overflow-x-hidden rounded-md px-2 py-1 font-semibold text-gray-50 visited:bg-blue-100`}
               >
                 {page}
               </a>
@@ -42,7 +42,7 @@ const Pagination = ({
           <li>
             <button
               disabled={currentPage === pagesCount}
-              className="cursor-pointer rounded-md bg-sky-400 px-3 py-2 font-semibold text-gray-50 disabled:cursor-not-allowed disabled:bg-sky-200"
+              className="cursor-pointer rounded-md bg-blue-600 px-3 py-2 font-semibold text-gray-50 disabled:cursor-not-allowed disabled:bg-gray-400"
               onClick={onNext}
             >
               Next

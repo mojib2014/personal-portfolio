@@ -26,7 +26,7 @@ export default function SliderImage({images, alt}: Props) {
       height="100%"
       layout="responsive"
       objectFit="fill"
-      className="rounded-md transition-all duration-300 ease-in will-change-contents"
+      className="rounded-md transition-all duration-300 ease-in-out will-change-contents"
     />
   )
 }
