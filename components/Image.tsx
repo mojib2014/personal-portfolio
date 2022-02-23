@@ -1,10 +1,7 @@
 import NextImage, {ImageProps} from 'next/image'
+import {FC} from 'react'
 
-interface Props {
-  [key: string]: any
-}
-
-const Image = (props: ImageProps & Props) => {
+const Image: FC<ImageProps> = props => {
   return <NextImage {...props} />
 }
 

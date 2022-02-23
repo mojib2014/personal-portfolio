@@ -1,8 +1,8 @@
-import {escape} from '@/lib/utils/htmlEscaper'
+import {escape} from '@lib/utils/htmlEscaper'
 
-import siteMetadata from '@/data/siteMetadata'
-//@ts-expect-error: Let's ignore a compile error like this unreachable code
-const generateRssItem = post => `
+import siteMetadata from '@data/siteMetadata'
+import {FrontMatterTypes} from '../types/index'
+const generateRssItem = (post: FrontMatterTypes) => `
   <item>
     <guid>${siteMetadata.siteUrl}/blog/${post.slug}</guid>
     <title>${escape(post.title)}</title>
@@ -16,8 +16,8 @@ const generateRssItem = post => `
     }
   </item>
 `
-//@ts-expect-error: Let's ignore a compile error like this unreachable code
-const generateRss = (posts, page: string = 'feed.xml') => `
+
+const generateRss = (posts: FrontMatterTypes, page: string = 'feed.xml') => `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>${escape(siteMetadata.title)}</title>

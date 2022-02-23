@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {FC, useState, useEffect} from 'react'
 import Image from 'next/image'
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   alt?: string
 }
 
-export default function SliderImage({images, alt}: Props) {
+const SliderImage: FC<Props> = ({images, alt}) => {
   const [index, setIndex] = useState(0)
 
   if (images?.length && index > images?.length - 1) setIndex(0)
@@ -30,3 +30,5 @@ export default function SliderImage({images, alt}: Props) {
     />
   )
 }
+
+export default SliderImage

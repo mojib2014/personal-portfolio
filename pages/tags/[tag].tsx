@@ -1,12 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import {GetStaticPaths, GetStaticProps} from 'next'
-import BlogLayout from '@/layouts/BlogLayout'
-import generateRss from '@/lib/generate-rss'
-import {getAllFilesFrontMatter} from '@/lib/mdx'
-import {getAllTags} from '@/lib/tags'
-import kebabCase from '@/lib/utils/kebabCase'
-import {FrontMatterTypes} from '@/types/index'
+import BlogLayout from '@layouts/BlogLayout'
+import generateRss from '@lib/generate-rss'
+import {getAllFilesFrontMatter} from '@lib/mdx'
+import {getAllTags} from '@lib/tags'
+import kebabCase from '@lib/utils/kebabCase'
+import {FrontMatterTypes} from '../../types/index'
 import {ParsedUrlQuery} from 'querystring'
 
 const root = process.cwd()

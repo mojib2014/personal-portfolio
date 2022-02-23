@@ -1,4 +1,4 @@
-export const skills = [
+const skills = [
   {skill: '/icons/javascript.gif', title: 'Javascript'},
   {skill: '/icons/python.svg', title: 'Python'},
   {skill: '/icons/django.svg', title: 'Django'},
@@ -17,3 +17,5 @@ export const skills = [
   {skill: '/icons/typescript.svg', title: 'Typescript'},
   {skill: '/icons/sql.svg', title: 'SQL'},
 ]
+
+export default skills

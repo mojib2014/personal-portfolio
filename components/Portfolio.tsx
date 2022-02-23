@@ -1,5 +1,5 @@
-import {MouseEvent, MouseEventHandler, useState} from 'react'
-import Link from '@/components/Link'
+import React, {FC, useState} from 'react'
+import Link from './Link'
 import SliderImage from './SliderImage'
 import PROJECTS from '../data/projects'
 import styles from '../styles/Portfolio.module.css'
@@ -7,10 +7,10 @@ import SectionContainer from './SectionContainer'
 
 const filters = ['JavaScript', 'React', 'Django/Docker', 'Python', 'All']
 
-export default function Portfolio() {
+const Portfolio: FC = () => {
   const [projects, setProjects] = useState(PROJECTS)
 
-  const handleFilter: MouseEventHandler = (event: MouseEvent) => {
+  const handleFilter = (event: React.SyntheticEvent<EventTarget>) => {
     const filter = (event.target as HTMLButtonElement).dataset.filter
     if (filter === 'All') setProjects(PROJECTS)
     else setProjects(PROJECTS.filter(p => p.technology === filter))
@@ -95,3 +95,5 @@ export default function Portfolio() {
     </section>
   )
 }
+
+export default Portfolio

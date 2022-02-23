@@ -1,13 +1,12 @@
-import React, {FC} from 'react'
-import {GetStaticProps, NextPage} from 'next'
-import Link from '@/components/Link'
-import {PageSEO} from '@/components/SEO'
-import SectionContainer from '@/components/SectionContainer'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import kebabCase from '@/lib/utils/kebabCase'
-import {getAllTags} from '@/lib/tags'
-import {TagTypes} from '@/types/index'
+import {GetStaticProps} from 'next'
+import Link from '@components/Link'
+import {PageSEO} from '@components/SEO'
+import SectionContainer from '@components/SectionContainer'
+import Tag from '@components/Tag'
+import siteMetadata from '@data/siteMetadata'
+import kebabCase from '@lib/utils/kebabCase'
+import {getAllTags} from '@lib/tags'
+import {TagTypes} from '../../types/index'
 
 export const getStaticProps: GetStaticProps = async () => {
   const tags = await getAllTags('blog')
@@ -18,7 +17,7 @@ type Props = {
   tags: TagTypes
 }
 
-const Tags: FC<NextPage & Props> = ({tags}) => {
+const Tags = ({tags}: Props) => {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
   return (
     <>

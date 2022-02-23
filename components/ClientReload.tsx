@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {FC, useEffect} from 'react'
 import Router from 'next/router'
 
 /**
@@ -11,7 +11,7 @@ export const ClientReload = () => {
   useEffect(() => {
     import('socket.io-client').then(module => {
       const socket = module.io()
-      socket.on('reload', data => {
+      socket.on('reload', () => {
         Router.replace(Router.asPath, undefined, {
           scroll: false,
         })

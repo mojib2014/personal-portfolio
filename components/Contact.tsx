@@ -1,7 +1,8 @@
+import {FC} from 'react'
 import {Formik, Form, Field, ErrorMessage} from 'formik'
 import * as Yup from 'yup'
 import SectionContainer from './SectionContainer'
-import styles from '@/styles/Contact.module.css'
+import styles from '../styles/Contact.module.css'
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -30,7 +31,7 @@ interface ContactInterface {
   message?: string
 }
 
-export default function Contact() {
+const Contact: FC = () => {
   const handleSubmit = (values: ContactInterface) => {
     console.log(values)
   }
@@ -118,3 +119,5 @@ export default function Contact() {
     </section>
   )
 }
+
+export default Contact

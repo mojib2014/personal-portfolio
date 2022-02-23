@@ -1,13 +1,14 @@
-import Banner from '@/components/Banner'
-import About from '@/components/About'
-import Skills from '@/components/Skills'
-import Portfolio from '@/components/Portfolio'
-import Resume from '@/components/Resume'
-import Contact from '@/components/Contact'
-import {PageSEO} from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata'
+import Banner from '@components/Banner'
+import About from '@components/About'
+import Skills from '@components/Skills'
+import Portfolio from '@components/Portfolio'
+import Resume from '@components/Resume'
+import Contact from '@components/Contact'
+import {PageSEO} from '@components/SEO'
+import siteMetadata from '@data/siteMetadata'
+import {FC} from 'react'
 
-export default function PortfolioLayout() {
+const PortfolioLayout: FC = () => {
   return (
     <>
       <PageSEO
@@ -23,3 +24,4 @@ export default function PortfolioLayout() {
     </>
   )
 }
+export default PortfolioLayout

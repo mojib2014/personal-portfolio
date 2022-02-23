@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import kebabCase from '@/lib/utils/kebabCase'
+import kebabCase from '@lib/utils/kebabCase'
+import {FC} from 'react'
 
 interface Props {
   tag: string
-  [key: string]: any
 }
 
-const Tag = ({tag, ...rest}: Props) => {
+const Tag: FC<Props> = ({tag, ...rest}) => {
   return (
     <Link href={`/tags/${kebabCase(tag)}`}>
       <a

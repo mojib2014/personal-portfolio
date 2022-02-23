@@ -1,12 +1,12 @@
-import React, {FC} from 'react'
+import {FC} from 'react'
 import Link from 'next/link'
-import Image from '@/components/Image'
-import {PageSEO} from '@/components/SEO'
-import {FrontMatterTypes} from '@/types/index'
+import Image from '@components/Image'
+import {PageSEO} from '@components/SEO'
+import {FrontMatterTypes} from '../types/index'
 
 interface Props {
   frontMatter: FrontMatterTypes
-  children?: any
+  children?: React.ReactNode
 }
 
 const AuthorLayout: FC<Props> = ({frontMatter, children}) => {

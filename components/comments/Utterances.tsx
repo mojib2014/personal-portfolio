@@ -1,10 +1,9 @@
 import React, {useState, useEffect, useCallback} from 'react'
-//@ts-expect-error
 import {useTheme} from 'next-themes'
 
-import siteMetadata from '@/data/siteMetadata'
-// @ts-expect-error: Let's ignore a compile error like this unreachable code
-const Utterances = ({issueTerm}) => {
+import siteMetadata from '@data/siteMetadata'
+
+const Utterances = ({issueTerm}: any) => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
   const {theme, resolvedTheme} = useTheme()
   const commentsTheme =

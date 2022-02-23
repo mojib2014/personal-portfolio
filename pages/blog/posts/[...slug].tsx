@@ -1,17 +1,21 @@
-import {FC} from 'react'
-import {GetStaticProps, GetStaticPaths, NextPage} from 'next'
+import {GetStaticProps, GetStaticPaths} from 'next'
 import fs from 'fs'
-import PageTitle from '@/components/PageTitle'
-import generateRss from '@/lib/generate-rss'
-import {MDXLayoutRenderer} from '@/components/MDXComponents'
+import PageTitle from '@components/PageTitle'
+import generateRss from '@lib/generate-rss'
+import {MDXLayoutRenderer} from '@components/MDXComponents'
 import {
   formatSlug,
   getAllFilesFrontMatter,
   getFileBySlug,
   getFiles,
-} from '@/lib/mdx'
+} from '@lib/mdx'
 import {ParsedUrlQuery} from 'querystring'
-import {FrontMatterTypes} from '@/types/index'
+import {
+  AuthorTypes,
+  FrontMatterTypes,
+  NextPrevTypes,
+  PostTypes,
+} from '../../../types/index'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -37,9 +41,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const post: FrontMatterTypes = await getFileBySlug('blog', slug.join('/'))
   const authorList = post.frontMatter.authors || ['default']
-  //@ts-expect-error: Let's ignore a compile error like this unreachable code
   const authorPromise = authorList.map(async author => {
-    //@ts-expect-error: Let's ignore a compile error like this unreachable code
     const authorResults = await getFileBySlug('authors', [author])
     return authorResults.frontMatter
   })
@@ -55,17 +57,20 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 interface Props {
-  [key: string]: any
+  post: PostTypes
+  authorDetails: AuthorTypes
+  prev: NextPrevTypes
+  next: NextPrevTypes
 }
 
-const Blog: FC<NextPage & Props> = ({post, authorDetails, prev, next}) => {
+const Blog = ({post, authorDetails, prev, next}: Props) => {
   const {mdxSource, toc, frontMatter} = post
 
   return (
     <>
-      {frontMatter.draft !== true ? (
+      {frontMatter?.draft !== true ? (
         <MDXLayoutRenderer
-          layout={frontMatter.layout || DEFAULT_LAYOUT}
+          layout={frontMatter?.layout || DEFAULT_LAYOUT}
           toc={toc}
           mdxSource={mdxSource}
           frontMatter={frontMatter}

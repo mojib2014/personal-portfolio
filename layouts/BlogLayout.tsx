@@ -1,13 +1,13 @@
-import {useState, ChangeEventHandler, ChangeEvent} from 'react'
-import {TagSEO} from '@/components/SEO'
-import SectionContainer from '@/components/SectionContainer'
-import Post from '@/components/Post'
-import Search from '@/components/Search'
-import PageTitle from '@/components/PageTitle'
-import siteMetadata from '@/data/siteMetadata'
-import Pagination from '@/components/Pagination'
-import {FrontMatterTypes} from '@/types/index'
-import {paginate} from '@/lib/utils/paginate'
+import {FC, useState} from 'react'
+import {TagSEO} from '@components/SEO'
+import SectionContainer from '@components/SectionContainer'
+import Post from '@components/Post'
+import Search from '@components/Search'
+import PageTitle from '@components/PageTitle'
+import siteMetadata from '@data/siteMetadata'
+import Pagination from '@components/Pagination'
+import {FrontMatterTypes} from '../types/index'
+import {paginate} from '@lib/utils/paginate'
 
 interface Props {
   items: FrontMatterTypes[]
@@ -16,7 +16,7 @@ interface Props {
 
 const PAGE_SIZE = 4
 
-const BlogLayout = ({items, tag}: Props) => {
+const BlogLayout: FC<Props> = ({items, tag}) => {
   const [query, setQuery] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -26,9 +26,7 @@ const BlogLayout = ({items, tag}: Props) => {
 
   if (currentPage < 1) setCurrentPage(1)
 
-  const handleChange: ChangeEventHandler = (
-    event: ChangeEvent<HTMLInputElement>,
-  ) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
   }
 

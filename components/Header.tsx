@@ -1,13 +1,13 @@
-import React, {useState, useEffect, MouseEventHandler} from 'react'
+import {FC, useState, useEffect} from 'react'
 import ActiveLink from './ActiveLink'
-import headerNavLinks from '@/data/headerNavLinks'
+import headerNavLinks from '@data/headerNavLinks'
 import MobileOverlay from './MobileOverlay'
 import SectionContainer from './SectionContainer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import smoothscroll from 'smoothscroll-polyfill'
 
-const Header = () => {
+const Header: FC = () => {
   const [scrolled, setScrolled] = useState(false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
@@ -22,7 +22,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleHeaderScroll)
   })
 
-  const handleAchorClick: MouseEventHandler = () => {
+  const handleAchorClick = () => {
     setShowMobileMenu(false)
   }
 

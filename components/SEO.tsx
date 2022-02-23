@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import {useRouter} from 'next/router'
-import siteMetadata from '@/data/siteMetadata'
-import {LayoutTypes} from 'types/index'
+import siteMetadata from '@data/siteMetadata'
+import {LayoutTypes} from '../types/index'
 
 const CommonSEO = ({
   title,

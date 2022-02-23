@@ -31,12 +31,12 @@ export interface FrontMatterTypes {
   slug?: string
   fileName?: string
   bibliography?: string
-  date?: Date
+  date: string | number | Date | undefined
   lastmod?: Date
   readingTime?: ReadingTimeTypes
   tags?: [string]
   draft?: boolean
-  authors?: {[key: string]: any}
+  authors?: AuthorTypes[]
   [key: string]: any
 }
 

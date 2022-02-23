@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react'
+import {FC, useState, useEffect} from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 
-const ScrollTopAndComment = () => {
+const ScrollTopAndComment: FC = () => {
   const [show, setShow] = useState(false)
 
   useEffect(() => {

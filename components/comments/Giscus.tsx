@@ -1,10 +1,9 @@
-import React, {useState, useEffect, useCallback} from 'react'
-// @ts-expect-error
+import {useState, useEffect, useCallback} from 'react'
 import {useTheme} from 'next-themes'
 
-import siteMetadata from '@/data/siteMetadata'
-// @ts-expect-error: Let's ignore a compile error like this unreachable code
-const Giscus = ({mapping}) => {
+import siteMetadata from '@data/siteMetadata'
+
+const Giscus = ({mapping}: any) => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
   const {theme, resolvedTheme} = useTheme()
   const commentsTheme =

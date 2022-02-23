@@ -1,14 +1,14 @@
-import {ReactNode} from 'react'
-import Link from '@/components/Link'
-import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/SectionContainer'
-import {BlogSEO} from '@/components/SEO'
-import Image from '@/components/Image'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import Comments from '@/components/comments'
-import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import {AuthorTypes, FrontMatterTypes, NextPrevTypes} from '@/types/index'
+import {FC} from 'react'
+import Link from '@components/Link'
+import PageTitle from '@components/PageTitle'
+import SectionContainer from '@components/SectionContainer'
+import {BlogSEO} from '@components/SEO'
+import Image from '@components/Image'
+import Tag from '@components/Tag'
+import siteMetadata from '@data/siteMetadata'
+import Comments from '@components/comments'
+import ScrollTopAndComment from '@components/ScrollTopAndComment'
+import {AuthorTypes, FrontMatterTypes, NextPrevTypes} from '../types/index'
 
 const editUrl = (fileName: string) =>
   `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
@@ -29,16 +29,16 @@ interface PostProps {
   authorDetails: AuthorTypes[]
   next: NextPrevTypes
   prev: NextPrevTypes
-  children: ReactNode
+  children: React.ReactNode
 }
 
-export default function PostLayout({
+const PostLayout: FC<PostProps> = ({
   frontMatter,
   authorDetails,
   next,
   prev,
   children,
-}: PostProps) {
+}) => {
   const {slug, fileName, date, title, tags} = frontMatter
 
   return (
@@ -58,8 +58,7 @@ export default function PostLayout({
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                     {date && (
-                      // @ts-expect-error: Let's ignore a compile error like this unreachable code
-                      <time dateTime={date}>
+                      <time dateTime={date.toString()}>
                         {new Date(date).toLocaleDateString(
                           siteMetadata.locale,
                           // @ts-expect-error: Let's ignore a compile error like this unreachable code
@@ -193,3 +192,5 @@ export default function PostLayout({
     </SectionContainer>
   )
 }
+
+export default PostLayout

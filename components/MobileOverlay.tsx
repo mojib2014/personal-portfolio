@@ -1,11 +1,11 @@
-import {MouseEventHandler} from 'react'
+import {FC} from 'react'
 
 interface Props {
   show?: boolean
-  onClose?: MouseEventHandler
+  onClose?: React.MouseEventHandler
 }
 
-const MobileOverlay = ({show, onClose}: Props) => {
+const MobileOverlay: FC<Props> = ({show, onClose}) => {
   return (
     <div
       onClick={onClose}

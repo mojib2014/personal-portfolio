@@ -1,10 +1,10 @@
-import {useState, useRef, ReactNode} from 'react'
+import {FC, useRef, useState} from 'react'
 
 type Props = {
-  children?: ReactNode
+  children?: React.ReactNode
 }
 
-const Pre = ({children}: Props) => {
+const Pre: FC<Props> = ({children}) => {
   const textInput = useRef<HTMLDivElement>(null)
   const [hovered, setHovered] = useState(false)
   const [copied, setCopied] = useState(false)

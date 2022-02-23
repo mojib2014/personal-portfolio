@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Personal Portfolio | Blog</title>
+      <link>https://mojib-mohammad.vercel.app/blog</link>
+      <description>A personal blog for recording my learning journey.</description>
+      <language>en-us</language>
+      <managingEditor>mmohammad3@outlook.com (Mojib Mohammad)</managingEditor>
+      <webMaster>mmohammad3@outlook.com (Mojib Mohammad)</webMaster>
+      <lastBuildDate>Sat, 07 Aug 2021 15:32:14 GMT</lastBuildDate>
+      <atom:link href="https://mojib-mohammad.vercel.app/tags/tailwind/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/new-features-in-v1</guid>
+    <title>New features in v1</title>
+    <link>https://mojib-mohammad.vercel.app/blog/new-features-in-v1</link>
+    <description>An overview of the new features released in v1 - code block copy, multiple authors, frontmatter layout and more</description>
+    <pubDate>Sat, 07 Aug 2021 15:32:14 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>next-js</category><category>tailwind</category><category>guide</category>
+  </item>
+
+    </channel>
+  </rss>

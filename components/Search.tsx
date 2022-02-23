@@ -1,11 +1,11 @@
-import {ChangeEventHandler} from 'react'
+import {FC} from 'react'
 
 interface Props {
   query?: string
-  onChange?: ChangeEventHandler
+  onChange?: React.ChangeEventHandler
 }
 
-const Search = ({query, onChange}: Props) => {
+const Search: FC<Props> = ({query, onChange}) => {
   return (
     <div className="w-full p-2">
       <h3 className="mb-4 text-[1.6rem] font-bold">Search for posts</h3>

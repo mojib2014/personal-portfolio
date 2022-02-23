@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import {FrontMatterTypes} from '@/types/index'
+import {FrontMatterTypes} from '../../types/index'
 
 export function paginate(
   items: FrontMatterTypes[],

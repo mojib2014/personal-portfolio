@@ -1,13 +1,13 @@
-import {MouseEventHandler} from 'react'
+import {FC} from 'react'
 import Link from 'next/link'
-import headerNavLinks from '@/data/headerNavLinks'
+import headerNavLinks from '@data/headerNavLinks'
 
 interface Props {
   show?: boolean
-  onClick?: MouseEventHandler
+  onClick?: React.MouseEventHandler
 }
 
-const MobileNav = ({show, onClick}: Props) => {
+const MobileNav: FC<Props> = ({show, onClick}) => {
   return (
     <nav
       className={`fixed top-0 bottom-0 z-40 flex h-full w-[40vw] flex-col justify-start overflow-y-auto bg-gray-800 py-3 transition-all duration-300 ease-in-out ${

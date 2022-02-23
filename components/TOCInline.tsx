@@ -5,7 +5,7 @@
  * @prop {string} url
  */
 
-import {TocTypes} from '../types'
+import {TocTypes} from '../types/index'
 
 /**
  * Generates an inline table of contents

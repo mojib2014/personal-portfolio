@@ -1,10 +1,14 @@
+import {FC} from 'react'
 import Link, {LinkProps} from 'next/link'
 
-interface Props {
-  [key: string]: any
+interface Props extends LinkProps {
+  children?: React.ReactNode
+  className?: string
+  title?: string
+  rel?: string
 }
 
-const CustomLink = (props: LinkProps & Props) => {
+const CustomLink: FC<Props> = props => {
   const {href, className, ...rest} = props
   const internalLink = href.toString().startsWith('/')
   const anchorLink = href.toString().startsWith('/#')

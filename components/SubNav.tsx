@@ -1,11 +1,12 @@
 import Link, {LinkProps} from 'next/link'
 import {NextRouter} from 'next/router'
+import {FC} from 'react'
 
 interface Props extends LinkProps {
   router?: NextRouter
 }
 
-export default function SubNav({router}: Props) {
+const SubNav: FC<Props> = ({router}) => {
   return (
     <div className="sub-header">
       <ul className="flex items-center gap-5">
@@ -19,3 +20,5 @@ export default function SubNav({router}: Props) {
     </div>
   )
 }
+
+export default SubNav

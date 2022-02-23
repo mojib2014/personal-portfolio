@@ -2,21 +2,16 @@ import fs from 'fs'
 import path from 'path'
 
 const pipe =
-  //@ts-expect-error: Let's ignore a compile error like this unreachable code
-
-
-    (...fns) =>
-    //@ts-expect-error: Let's ignore a compile error like this unreachable code
-    x =>
-      fns.reduce((v, f) => f(v), x)
+  (...fns: any) =>
+  (x: any) =>
+    fns.reduce((v: any, f: any) => f(v), x)
 
 const flattenArray = (input: []) =>
   input.reduce(
     (acc, item) => [...acc, ...(Array.isArray(item) ? item : [item])],
     [],
   )
-//@ts-expect-error: Let's ignore a compile error like this unreachable code
-const map = fn => (input: []) => input.map(fn)
+const map = (fn: any) => (input: []) => input.map(fn)
 
 const walkDir = (fullPath: string) => {
   return fs.statSync(fullPath).isFile()

@@ -1,9 +1,10 @@
+import {FC} from 'react'
 import Image from 'next/image'
-import Link from '@/components/Link'
+import Link from './Link'
 import SectionContainer from './SectionContainer'
-import styles from '@/styles/Resume.module.css'
+import styles from '../styles/Resume.module.css'
 
-export default function Resume() {
+const Resume: FC = () => {
   return (
     <section
       id="resume"
@@ -145,3 +146,4 @@ export default function Resume() {
     </section>
   )
 }
+export default Resume

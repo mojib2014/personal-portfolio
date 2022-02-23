@@ -1,18 +1,18 @@
-import {useRef, useState, MouseEvent, FormEventHandler} from 'react'
+import React, {FC, useRef, useState} from 'react'
 
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@data/siteMetadata'
 
 interface Props {
   title?: string
 }
 
-const NewsLetterForm = ({title = 'Subscribe to the newsletter'}: Props) => {
+const NewsLetterForm: FC<Props> = ({title = 'Subscribe to the newsletter'}) => {
   const inputEl = useRef<HTMLInputElement>(null)
   const [error, setError] = useState(false)
   const [message, setMessage] = useState('')
   const [subscribed, setSubscribed] = useState(false)
 
-  const subscribe: FormEventHandler = async (e: MouseEvent) => {
+  const subscribe = async (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault()
 
     const res = await fetch(`/api/${siteMetadata.newsletter.provider}`, {
@@ -88,7 +88,7 @@ const NewsLetterForm = ({title = 'Subscribe to the newsletter'}: Props) => {
 
 export default NewsLetterForm
 
-export const BlogNewsLetterForm = ({title}: Props) => (
+export const BlogNewsLetterForm: FC<Props> = ({title}) => (
   <div className="flex items-center justify-center">
     <div className="bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8">
       <NewsLetterForm title={title} />

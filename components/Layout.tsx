@@ -2,10 +2,11 @@ import {useRouter} from 'next/router'
 import Header from './Header'
 import Footer from './Footer'
 import Head from 'next/head'
-import siteMetadata from '@/data/siteMetadata'
-import {LayoutTypes} from 'types/index'
+import siteMetadata from '@data/siteMetadata'
+import {LayoutTypes} from '../types/index'
+import {FC} from 'react'
 
-const Layout = ({
+const Layout: FC<LayoutTypes> = ({
   title,
   description,
   author,
@@ -18,7 +19,7 @@ const Layout = ({
   siteName,
   twImage,
   children,
-}: LayoutTypes) => {
+}) => {
   const router = useRouter()
   const publishedAt = date && new Date(date).toISOString()
   const modifiedAt =

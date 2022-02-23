@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import SectionContainer from './SectionContainer'
-import {skills} from '@/data/skills'
+import skills from '@data/skills'
+import {FC} from 'react'
 
-export default function Skills() {
+const Skills: FC = () => {
   return (
     <section
       id="skills"
@@ -32,3 +33,4 @@ export default function Skills() {
     </section>
   )
 }
+export default Skills

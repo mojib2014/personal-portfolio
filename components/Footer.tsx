@@ -2,10 +2,11 @@ import Image from 'next/image'
 import Link from 'components/Link'
 import SectionContainer from './SectionContainer'
 import headerNavLinks from 'data/headerNavLinks'
-import {icons} from 'data/icons'
+import icons from 'data/icons'
 import styles from 'styles/Footer.module.css'
+import {FC} from 'react'
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <footer className="w-full border-y border-y-gray-300 py-3 text-gray-500 dark:bg-[#111827]">
       <div>

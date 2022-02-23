@@ -1,5 +1,5 @@
 import {NextPage} from 'next'
-import PortfolioLayout from '@/layouts/PortfolioLayout'
+import PortfolioLayout from '@layouts/PortfolioLayout'
 
 const Home: NextPage = () => {
   return <PortfolioLayout />

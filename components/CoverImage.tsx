@@ -1,14 +1,16 @@
+import {FC} from 'react'
 import Image from 'next/image'
 import cn from 'classnames'
+import {FrontMatterTypes} from '../types/index'
 
 interface Props {
+  item: FrontMatterTypes
   width?: number
   height?: number
   src: string
-  [key: string]: any
 }
 
-export default function CoverImage({item, width, height, src, ...rest}: Props) {
+const CoverImage: FC<Props> = ({item, width, height, src, ...rest}) => {
   const image = (
     <Image
       {...rest}
@@ -24,3 +26,5 @@ export default function CoverImage({item, width, height, src, ...rest}: Props) {
 
   return <div className="m-auto w-full text-center">{image}</div>
 }
+
+export default CoverImage

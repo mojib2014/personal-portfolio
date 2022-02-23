@@ -1,12 +1,12 @@
-import {ReactNode} from 'react'
+import {FC} from 'react'
 import Header from './Header'
 import Footer from './Footer'
 
 interface Props {
-  children?: ReactNode
+  children?: React.ReactNode
 }
 
-const LayoutWrapper = ({children}: Props) => {
+const LayoutWrapper: FC<Props> = ({children}) => {
   return (
     <div className="flex h-screen flex-col justify-between">
       <Header />

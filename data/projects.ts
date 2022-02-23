@@ -1,4 +1,4 @@
-const PROJECTS = [
+const projects = [
   {
     images: [
       '/portfolio/reddit/reddit_lighthouse.png',
@@ -119,4 +119,4 @@ const PROJECTS = [
     github: '#',
   },
 ]
-module.exports = PROJECTS
+export default projects

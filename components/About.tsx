@@ -1,7 +1,8 @@
-import Link from '@/components/Link'
+import {FC} from 'react'
+import Link from './Link'
 import SectionContainer from './SectionContainer'
 
-const About = () => {
+const About: FC = () => {
   return (
     <section
       id="about"

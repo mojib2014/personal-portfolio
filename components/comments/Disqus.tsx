@@ -1,10 +1,14 @@
-import React, {useState} from 'react'
+import * as React from 'react'
 
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@data/siteMetadata'
+import {FrontMatterTypes} from '../../types/index'
 
-// @ts-ignore: Unreachable code error
-const Disqus = frontMatter => {
-  const [enableLoadComments, setEnabledLoadComments] = useState(true)
+type Props = {
+  frontMatter: FrontMatterTypes
+}
+
+const Disqus = ({frontMatter}: Props) => {
+  const [enableLoadComments, setEnabledLoadComments] = React.useState(true)
 
   const COMMENTS_ID = 'disqus_thread'
 

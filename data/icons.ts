@@ -1,4 +1,4 @@
-export const icons = [
+const icons = [
   {
     icon: '/icons/github.svg',
     title: 'Github',
@@ -16,3 +16,5 @@ export const icons = [
   },
   {icon: '/icons/facebook.svg', title: 'Facebook', href: '#'},
 ]
+
+export default icons

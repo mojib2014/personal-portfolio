@@ -1,8 +1,9 @@
+import {FC} from 'react'
 import Link from './Link'
 import SectionContainer from './SectionContainer'
 import PageTitle from './PageTitle'
 
-export default function Banner() {
+const Banner: FC = () => {
   return (
     <section id="banner" className="mb-[-50px] text-gray-100">
       <div
@@ -33,3 +34,5 @@ export default function Banner() {
     </section>
   )
 }
+
+export default Banner

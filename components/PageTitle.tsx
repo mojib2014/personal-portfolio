@@ -1,11 +1,11 @@
-import React, {ReactNode} from 'react'
+import {FC} from 'react'
 
 interface Props {
   banner?: boolean
-  children?: ReactNode
+  children?: React.ReactNode
 }
 
-const PageTitle = ({banner, children}: Props) => {
+const PageTitle: FC<Props> = ({banner, children}) => {
   return (
     <h1
       className={`text-3xl font-extrabold leading-9 tracking-tight ${

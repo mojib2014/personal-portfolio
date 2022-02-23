@@ -1,18 +1,24 @@
-import {Children, cloneElement} from 'react'
+import {FC, cloneElement, Children} from 'react'
 import Link from 'next/link'
 import {withRouter, NextRouter} from 'next/router'
 
 interface WithRouterProps {
   router: NextRouter
   children: any
-  [x: string]: any
+  href: string
+  as?: string
 }
 
 interface MyComponentProps extends WithRouterProps {}
 
-const ActiveLink = ({router, children, ...rest}: MyComponentProps) => {
+const ActiveLink: FC<MyComponentProps> = ({
+  router,
+  children,
+  href,
+  ...rest
+}) => {
   return (
-    <Link href={rest.href} {...rest}>
+    <Link href={href} {...rest}>
       {cloneElement(Children.only(children), {
         className:
           // @ts-expect-error

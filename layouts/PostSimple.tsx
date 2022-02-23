@@ -1,20 +1,20 @@
-import {FC, ReactNode} from 'react'
-import Link from '@/components/Link'
-import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/SectionContainer'
-import {BlogSEO} from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata'
-import formatDate from '@/lib/utils/format-date'
-import Comments from '@/components/comments'
-import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import {FrontMatterTypes} from 'types/index'
-import {NextPrevTypes} from '@/types/index'
+import {FC} from 'react'
+import Link from '@components/Link'
+import PageTitle from '@components/PageTitle'
+import SectionContainer from '@components/SectionContainer'
+import {BlogSEO} from '@components/SEO'
+import siteMetadata from '@data/siteMetadata'
+import formatDate from '@lib/utils/format-date'
+import Comments from '@components/comments'
+import ScrollTopAndComment from '@components/ScrollTopAndComment'
+import {FrontMatterTypes} from '../types/index'
+import {NextPrevTypes} from '../types/index'
 
 interface Props {
   frontMatter: FrontMatterTypes
   next: NextPrevTypes
   prev: NextPrevTypes
-  children: ReactNode
+  children: React.ReactNode
 }
 
 const PostLayout: FC<Props> = ({frontMatter, next, prev, children}) => {

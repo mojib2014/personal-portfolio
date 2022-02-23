@@ -1,14 +1,15 @@
-import {PaginationTypes} from 'types/index'
+import {FC} from 'react'
+import {PaginationTypes} from '../types/index'
 import _ from 'lodash'
 
-const Pagination = ({
+const Pagination: FC<PaginationTypes> = ({
   itemsCount = 0,
   pageSize = 5,
   currentPage,
   onPageChange,
   onNext,
   onPrevious,
-}: PaginationTypes) => {
+}) => {
   const pagesCount = Math.ceil(itemsCount / pageSize)
   if (pagesCount === 1) return null
   const pages = _.range(1, pagesCount + 1)
