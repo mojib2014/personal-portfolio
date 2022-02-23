@@ -2,7 +2,7 @@ import {FC} from 'react'
 import Link from 'next/link'
 import Tag from './Tag'
 import formatDate from '@lib/utils/format-date'
-import {FrontMatterTypes} from '../types/index'
+import type {FrontMatterTypes} from '../types/index'
 
 interface Props {
   frontMatter: FrontMatterTypes

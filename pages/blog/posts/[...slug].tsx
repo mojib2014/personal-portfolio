@@ -9,8 +9,8 @@ import {
   getFileBySlug,
   getFiles,
 } from '@lib/mdx'
-import {ParsedUrlQuery} from 'querystring'
-import {
+import type {ParsedUrlQuery} from 'querystring'
+import type {
   AuthorTypes,
   FrontMatterTypes,
   NextPrevTypes,

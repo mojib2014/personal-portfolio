@@ -6,7 +6,7 @@ import Tag from '@components/Tag'
 import siteMetadata from '@data/siteMetadata'
 import kebabCase from '@lib/utils/kebabCase'
 import {getAllTags} from '@lib/tags'
-import {TagTypes} from '../../types/index'
+import type {TagTypes} from '../../types/index'
 
 export const getStaticProps: GetStaticProps = async () => {
   const tags = await getAllTags('blog')

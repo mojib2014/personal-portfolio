@@ -1,10 +1,10 @@
+import {FC} from 'react'
 import Image from 'next/image'
 import Link from 'components/Link'
 import SectionContainer from './SectionContainer'
 import headerNavLinks from 'data/headerNavLinks'
 import icons from 'data/icons'
 import styles from 'styles/Footer.module.css'
-import {FC} from 'react'
 
 const Footer: FC = () => {
   return (

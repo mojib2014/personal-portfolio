@@ -1,7 +1,7 @@
 import {FC} from 'react'
 import dynamic from 'next/dynamic'
 import siteMetadata from '@data/siteMetadata'
-import {FrontMatterTypes} from '../../types/index'
+import type {FrontMatterTypes} from '../../types/index'
 
 const UtterancesComponent = dynamic(
   () => {

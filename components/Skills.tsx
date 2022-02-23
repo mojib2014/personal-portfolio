@@ -1,7 +1,7 @@
+import {FC} from 'react'
 import Image from 'next/image'
 import SectionContainer from './SectionContainer'
 import skills from '@data/skills'
-import {FC} from 'react'
 
 const Skills: FC = () => {
   return (

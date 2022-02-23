@@ -1,3 +1,4 @@
+import {FC} from 'react'
 import Banner from '@components/Banner'
 import About from '@components/About'
 import Skills from '@components/Skills'
@@ -6,7 +7,6 @@ import Resume from '@components/Resume'
 import Contact from '@components/Contact'
 import {PageSEO} from '@components/SEO'
 import siteMetadata from '@data/siteMetadata'
-import {FC} from 'react'
 
 const PortfolioLayout: FC = () => {
   return (

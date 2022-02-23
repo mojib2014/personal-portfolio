@@ -7,7 +7,7 @@ interface Props {
 }
 
 const NewsLetterForm: FC<Props> = ({title = 'Subscribe to the newsletter'}) => {
-  const inputEl = useRef<HTMLInputElement>(null)
+  const inputEl = useRef() as React.MutableRefObject<HTMLInputElement>
   const [error, setError] = useState(false)
   const [message, setMessage] = useState('')
   const [subscribed, setSubscribed] = useState(false)

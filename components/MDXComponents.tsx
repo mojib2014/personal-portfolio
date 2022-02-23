@@ -1,4 +1,4 @@
-import * as React from 'react'
+import {useMemo} from 'react'
 import {getMDXComponent} from 'mdx-bundler/client'
 import Image from './Image'
 import CustomLink from './Link'
@@ -23,7 +23,7 @@ export const MDXComponents = {
 }
 
 export const MDXLayoutRenderer = ({layout, mdxSource, ...rest}: any) => {
-  const MDXLayout = React.useMemo(() => getMDXComponent(mdxSource), [mdxSource])
+  const MDXLayout = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
 
   return <MDXLayout layout={layout} components={MDXComponents} {...rest} />
 }

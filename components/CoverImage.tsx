@@ -1,7 +1,7 @@
 import {FC} from 'react'
 import Image from 'next/image'
 import cn from 'classnames'
-import {FrontMatterTypes} from '../types/index'
+import type {FrontMatterTypes} from '../types/index'
 
 interface Props {
   item: FrontMatterTypes

@@ -1,6 +1,6 @@
+import {FC} from 'react'
 import Link, {LinkProps} from 'next/link'
 import {NextRouter} from 'next/router'
-import {FC} from 'react'
 
 interface Props extends LinkProps {
   router?: NextRouter

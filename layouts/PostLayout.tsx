@@ -8,7 +8,7 @@ import Tag from '@components/Tag'
 import siteMetadata from '@data/siteMetadata'
 import Comments from '@components/comments'
 import ScrollTopAndComment from '@components/ScrollTopAndComment'
-import {AuthorTypes, FrontMatterTypes, NextPrevTypes} from '../types/index'
+import type {AuthorTypes, FrontMatterTypes, NextPrevTypes} from '../types/index'
 
 const editUrl = (fileName: string) =>
   `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`

@@ -2,7 +2,7 @@ import {FC} from 'react'
 import Link from 'next/link'
 import Image from '@components/Image'
 import {PageSEO} from '@components/SEO'
-import {FrontMatterTypes} from '../types/index'
+import type {FrontMatterTypes} from '../types/index'
 
 interface Props {
   frontMatter: FrontMatterTypes

@@ -1,6 +1,6 @@
 import {FC} from 'react'
-import {PaginationTypes} from '../types/index'
 import _ from 'lodash'
+import type {PaginationTypes} from '../types/index'
 
 const Pagination: FC<PaginationTypes> = ({
   itemsCount = 0,

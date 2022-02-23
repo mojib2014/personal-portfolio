@@ -1,14 +1,13 @@
-import * as React from 'react'
-
+import {useState} from 'react'
 import siteMetadata from '@data/siteMetadata'
-import {FrontMatterTypes} from '../../types/index'
+import type {FrontMatterTypes} from '../../types/index'
 
 type Props = {
   frontMatter: FrontMatterTypes
 }
 
 const Disqus = ({frontMatter}: Props) => {
-  const [enableLoadComments, setEnabledLoadComments] = React.useState(true)
+  const [enableLoadComments, setEnabledLoadComments] = useState(true)
 
   const COMMENTS_ID = 'disqus_thread'
 

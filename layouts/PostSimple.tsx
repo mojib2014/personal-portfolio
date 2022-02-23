@@ -7,8 +7,7 @@ import siteMetadata from '@data/siteMetadata'
 import formatDate from '@lib/utils/format-date'
 import Comments from '@components/comments'
 import ScrollTopAndComment from '@components/ScrollTopAndComment'
-import {FrontMatterTypes} from '../types/index'
-import {NextPrevTypes} from '../types/index'
+import type {NextPrevTypes, FrontMatterTypes} from '../types/index'
 
 interface Props {
   frontMatter: FrontMatterTypes

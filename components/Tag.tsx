@@ -1,6 +1,6 @@
+import {FC} from 'react'
 import Link from 'next/link'
 import kebabCase from '@lib/utils/kebabCase'
-import {FC} from 'react'
 
 interface Props {
   tag: string

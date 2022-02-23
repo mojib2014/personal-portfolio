@@ -6,8 +6,8 @@ import Search from '@components/Search'
 import PageTitle from '@components/PageTitle'
 import siteMetadata from '@data/siteMetadata'
 import Pagination from '@components/Pagination'
-import {FrontMatterTypes} from '../types/index'
 import {paginate} from '@lib/utils/paginate'
+import type {FrontMatterTypes} from '../types/index'
 
 interface Props {
   items: FrontMatterTypes[]

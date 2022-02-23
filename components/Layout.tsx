@@ -1,10 +1,10 @@
+import {FC} from 'react'
 import {useRouter} from 'next/router'
 import Header from './Header'
 import Footer from './Footer'
 import Head from 'next/head'
 import siteMetadata from '@data/siteMetadata'
-import {LayoutTypes} from '../types/index'
-import {FC} from 'react'
+import type {LayoutTypes} from '../types/index'
 
 const Layout: FC<LayoutTypes> = ({
   title,
