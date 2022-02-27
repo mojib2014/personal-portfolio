@@ -7,7 +7,7 @@ const Banner = () => {
     <section id="banner" className="mb-[-50px] text-gray-100">
       <div
         className="h-screen bg-cover bg-fixed bg-no-repeat bg-origin-content pt-44 md:bg-center"
-        style={{backgroundImage: 'url(/bg-images/01.png)'}}
+        style={{ backgroundImage: 'url(/bg-images/01.png)' }}
       >
         <SectionContainer>
           <div className="max-w-3xl text-left">

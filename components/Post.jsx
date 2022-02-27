@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Tag from './Tag'
 import formatDate from '@lib/utils/format-date'
 
-const Post = ({frontMatter}) => {
-  const {title, slug, summary, date, tags} = frontMatter
+const Post = ({ frontMatter }) => {
+  const { title, slug, summary, date, tags } = frontMatter
 
   return (
     <div className="border-gray mb-4 w-full border p-2">
@@ -12,11 +12,7 @@ const Post = ({frontMatter}) => {
           <dl>
             <dt className="sr-only">Published on</dt>
             <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-              {date && (
-                <time dateTime={date.toString()}>
-                  {date && formatDate(date)}
-                </time>
-              )}
+              <time dateTime={date}>{formatDate(date)}</time>
             </dd>
           </dl>
         </li>
@@ -29,7 +25,7 @@ const Post = ({frontMatter}) => {
           </div>
         </a>
       </Link>
-      {tags && tags.map(tag => <Tag key={tag} tag={tag} />)}
+      {tags && tags.map((tag) => <Tag key={tag} tag={tag} />)}
     </div>
   )
 }

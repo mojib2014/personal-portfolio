@@ -1,6 +1,6 @@
 import NextImage from 'next/image'
 
-const Image = props => {
+const Image = (props) => {
   return <NextImage {...props} />
 }
 

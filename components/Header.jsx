@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import ActiveLink from './ActiveLink'
 import headerNavLinks from '@data/headerNavLinks'
 import MobileOverlay from './MobileOverlay'
@@ -36,9 +36,7 @@ const Header = () => {
       <header
         id="header"
         className={`fixed z-10 w-full text-gray-900 transition-all duration-300 ease-in-out  ${
-          scrolled
-            ? 'bg-gray-100 text-gray-900 shadow-lg dark:bg-[#111827]'
-            : ''
+          scrolled ? 'bg-gray-100 text-gray-900 shadow-lg dark:bg-[#111827]' : ''
         }`}
       >
         <SectionContainer>
@@ -54,7 +52,7 @@ const Header = () => {
             </ActiveLink>
             <nav className="hidden md:block lg:ml-auto">
               <ul className="flex items-center justify-end">
-                {headerNavLinks.map(link => (
+                {headerNavLinks.map((link) => (
                   <li className="relative pl-6 xl:pl-10" key={link.title}>
                     <ActiveLink href={link.href} as={link.href}>
                       <a

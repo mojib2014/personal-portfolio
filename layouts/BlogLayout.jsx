@@ -1,16 +1,16 @@
-import {FC, useState} from 'react'
-import {TagSEO} from '@components/SEO'
+import { useState } from 'react'
+import { TagSEO } from '@components/SEO'
 import SectionContainer from '@components/SectionContainer'
 import Post from '@components/Post'
 import Search from '@components/Search'
 import PageTitle from '@components/PageTitle'
 import siteMetadata from '@data/siteMetadata'
 import Pagination from '@components/Pagination'
-import {paginate} from '@lib/utils/paginate'
+import { paginate } from '@lib/utils/paginate'
 
 const PAGE_SIZE = 4
 
-const BlogLayout = ({items, tag}) => {
+const BlogLayout = ({ items, tag }) => {
   const [query, setQuery] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -20,11 +20,11 @@ const BlogLayout = ({items, tag}) => {
 
   if (currentPage < 1) setCurrentPage(1)
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setQuery(event.target.value)
   }
 
-  const handlePageChange = page => {
+  const handlePageChange = (page) => {
     setCurrentPage(page)
   }
 
@@ -37,12 +37,10 @@ const BlogLayout = ({items, tag}) => {
   }
 
   if (query) {
-    filtered = items.filter(frontMatter => {
+    filtered = items.filter((frontMatter) => {
       if (frontMatter.title && frontMatter.summary && frontMatter.tags) {
         const searchContent =
-          frontMatter?.title +
-          frontMatter?.summary +
-          frontMatter?.tags.join(' ')
+          frontMatter?.title + frontMatter?.summary + frontMatter?.tags.join(' ')
         return searchContent.toLowerCase().includes(query.toLowerCase())
       }
     })
@@ -66,7 +64,7 @@ const BlogLayout = ({items, tag}) => {
           </div>
           <ul>
             {!displayPosts?.length && 'No posts found.'}
-            {displayPosts?.map(frontMatter => (
+            {displayPosts?.map((frontMatter) => (
               <Post key={frontMatter?.title} frontMatter={frontMatter} />
             ))}
           </ul>

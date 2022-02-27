@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PageTitle = ({banner, children}) => {
+const PageTitle = ({ banner, children }) => {
   return (
     <h1
       className={`text-3xl font-extrabold leading-9 tracking-tight ${

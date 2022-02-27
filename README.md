@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a portfolio/blog built with [nextjs](https://nextjs.org/) and [MDX bundler](https://github.com/kentcdodds/mdx-bundler#readme).
 
 ## Getting Started
 

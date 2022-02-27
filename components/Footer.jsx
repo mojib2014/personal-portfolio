@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import Link from 'components/Link'
+import Link from './Link'
 import SectionContainer from './SectionContainer'
-import headerNavLinks from 'data/headerNavLinks'
-import icons from 'data/icons'
-import styles from 'styles/Footer.module.css'
+import headerNavLinks from '@data/headerNavLinks'
+import icons from '@data/icons'
+import styles from '@styles/Footer.module.css'
 
 const Footer = () => {
   return (
@@ -17,12 +17,7 @@ const Footer = () => {
             >
               Powered by{' '}
               <span className={styles.logo}>
-                <Image
-                  src="/vercel.svg"
-                  alt="Vercel Logo"
-                  width={72}
-                  height={16}
-                />
+                <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
               </span>
             </Link>
           </div>
@@ -33,15 +28,12 @@ const Footer = () => {
                   <h4 className="mt-2 mb-5 text-center text-2xl font-bold md:text-left lg:text-3xl">
                     General resources
                   </h4>
-                  {headerNavLinks.map(link => (
+                  {headerNavLinks.map((link) => (
                     <li
                       key={link.href}
                       className="rounded-md p-2 duration-500 ease-in-out hover:bg-gray-100 hover:transition-all"
                     >
-                      <Link
-                        href={link.href}
-                        className="inline-block text-blue-700"
-                      >
+                      <Link href={link.href} className="inline-block text-blue-700">
                         {link.title}
                       </Link>
                     </li>
@@ -55,7 +47,7 @@ const Footer = () => {
                   Social
                 </h4>
                 <ul className="m-0 flex flex-wrap items-center justify-between p-0">
-                  {icons.map(icon => (
+                  {icons.map((icon) => (
                     <li key={icon.title}>
                       <Link
                         href={icon.href}
@@ -63,12 +55,7 @@ const Footer = () => {
                         aria-label={icon.title}
                         className="flex items-center hover:scale-150 dark:rounded-full dark:bg-gray-200 dark:p-2"
                       >
-                        <Image
-                          src={icon.icon}
-                          width={30}
-                          height={30}
-                          alt={icon.title}
-                        />
+                        <Image src={icon.icon} width={30} height={30} alt={icon.title} />
                       </Link>
                     </li>
                   ))}

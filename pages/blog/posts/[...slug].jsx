@@ -1,20 +1,15 @@
 import fs from 'fs'
 import PageTitle from '@components/PageTitle'
 import generateRss from '@lib/generate-rss'
-import {MDXLayoutRenderer} from '@components/MDXComponents'
-import {
-  formatSlug,
-  getAllFilesFrontMatter,
-  getFileBySlug,
-  getFiles,
-} from '@lib/mdx'
+import { MDXLayoutRenderer } from '@components/MDXComponents'
+import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@lib/mdx'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
 export const getStaticPaths = async () => {
   const posts = getFiles('blog')
   return {
-    paths: posts.map(p => ({
+    paths: posts.map((p) => ({
       params: {
         slug: formatSlug(p).split('/'),
       },
@@ -23,13 +18,13 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async context => {
-  const {slug} = context.params
+export const getStaticProps = async ({ params }) => {
+  const { slug } = params
   const allPosts = await getAllFilesFrontMatter('blog')
 
   const post = await getFileBySlug('blog', slug.join('/'))
   const authorList = post.frontMatter.authors || ['default']
-  const authorPromise = authorList.map(async author => {
+  const authorPromise = authorList.map(async (author) => {
     const authorResults = await getFileBySlug('authors', [author])
     return authorResults.frontMatter
   })
@@ -41,11 +36,11 @@ export const getStaticProps = async context => {
     fs.writeFileSync('./public/feed.xml', rss)
   }
 
-  return {props: {post, authorDetails}}
+  return { props: { post, authorDetails } }
 }
 
-const Blog = ({post, authorDetails, prev, next}) => {
-  const {mdxSource, toc, frontMatter} = post
+const Blog = ({ post, authorDetails, prev, next }) => {
+  const { mdxSource, toc, frontMatter } = post
 
   return (
     <>

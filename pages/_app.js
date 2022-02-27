@@ -6,15 +6,15 @@ import '@fontsource/inter/variable-full.css'
 
 import Head from 'next/head'
 import LayoutWrapper from '@components/LayoutWrapper'
-import {ThemeProvider} from 'next-themes'
-import {ClientReload} from '@components/ClientReload'
+import { ThemeProvider } from 'next-themes'
+import { ClientReload } from '@components/ClientReload'
 
 import siteMetadata from '@data/siteMetadata'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
-function MyApp({Component, pageProps}) {
+function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head key="viewport">

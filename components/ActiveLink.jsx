@@ -1,8 +1,8 @@
-import {cloneElement, Children} from 'react'
+import React, { cloneElement, Children } from 'react'
 import Link from 'next/link'
-import {withRouter} from 'next/router'
+import { withRouter } from 'next/router'
 
-const ActiveLink = ({router, children, href, ...rest}) => {
+const ActiveLink = ({ router, children, href, ...rest }) => {
   return (
     <Link href={href} {...rest}>
       {cloneElement(Children.only(children), {

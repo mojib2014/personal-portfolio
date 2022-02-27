@@ -24,14 +24,12 @@ const Pagination = ({
               Previous
             </button>
           </li>
-          {pages?.map(page => (
+          {pages?.map((page) => (
             <li key={page}>
               <a
                 onClick={() => onPageChange?.(page)}
                 className={`${
-                  page === currentPage
-                    ? 'bg-blue-500'
-                    : 'overflow-x-hidden bg-gray-400'
+                  page === currentPage ? 'bg-blue-500' : 'overflow-x-hidden bg-gray-400'
                 } cursor-pointer overflow-x-hidden rounded-md px-2 py-1 font-semibold text-gray-50 visited:bg-blue-100`}
               >
                 {page}

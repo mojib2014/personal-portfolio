@@ -1,9 +1,6 @@
 const projects = [
   {
-    images: [
-      '/portfolio/reddit/reddit_lighthouse.png',
-      '/portfolio/reddit/reddit_client.png',
-    ],
+    images: ['/portfolio/reddit/reddit_lighthouse.png', '/portfolio/reddit/reddit_client.png'],
     title: 'Reddit Client',
     technology: 'React',
     detail:
@@ -51,10 +48,7 @@ const projects = [
     github: 'https://github.com/mojib2014/dent-soft',
   },
   {
-    images: [
-      '/portfolio/minesweeper/minesweeper1.png',
-      '/portfolio/minesweeper/minesweeper2.png',
-    ],
+    images: ['/portfolio/minesweeper/minesweeper1.png', '/portfolio/minesweeper/minesweeper2.png'],
     title: 'Mine Sweeper',
     technology: 'JavaScript',
     detail: 'A grid based game, build with vanilla javascript.',
@@ -62,14 +56,10 @@ const projects = [
     github: 'https://github.com/mojib2014/minesweeper',
   },
   {
-    images: [
-      '/portfolio/spotify/spotify1.png',
-      '/portfolio/spotify/spotify2.png',
-    ],
+    images: ['/portfolio/spotify/spotify1.png', '/portfolio/spotify/spotify2.png'],
     title: 'Jamming Spotify',
     technology: 'React',
-    detail:
-      'Search for your favorite artist/music and save to local and spotify playlist.',
+    detail: 'Search for your favorite artist/music and save to local and spotify playlist.',
     url: 'https://jamming-spotify.netlify.app',
     github: 'https://github.com/mojib2014/jamming-spotify-api',
   },
@@ -92,8 +82,7 @@ const projects = [
   {
     images: ['/image-coming-soon-placeholder.png'],
     title: 'Airline',
-    detail:
-      'Airline, a small Django/python3/GithubActions (CI/CD) app for learning purposes',
+    detail: 'Airline, a small Django/python3/GithubActions (CI/CD) app for learning purposes',
     technology: 'Django/Docker',
     url: '#',
     github: 'https://github.com/mojib2014/airline',
@@ -104,8 +93,7 @@ const projects = [
       '/portfolio/appointment-planner/planner2.png',
     ],
     title: 'Appointment Planner',
-    detail:
-      'Appointment Planner built with React, add contacts & appointments.',
+    detail: 'Appointment Planner built with React, add contacts & appointments.',
     technology: 'React',
     url: '#',
     github: 'https://github.com/mojib2014/appointment-planner',

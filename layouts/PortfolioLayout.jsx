@@ -4,16 +4,13 @@ import Skills from '@components/Skills'
 import Portfolio from '@components/Portfolio'
 import Resume from '@components/Resume'
 import Contact from '@components/Contact'
-import {PageSEO} from '@components/SEO'
+import { PageSEO } from '@components/SEO'
 import siteMetadata from '@data/siteMetadata'
 
 const PortfolioLayout = () => {
   return (
     <>
-      <PageSEO
-        title={siteMetadata.title}
-        description={siteMetadata.description}
-      />
+      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Banner />
       <About />
       <Skills />

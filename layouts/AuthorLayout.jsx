@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import Image from '@components/Image'
-import {PageSEO} from '@components/SEO'
+import { PageSEO } from '@components/SEO'
 
-const AuthorLayout = ({frontMatter, children}) => {
-  const {name, avatar, occupation, company, email, twitter, linkedin, github} =
-    frontMatter
+const AuthorLayout = ({ frontMatter, children }) => {
+  const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
 
   return (
     <>
@@ -26,9 +25,7 @@ const AuthorLayout = ({frontMatter, children}) => {
                 className="h-48 w-48 rounded-full"
               />
             )}
-            <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
-              {name}
-            </h3>
+            <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
             <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
             <div className="text-gray-500 dark:text-gray-400">{company}</div>
             <div className="flex space-x-3 pt-6">
@@ -54,9 +51,7 @@ const AuthorLayout = ({frontMatter, children}) => {
               </Link>
             </div>
           </div>
-          <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">
-            {children}
-          </div>
+          <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{children}</div>
         </div>
       </div>
     </>

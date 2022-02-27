@@ -1,7 +1,7 @@
-import {useRef, useState} from 'react'
+import { useRef, useState } from 'react'
 
-const Pre = ({children}) => {
-  const textInput = useRef < HTMLDivElement > null
+const Pre = ({ children }) => {
+  const textInput = useRef(null)
   const [hovered, setHovered] = useState(false)
   const [copied, setCopied] = useState(false)
 
@@ -14,20 +14,14 @@ const Pre = ({children}) => {
   }
   const onCopy = () => {
     setCopied(true)
-    if (textInput.current?.textContent)
-      navigator.clipboard.writeText(textInput.current.textContent)
+    if (textInput.current?.textContent) navigator.clipboard.writeText(textInput.current.textContent)
     setTimeout(() => {
       setCopied(false)
     }, 2000)
   }
 
   return (
-    <div
-      ref={textInput}
-      onMouseEnter={onEnter}
-      onMouseLeave={onExit}
-      className="relative"
-    >
+    <div ref={textInput} onMouseEnter={onEnter} onMouseLeave={onExit} className="relative">
       {hovered && (
         <button
           aria-label="Copy code"

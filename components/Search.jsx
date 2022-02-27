@@ -1,6 +1,4 @@
-import {ChangeEventHandler} from 'react'
-
-const Search = ({query = '', onChange}) => {
+const Search = ({ query = '', onChange }) => {
   return (
     <div className="w-full p-2">
       <h3 className="mb-4 text-[1.6rem] font-bold">Search for posts</h3>

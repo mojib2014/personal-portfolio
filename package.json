@@ -5,18 +5,16 @@
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node ./scripts/generate-sitemap",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
-    "start:css": "tailwindcss -o tailwind.css --watch",
-    "build:css": "NODE_ENV=production tailwindcss -o tailwind.css -m",
-    "prepare": "husky install",
-    "type-check": "tsc"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.2",
     "@mailchimp/mailchimp_marketing": "^3.0.74",
+    "@next/bundle-analyzer": "^12.1.0",
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
     "esbuild": "^0.14.18",
@@ -28,8 +26,8 @@
     "mdx-bundler": "^8.0.1",
     "next": "^12.1.0",
     "next-themes": "^0.0.15",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-citation": "^0.1.2",
@@ -65,7 +63,6 @@
     "inquirer": "^8.2.0",
     "lint-staged": "^12.3.3",
     "next-remote-watch": "^1.0.0",
-    "node-gyp": "^8.4.1",
     "postcss": "^8.4.5",
     "postcss-preset-env": "^7.2.3",
     "prettier": "^2.5.1",
@@ -81,14 +78,5 @@
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "prettier --write"
     ]
-  },
-  "eslintIgnore": [
-    "node_modules",
-    "coverage",
-    "server-build",
-    "build",
-    "public/build",
-    "*.ignored/",
-    "*.ignored.*"
-  ]
+  }
 }

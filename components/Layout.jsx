@@ -1,4 +1,4 @@
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import Header from './Header'
 import Footer from './Footer'
 import Head from 'next/head'
@@ -20,8 +20,7 @@ const Layout = ({
 }) => {
   const router = useRouter()
   const publishedAt = date && new Date(date).toISOString()
-  const modifiedAt =
-    lastmod || (date && new Date(lastmod || date).toISOString())
+  const modifiedAt = lastmod || (date && new Date(lastmod || date).toISOString())
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -62,16 +61,9 @@ const Layout = ({
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={twImage} />
-        {date && (
-          <meta property="article:published_time" content={publishedAt} />
-        )}
-        {lastmod && (
-          <meta property="article:modified_time" content={modifiedAt} />
-        )}
-        <link
-          rel="canonical"
-          href={`${siteMetadata.siteUrl}${router.asPath}`}
-        />
+        {date && <meta property="article:published_time" content={publishedAt} />}
+        {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
+        <link rel="canonical" href={`${siteMetadata.siteUrl}${router.asPath}`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

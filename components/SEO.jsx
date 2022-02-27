@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import siteMetadata from '@data/siteMetadata'
 
-const CommonSEO = ({title, description, ogType, ogImage, twImage}) => {
+const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
   const router = useRouter()
   return (
     <>
@@ -10,18 +10,13 @@ const CommonSEO = ({title, description, ogType, ogImage, twImage}) => {
         <title>{title}</title>
         <meta name="robots" content="follow, index" />
         <meta name="description" content={description} />
-        <meta
-          property="og:url"
-          content={`${siteMetadata.siteUrl}${router.asPath}`}
-        />
+        <meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
         <meta property="og:type" content={ogType} />
         <meta property="og:site_name" content={siteMetadata.title} />
         <meta property="og:description" content={description} />
         <meta property="og:title" content={title} />
         {ogImage?.constructor.name === 'Array' ? (
-          ogImage.map(url => (
-            <meta property="og:image" content={url} key={url} />
-          ))
+          ogImage.map((url) => <meta property="og:image" content={url} key={url} />)
         ) : (
           <meta property="og:image" content={ogImage} key={ogImage} />
         )}
@@ -35,7 +30,7 @@ const CommonSEO = ({title, description, ogType, ogImage, twImage}) => {
   )
 }
 
-export const PageSEO = ({title, description}) => {
+export const PageSEO = ({ title, description }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   return (
@@ -49,7 +44,7 @@ export const PageSEO = ({title, description}) => {
   )
 }
 
-export const TagSEO = ({title, description}) => {
+export const TagSEO = ({ title, description }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const router = useRouter()
@@ -74,15 +69,7 @@ export const TagSEO = ({title, description}) => {
   )
 }
 
-export const BlogSEO = ({
-  authorDetails,
-  title,
-  summary,
-  date,
-  lastmod,
-  url,
-  images = [],
-}) => {
+export const BlogSEO = ({ authorDetails, title, summary, date, lastmod, url, images = [] }) => {
   const router = useRouter()
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
@@ -93,7 +80,7 @@ export const BlogSEO = ({
       ? [images]
       : images
 
-  const featuredImages = imagesArr.map(img => {
+  const featuredImages = imagesArr.map((img) => {
     return {
       '@type': 'ImageObject',
       url: `${siteMetadata.siteUrl}${img}`,
@@ -102,7 +89,7 @@ export const BlogSEO = ({
 
   let authorList
   if (authorDetails) {
-    authorList = authorDetails.map(author => {
+    authorList = authorDetails.map((author) => {
       return {
         '@type': 'Person',
         name: author.name,
@@ -150,16 +137,9 @@ export const BlogSEO = ({
         twImage={twImageUrl}
       />
       <Head>
-        {date && (
-          <meta property="article:published_time" content={publishedAt} />
-        )}
-        {lastmod && (
-          <meta property="article:modified_time" content={modifiedAt} />
-        )}
-        <link
-          rel="canonical"
-          href={`${siteMetadata.siteUrl}${router.asPath}`}
-        />
+        {date && <meta property="article:published_time" content={publishedAt} />}
+        {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
+        <link rel="canonical" href={`${siteMetadata.siteUrl}${router.asPath}`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

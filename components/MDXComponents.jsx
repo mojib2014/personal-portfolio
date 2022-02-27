@@ -1,10 +1,10 @@
-import {FunctionComponent, useMemo} from 'react'
-import {getMDXComponent, MDXContentProps} from 'mdx-bundler/client'
+import { useMemo } from 'react'
+import { getMDXComponent } from 'mdx-bundler/client'
 import Image from './Image'
 import CustomLink from './Link'
 import TOCInline from './TOCInline'
 import Pre from './Pre'
-import {BlogNewsLetterForm} from './NewsLetterForm'
+import { BlogNewsLetterForm } from './NewsLetterForm'
 
 export const MDXComponents = {
   Image,
@@ -12,13 +12,13 @@ export const MDXComponents = {
   a: CustomLink,
   pre: Pre,
   BlogNewsletterForm: BlogNewsLetterForm,
-  wrapper: ({components, layout, ...rest}) => {
+  wrapper: ({ components, layout, ...rest }) => {
     const Layout = require(`../layouts/${layout}`).default
     return <Layout {...rest} />
   },
 }
 
-export const MDXLayoutRenderer = ({layout, mdxSource, ...rest}) => {
+export const MDXLayoutRenderer = ({ layout, mdxSource, ...rest }) => {
   const MDXLayout = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
 
   return <MDXLayout layout={layout} components={MDXComponents} {...rest} />

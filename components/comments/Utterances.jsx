@@ -1,10 +1,10 @@
-import React, {useState, useEffect, useCallback} from 'react'
-import {useTheme} from 'next-themes'
+import React, { useState, useEffect, useCallback } from 'react'
+import { useTheme } from 'next-themes'
 import siteMetadata from '@data/siteMetadata'
 
-const Utterances = ({issueTerm}) => {
+const Utterances = ({ issueTerm }) => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
-  const {theme, resolvedTheme} = useTheme()
+  const { theme, resolvedTheme } = useTheme()
   const commentsTheme =
     theme === 'dark' || resolvedTheme === 'dark'
       ? siteMetadata.comment.utterancesConfig.darkTheme
@@ -42,9 +42,7 @@ const Utterances = ({issueTerm}) => {
   // Added `relative` to fix a weird bug with `utterances-frame` position
   return (
     <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && (
-        <button onClick={LoadComments}>Load Comments</button>
-      )}
+      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
       <div className="utterances-frame relative" id={COMMENTS_ID} />
     </div>
   )

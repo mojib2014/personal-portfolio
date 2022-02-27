@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import cn from 'classnames'
 
-const CoverImage = ({item, width, height, src, ...rest}) => {
+const CoverImage = ({ item, width, height, src, ...rest }) => {
   const image = (
     <Image
       {...rest}

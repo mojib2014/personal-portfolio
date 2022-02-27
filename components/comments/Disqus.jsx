@@ -1,7 +1,7 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import siteMetadata from '@data/siteMetadata'
 
-const Disqus = ({frontMatter}) => {
+const Disqus = ({ frontMatter }) => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
 
   const COMMENTS_ID = 'disqus_thread'
@@ -15,24 +15,19 @@ const Disqus = ({frontMatter}) => {
     }
     if (window.DISQUS === undefined) {
       const script = document.createElement('script')
-      script.src =
-        'https://' +
-        siteMetadata.comment.disqusConfig.shortname +
-        '.disqus.com/embed.js'
+      script.src = 'https://' + siteMetadata.comment.disqusConfig.shortname + '.disqus.com/embed.js'
       script.setAttribute('data-timestamp', +new Date())
       script.setAttribute('crossorigin', 'anonymous')
       script.async = true
       document.body.appendChild(script)
     } else {
-      window.DISQUS.reset({reload: true})
+      window.DISQUS.reset({ reload: true })
     }
   }
 
   return (
     <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && (
-        <button onClick={LoadComments}>Load Comments</button>
-      )}
+      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
       <div className="disqus-frame" id={COMMENTS_ID} />
     </div>
   )

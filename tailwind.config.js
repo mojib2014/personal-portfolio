@@ -5,15 +5,13 @@ module.exports = {
   mode: 'layers',
   enabled: process.env.NODE_ENV === 'production',
   content: [
+    './pages/**/*.jsx',
     './pages/**/*.js',
-    './pages/**/*.ts',
-    './pages/**/*.tsx',
+    './components/**/*.jsx',
     './components/**/*.js',
-    './components/**/*.tsx',
+    './layouts/**/*.jsx',
     './layouts/**/*.js',
-    './layouts/**/*.tsx',
     './lib/**/*.js',
-    './lib/**/*.ts',
   ],
   darkMode: 'class',
   theme: {
@@ -61,8 +59,7 @@ module.exports = {
       transitionDuration: {
         300: '300ms',
       },
-      //@ts-expect-error: Let's ignore a compile error like this unreachable code
-      typography: theme => ({
+      typography: (theme) => ({
         DEFAULT: {
           css: {
             color: theme('colors.gray.700'),
@@ -71,7 +68,7 @@ module.exports = {
               '&:hover': {
                 color: `${theme('colors.primary.600')} !important`,
               },
-              code: {color: theme('colors.primary.400')},
+              code: { color: theme('colors.primary.400') },
             },
             h1: {
               fontWeight: '700',
@@ -116,7 +113,7 @@ module.exports = {
               paddingBottom: '2px',
               borderRadius: '0.25rem',
             },
-            hr: {borderColor: theme('colors.gray.200')},
+            hr: { borderColor: theme('colors.gray.200') },
             'ol li::marker': {
               fontWeight: '600',
               color: theme('colors.gray.500'),
@@ -124,7 +121,7 @@ module.exports = {
             'ul li::marker': {
               backgroundColor: theme('colors.gray.500'),
             },
-            strong: {color: theme('colors.gray.600')},
+            strong: { color: theme('colors.gray.600') },
             blockquote: {
               color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.200'),
@@ -139,7 +136,7 @@ module.exports = {
               '&:hover': {
                 color: `${theme('colors.primary.400')} !important`,
               },
-              code: {color: theme('colors.primary.400')},
+              code: { color: theme('colors.primary.400') },
             },
             h1: {
               fontWeight: '700',
@@ -167,7 +164,7 @@ module.exports = {
             details: {
               backgroundColor: theme('colors.gray.800'),
             },
-            hr: {borderColor: theme('colors.gray.700')},
+            hr: { borderColor: theme('colors.gray.700') },
             'ol li::marker': {
               fontWeight: '600',
               color: theme('colors.gray.400'),
@@ -175,7 +172,7 @@ module.exports = {
             'ul li::marker': {
               backgroundColor: theme('colors.gray.400'),
             },
-            strong: {color: theme('colors.gray.100')},
+            strong: { color: theme('colors.gray.100') },
             thead: {
               th: {
                 color: theme('colors.gray.100'),

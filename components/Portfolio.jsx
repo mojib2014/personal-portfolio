@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Link from './Link'
 import SliderImage from './SliderImage'
 import PROJECTS from '../data/projects'
@@ -10,10 +10,10 @@ const filters = ['JavaScript', 'React', 'Django/Docker', 'Python', 'All']
 const Portfolio = () => {
   const [projects, setProjects] = useState(PROJECTS)
 
-  const handleFilter = event => {
+  const handleFilter = (event) => {
     const filter = event.target.dataset.filter
     if (filter === 'All') setProjects(PROJECTS)
-    else setProjects(PROJECTS.filter(p => p.technology === filter))
+    else setProjects(PROJECTS.filter((p) => p.technology === filter))
   }
 
   return (
@@ -22,11 +22,9 @@ const Portfolio = () => {
       className="pb-section-pb pt-section-pt dark:bg-[#111827] dark:text-gray-100"
     >
       <SectionContainer>
-        <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl xl:text-5xl">
-          Portfolio
-        </h2>
+        <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl xl:text-5xl">Portfolio</h2>
         <div className="flex flex-wrap items-center justify-center gap-3 py-16 md:justify-between md:gap-8">
-          {filters.map(fitler => (
+          {filters.map((fitler) => (
             <button
               key={fitler}
               data-filter={fitler}
@@ -39,7 +37,7 @@ const Portfolio = () => {
         </div>
         <div className="slide-in grid w-full auto-rows-auto items-center justify-items-center gap-7 transition-all duration-500 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           {projects.length ? (
-            projects.map(project => (
+            projects.map((project) => (
               <div
                 key={project.title}
                 className={`pointer-events-auto relative w-full cursor-pointer rounded-lg shadow-md shadow-gray-500 ${styles.card}`}

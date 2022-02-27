@@ -1,6 +1,6 @@
 import PortfolioLayout from '@layouts/PortfolioLayout'
 
-const Home: NextPage = () => {
+const Home = () => {
   return <PortfolioLayout />
 }
 

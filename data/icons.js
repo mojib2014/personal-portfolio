@@ -14,7 +14,7 @@ const icons = [
     title: 'Linkedin',
     href: 'https://www.linkedin.com/in/mojib-mohammad/',
   },
-  {icon: '/icons/facebook.svg', title: 'Facebook', href: '#'},
+  { icon: '/icons/facebook.svg', title: 'Facebook', href: '#' },
 ]
 
 export default icons

@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import {NextRouter} from 'next/router'
 
-const SubNav = ({router}) => {
+const SubNav = ({ router }) => {
   return (
     <div className="sub-header">
       <ul className="flex items-center gap-5">

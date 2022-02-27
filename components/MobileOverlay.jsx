@@ -1,4 +1,4 @@
-const MobileOverlay = ({show, onClose}) => {
+const MobileOverlay = ({ show, onClose }) => {
   return (
     <div
       onClick={onClose}
