@@ -4,15 +4,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'layers',
   enabled: process.env.NODE_ENV === 'production',
-  content: [
-    './pages/**/*.jsx',
-    './pages/**/*.js',
-    './components/**/*.jsx',
-    './components/**/*.js',
-    './layouts/**/*.jsx',
-    './layouts/**/*.js',
-    './lib/**/*.js',
-  ],
+  content: ['./pages/**/*.js', './components/**/*.jsx', './layouts/**/*.jsx', './lib/**/*.js'],
   darkMode: 'class',
   theme: {
     extend: {

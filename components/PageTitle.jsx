@@ -1,5 +1,3 @@
-import React from 'react'
-
 const PageTitle = ({ banner, children }) => {
   return (
     <h1

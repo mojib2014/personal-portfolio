@@ -1,6 +1,7 @@
-import '../styles/tailwind.css'
-import '../styles/globals.css'
-import '../styles/prism.css'
+import '@styles/tailwind.css'
+import '@styles/globals.css'
+import '@styles/prism.css'
+import 'katex/dist/katex.css'
 
 import '@fontsource/inter/variable-full.css'
 
@@ -14,7 +15,7 @@ import siteMetadata from '@data/siteMetadata'
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head key="viewport">
@@ -27,5 +28,3 @@ function MyApp({ Component, pageProps }) {
     </ThemeProvider>
   )
 }
-
-export default MyApp

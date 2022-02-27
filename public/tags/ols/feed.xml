@@ -10,15 +10,15 @@
       <lastBuildDate>Mon, 21 Dec 2020 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://mojib-mohammad.vercel.app/tags/ols/feed.xml" rel="self" type="application/rss+xml"/>
       
-    <item>
-        <guid>https://mojib-mohammad.vercel.app/blogderiving-ols-estimator</guid>
-        <title>Deriving the OLS Estimator</title>
-        <link>https://mojib-mohammad.vercel.app/blog/deriving-ols-estimator</link>
-        undefined
-        <pubDate>Mon, 21 Dec 2020 00:00:00 GMT</pubDate>
-        <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
-        <category>next js</category><category>math</category><category>ols</category>
-    </item>
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/deriving-ols-estimator</guid>
+    <title>Deriving the OLS Estimator</title>
+    <link>https://mojib-mohammad.vercel.app/blog/deriving-ols-estimator</link>
+    <description>How to derive the OLS Estimator with matrix notation and a tour of math typesetting using markdown with the help of KaTeX.</description>
+    <pubDate>Mon, 21 Dec 2020 00:00:00 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>next js</category><category>math</category><category>ols</category>
+  </item>
 
     </channel>
   </rss>

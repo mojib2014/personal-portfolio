@@ -1,4 +1,3 @@
-import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import SectionContainer from './SectionContainer'
@@ -15,7 +14,7 @@ const ContactSchema = Yup.object().shape({
   message: Yup.string().min(50, 'Too Short!').max(150, 'Too Long!').label('Message'),
 })
 
-const Contact = () => {
+export default function Contact() {
   const handleSubmit = (values) => {
     console.log(values)
   }
@@ -85,5 +84,3 @@ const Contact = () => {
     </section>
   )
 }
-
-export default Contact

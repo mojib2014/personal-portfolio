@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useTheme } from 'next-themes'
 import siteMetadata from '@data/siteMetadata'
 

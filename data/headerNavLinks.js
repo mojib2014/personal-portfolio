@@ -9,4 +9,4 @@ const headerNavLinks = [
   { href: '/#contact', title: 'Contact' },
 ]
 
-export default headerNavLinks
+module.exports = headerNavLinks

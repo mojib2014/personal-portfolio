@@ -1,9 +1,9 @@
 :root {
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
   --facebook-color: #4867ab;
   --twitter-color: #5da9dd;
   --linkedin-color: #2466c2;
@@ -72,6 +72,7 @@ a {
 
 #header ul li a.active {
   border-bottom: 2px solid dodgerblue;
+  color: dodgerblue;
 }
 
 .line-container:hover .line {

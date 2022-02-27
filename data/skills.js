@@ -18,4 +18,4 @@ const skills = [
   { skill: '/icons/sql.svg', title: 'SQL' },
 ]
 
-export default skills
+module.exports = skills

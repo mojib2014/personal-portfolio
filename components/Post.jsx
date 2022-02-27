@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import ActiveLink from './ActiveLink'
 import Tag from './Tag'
 import formatDate from '@lib/utils/format-date'
 
@@ -17,14 +17,14 @@ const Post = ({ frontMatter }) => {
           </dl>
         </li>
       </ul>
-      <Link as={`/blog/posts/${slug}`} href="/blog/posts/[...slug]">
+      <ActiveLink href="/blog/posts/[...slug]" as={`/blog/posts/${slug}`}>
         <a>
           <div className="card-body">
             <h2 className="text-1xl font-bold md:text-2xl">{title}</h2>
             <p className="py-3 text-[1.1rem] tracking-wide">{summary}</p>
           </div>
         </a>
-      </Link>
+      </ActiveLink>
       {tags && tags.map((tag) => <Tag key={tag} tag={tag} />)}
     </div>
   )

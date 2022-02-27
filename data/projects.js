@@ -107,4 +107,4 @@ const projects = [
     github: '#',
   },
 ]
-export default projects
+module.exports = projects

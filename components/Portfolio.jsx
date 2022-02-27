@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Link from './Link'
 import SliderImage from './SliderImage'
 import PROJECTS from '../data/projects'

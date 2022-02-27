@@ -17,4 +17,4 @@ const icons = [
   { icon: '/icons/facebook.svg', title: 'Facebook', href: '#' },
 ]
 
-export default icons
+module.exports = icons

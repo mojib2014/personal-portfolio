@@ -1,10 +1,10 @@
-import React, { cloneElement, Children } from 'react'
+import { cloneElement, Children } from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 
-const ActiveLink = ({ router, children, href, ...rest }) => {
+const ActiveLink = ({ router, children, ...rest }) => {
   return (
-    <Link href={href} {...rest}>
+    <Link {...rest}>
       {cloneElement(Children.only(children), {
         className:
           router.pathname === /\// || router.asPath === rest.href

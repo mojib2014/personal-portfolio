@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import ActiveLink from './ActiveLink'
 import headerNavLinks from '@data/headerNavLinks'
 
 const MobileNav = ({ show, onClick }) => {
@@ -11,11 +11,11 @@ const MobileNav = ({ show, onClick }) => {
       <ul className="mobile-nav">
         {headerNavLinks.map((link) => (
           <li key={link.title} className="m-0 border-t-[1px] border-t-gray-500 pl-6 text-left">
-            <Link href={link.href}>
+            <ActiveLink href={link.href} as={link.href}>
               <a className="block leading-[60px] text-white" onClick={onClick}>
                 {link.title}
               </a>
-            </Link>
+            </ActiveLink>
           </li>
         ))}
       </ul>
