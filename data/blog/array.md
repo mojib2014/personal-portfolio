@@ -2,7 +2,7 @@
 title: What's Is an Array?
 date: '2022-03-01'
 tags: ['Data Structures', 'Algoritms', 'Arrays']
-draft: true
+draft: false
 summary: An Array is a collection(list) of items. The items can really be anything, integers, strings, arrays, objects... etc.
 ---
 
