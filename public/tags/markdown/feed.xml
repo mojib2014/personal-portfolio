@@ -20,15 +20,5 @@
     <category>github</category><category>guide</category><category>markdown</category>
   </item>
 
-  <item>
-    <guid>https://mojib-mohammad.vercel.app/blog/code-sample</guid>
-    <title>Sample .md file</title>
-    <link>https://mojib-mohammad.vercel.app/blog/code-sample</link>
-    <description>Example of a markdown file with code blocks and syntax highlighting</description>
-    <pubDate>Tue, 08 Mar 2016 00:00:00 GMT</pubDate>
-    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
-    <category>markdown</category><category>code</category><category>features</category>
-  </item>
-
     </channel>
   </rss>

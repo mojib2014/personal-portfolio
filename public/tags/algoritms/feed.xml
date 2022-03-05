@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Personal Portfolio | Blog</title>
+      <link>https://mojib-mohammad.vercel.app/blog</link>
+      <description>A personal blog for recording my learning journey.</description>
+      <language>en-us</language>
+      <managingEditor>mmohammad3@outlook.com (Mojib Mohammad)</managingEditor>
+      <webMaster>mmohammad3@outlook.com (Mojib Mohammad)</webMaster>
+      <lastBuildDate>Tue, 01 Mar 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://mojib-mohammad.vercel.app/tags/algoritms/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://mojib-mohammad.vercel.app/blog/array</guid>
+    <title>What&#39;s Is an Array?</title>
+    <link>https://mojib-mohammad.vercel.app/blog/array</link>
+    <description>An Array is a collection(list) of items. The items can really be anything, integers, strings, arrays, objects... etc.</description>
+    <pubDate>Tue, 01 Mar 2022 00:00:00 GMT</pubDate>
+    <author>mmohammad3@outlook.com (Mojib Mohammad)</author>
+    <category>Data Structures</category><category>Algoritms</category><category>Arrays</category>
+  </item>
+
+    </channel>
+  </rss>
