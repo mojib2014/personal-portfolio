@@ -5,6 +5,10 @@
   </url>
 
   <url>
+    <loc>https://mojib-mohammad.vercel.app/blog/array</loc>
+  </url>
+
+  <url>
     <loc>https://mojib-mohammad.vercel.app/blog/deriving-ols-estimator</loc>
   </url>
 
@@ -21,7 +25,11 @@
   </url>
 
   <url>
-    <loc>https://mojib-mohammad.vercel.app/blog/code-sample</loc>
+    <loc>https://mojib-mohammad.vercel.app/tags/algoritms</loc>
+  </url>
+
+  <url>
+    <loc>https://mojib-mohammad.vercel.app/tags/arrays</loc>
   </url>
 
   <url>
@@ -29,11 +37,15 @@
   </url>
 
   <url>
-    <loc>https://mojib-mohammad.vercel.app/tags/features</loc>
+    <loc>https://mojib-mohammad.vercel.app/tags/code</loc>
   </url>
 
   <url>
-    <loc>https://mojib-mohammad.vercel.app/tags/code</loc>
+    <loc>https://mojib-mohammad.vercel.app/tags/data-structures</loc>
+  </url>
+
+  <url>
+    <loc>https://mojib-mohammad.vercel.app/tags/features</loc>
   </url>
 
   <url>
