@@ -198,7 +198,6 @@ code.language-css .token.selector > .token.pseudo-element {
 
 /* Blockqoute */
 .prose :where(blockquote):not(:where([class~='not-prose'] *)) {
-  background-color: #f8f8f8;
   border-left-color: dodgerblue;
   padding: 0.3rem;
 }
