@@ -6,7 +6,7 @@ const Post = ({ frontMatter }) => {
   const { title, slug, summary, date, tags } = frontMatter
 
   return (
-    <div className="border-gray mb-4 w-full border p-2">
+    <div className="mb-4 w-full border border-gray-100 p-2 transition-all duration-300 ease-in-out hover:shadow-md hover:shadow-gray-400 dark:border-gray-700 dark:hover:shadow-gray-700">
       <ul className="meta mb-3 flex items-center justify-between">
         <li className="text-gray-300">
           <dl>

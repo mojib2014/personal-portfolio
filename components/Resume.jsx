@@ -58,7 +58,7 @@ const Resume = () => {
             </div>
           </div>
           <div className="md:pl-full sm:self-cecover w-full self-start py-3">
-            <h4 className={`${styles.subTitle} text-pink mb-13`}>Educational qualification</h4>
+            <h4 className={`${styles.subTitle} mb-13 text-pink-400`}>Educational qualification</h4>
             <h2 className="sction-title mt-5 mb-20 text-3xl font-bold leading-6">My Education</h2>
             <div className="relative w-full">
               <ul className={`${styles.timeline} relative`}>
@@ -98,7 +98,12 @@ const Resume = () => {
                 </li>
               </ul>
               <div className={styles.downloadBtn}>
-                <Link href="/#resume" title="Download Resume" aria-label="Download Resume">
+                <Link
+                  href="/#resume"
+                  title="Download Resume"
+                  aria-label="Download Resume"
+                  className="shadow-md shadow-yellow-700"
+                >
                   Download Resume
                 </Link>
               </div>

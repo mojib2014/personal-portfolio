@@ -2,8 +2,8 @@ import { useState } from 'react'
 import Link from './Link'
 import SliderImage from './SliderImage'
 import PROJECTS from '../data/projects'
-import styles from '../styles/Portfolio.module.css'
 import SectionContainer from './SectionContainer'
+import styles from '../styles/Portfolio.module.css'
 
 const filters = ['JavaScript', 'React', 'Django/Docker', 'Python', 'All']
 
@@ -12,8 +12,9 @@ const Portfolio = () => {
 
   const handleFilter = (event) => {
     const filter = event.target.dataset.filter
-    if (filter === 'All') setProjects(PROJECTS)
-    else setProjects(PROJECTS.filter((p) => p.technology === filter))
+    if (filter === 'All') {
+      setProjects(PROJECTS)
+    } else setProjects(PROJECTS.filter((p) => p.technology === filter))
   }
 
   return (
@@ -23,19 +24,23 @@ const Portfolio = () => {
     >
       <SectionContainer>
         <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl xl:text-5xl">Portfolio</h2>
-        <div className="flex flex-wrap items-center justify-center gap-3 py-16 md:justify-between md:gap-8">
+        <div
+          className={`${styles.filterContainer} flex flex-wrap items-center justify-center gap-3 py-16 md:justify-between md:gap-8`}
+        >
           {filters.map((fitler) => (
             <button
               key={fitler}
               data-filter={fitler}
               onClick={handleFilter}
-              className="rounded-md bg-blue-400 py-1 px-3 text-lg text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-600 md:py-2 md:px-6"
+              className="rounded-md bg-blue-400 py-1 px-3 text-lg text-gray-100 shadow-lg shadow-current transition-all duration-300 ease-in-out hover:bg-blue-600 md:py-2 md:px-6"
             >
               {fitler}
             </button>
           ))}
         </div>
-        <div className="slide-in grid w-full auto-rows-auto items-center justify-items-center gap-7 transition-all duration-500 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div
+          className={`${styles.slideRight} grid w-full auto-rows-auto items-center justify-items-center gap-7 transition-all duration-500 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3`}
+        >
           {projects.length ? (
             projects.map((project) => (
               <div

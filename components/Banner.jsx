@@ -17,12 +17,12 @@ const Banner = () => {
               I&apos;m Mojib Mohammad
             </PageTitle>
             <p>Junior full stack developer</p>
-            <div className="mt-8">
+            <div className="mt-8 transition-all duration-300 ease-in-out">
               <Link
                 href="/Mojib-Mohammad-resume.pdf"
                 title="Resumt"
                 aria-label="Resume"
-                className="inline-block bg-banner-gradient py-5 px-10 hover:rounded-full sm:py-7 sm:px-16"
+                className="inline-block bg-banner-gradient py-5 px-10 shadow-md shadow-current transition-all duration-300 ease-in-out hover:rounded-full sm:py-7 sm:px-16"
               >
                 Download Resume
               </Link>

@@ -23,8 +23,8 @@ pre[class*='language-'] {
   -ms-hyphens: none;
   hyphens: none;
 
-  font-family: 'Operator Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono',
-    'Ubuntu Mono', monospace;
+  font-family: 'Operator Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+    monospace;
   font-weight: 400;
   font-size: 17px;
   line-height: 25px;
@@ -194,4 +194,11 @@ code.language-css .token.selector > .token.pseudo-element {
 .line-highlight.line-highlight:before,
 .line-highlight.line-highlight[data-end]:after {
   content: '';
+}
+
+/* Blockqoute */
+.prose :where(blockquote):not(:where([class~='not-prose'] *)) {
+  background-color: #f8f8f8;
+  border-left-color: dodgerblue;
+  padding: 0.3rem;
 }

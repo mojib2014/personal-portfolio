@@ -73,7 +73,7 @@ export default function Contact() {
                 <input
                   type="submit"
                   disabled={isSubmitting}
-                  className={styles.submitBtn}
+                  className={`${styles.submitBtn} shadow-md shadow-purple-700`}
                   value="Submit"
                 />
               </Form>
